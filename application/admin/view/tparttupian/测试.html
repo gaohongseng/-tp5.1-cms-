@@ -1,0 +1,248 @@
+<html style="padding-bottom: 54px;"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>图片上传插件zyupload java版实例代码</title>
+<meta name="description" content="本插件经本人多次修改完善，功能齐全，支持多图片上传、拖拽上传、剪辑、编辑，上传预览，编辑获取默认值等功能，并且每一个功能对应一个demo，简单易懂，方便学习修改">
+<meta name="keywords" content="图片上传，多图上传，拖拽上传，上传预览，剪辑，jquery,jquery插件">
+<link rel="Shortcut icon" href="http://www.jq22.com/favicon.ico">
+<link href="css/demo.css?v3" rel="stylesheet" media="all">
+<!--[if IE]>
+            
+            <style type="text/css">         
+                li.purchase a {
+                    padding-top: 5px;
+                    background-position: 0px -4px;
+                }
+                
+                li.remove_frame a {
+                    padding-top: 5px;
+                    background-position: 0px -3px;
+                }                       
+            </style>
+            
+        <![endif]-->
+<style>
+        .fdad a {
+            color: #000;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .fdad {
+            top: 66px;
+        }
+
+        .xgcj li {
+            font-size: 14px;
+            line-height: 20px;
+            list-style-type: none;
+            transition: all 1s ease 0s;
+            border-radius: 5px;
+        }
+
+            .xgcj li:hover {
+                background-color: #e4e4e4;
+            }
+
+        .xgcj {
+            background-color: rgba(255,255,255,.3);
+            overflow-x: hidden;
+        }
+
+            .xgcj ul {
+                padding: 10px
+            }
+
+            .xgcj h3 {
+                line-height: 30px;
+            }
+
+            .xgcj p {
+                padding-left: 20px;
+                font-size: 13px;
+                display: none;
+            }
+
+            .xgcj span {
+                font-family: "宋体";
+            }
+
+            .xgcj li:hover p {
+                display: block;
+            }
+    </style>
+<script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="//hm.baidu.com/hm.js?b3a3fc356d0af38b811a0ef8d50716b8"></script><script src="http://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-2935286260943234.js"></script><script type="text/javascript">
+        var txt = "http://www.jq22.com/demo/jquery-publicity20151104";
+        window.g1 = txt.substr(0, 3);
+        window.g2 = txt.substr(0, 19);
+    </script>
+<script src="js/pace.min.js" charset="gbk"></script>
+<link href="css/pace-theme-barber-shop.css" rel="stylesheet">
+<script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script type="text/javascript">
+
+        var theme_list_open = false;
+
+        $(document).ready(function () {
+            function fixHeight() {
+                var headerHeight = $("#switcher").height();
+                $("#iframe").attr("height", $(window).height() - 54 + "px");
+            }
+            $(window).resize(function () {
+                fixHeight();
+            }).resize();
+
+            $('.icon-monitor').addClass('active');
+
+            $(".icon-mobile-3").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-2").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-1").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width');
+                $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-tablet").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('tablet-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-monitor").click(function () {
+                $("#by").css("overflow-y", "hidden");
+                $('#iframe-wrap').removeClass().addClass('full-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+        });
+    </script>
+<script type="text/javascript">
+        function Responsive($a) {
+            if ($a == true) $("#Device").css("opacity", "100");
+            if ($a == false) $("#Device").css("opacity", "0");
+            $('#iframe-wrap').removeClass().addClass('full-width');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        };
+    </script>
+<link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.jq22.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.jq22.com"></script><link rel="preload" href="http://pagead2.googlesyndication.com/pagead/js/r20190107/r20180604/show_ads_impl.js" as="script"></head>
+<body id="by" style="overflow-y: hidden" class="  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+<div id="switcher">
+<div class="center">
+<ul>
+<li class="logoTop" id="sj2"><a href="http://www.jq22.com/jquery-info4600">图片上传插件zyupload java版实例代码</a></li>
+<div id="Device">
+<li class="device-monitor"><a href="javascript:">
+<div class="icon-monitor active">
+</div>
+</a></li>
+<li class="device-mobile"><a href="javascript:">
+<div class="icon-tablet">
+</div>
+</a></li>
+<li class="device-mobile"><a href="javascript:">
+<div class="icon-mobile-1">
+</div>
+</a></li>
+<li class="device-mobile-2"><a href="javascript:">
+<div class="icon-mobile-2">
+</div>
+</a></li>
+<li class="device-mobile-3"><a href="javascript:">
+<div class="icon-mobile-3">
+</div>
+</a></li>
+</div>
+<li class="top2" id="sj"><a href="#">手机二维码预览</a><div class="vm">
+<div id="output"><canvas width="150" height="150"></canvas></div>
+<p style="color: #808080">扫一扫，直接在手机上打开</p>
+</div>
+</li>
+<script>
+                    jQuery('#output').qrcode({ width: 150, height: 150, text: window.location.href });
+                </script>
+<li class="remove_frame" style="display:n"><a href="http://www.jq22.com/demo/jquery-publicity20151104" title="移除框架"></a></li>
+</ul>
+</div>
+</div>
+<div id="iframe-wrap">
+<iframe id="iframe" src="http://www.jq22.com/demo/jquery-publicity20151104" frameborder="0" width="100%" height="296px"></iframe>
+</div>
+<div class="fdad">
+<div class="fdl">Advertisement</div>
+<div class="fdr">x</div>
+<div class="fdadnr">
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-2935286260943234" data-ad-slot="6063645905" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:336px;height:280px;"></iframe></ins></ins></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+<div class="xgcj">
+<ul>
+<div style="width:100%">
+<div style="float:left"><h3>相关插件</h3></div>
+<div style="clear: left;"></div>
+</div>
+<li>
+<a href="http://www.jq22.com/jquery-info15355"><span>&gt;</span> zyupload图片上传修改版</a>
+<p>在原zyupload基础上增加了放大，删除，目录选择功能 。上传的图片可以轮播查看， 上传图片有拖拽图片和文件功能</p>
+</li>
+<li>
+<a href="http://www.jq22.com/jquery-info1604"><span>&gt;</span> jquery多图片上传</a>
+<p>多张图片上传，显示</p>
+</li>
+<li>
+<a href="http://www.jq22.com/jquery-info19864"><span>&gt;</span> jQuery多图压缩上传</a>
+<p>前端对图片的压缩、可以选择多张、可以预览、还可以删除</p>
+</li>
+<li>
+<a href="http://www.jq22.com/jquery-info14213"><span>&gt;</span> zyupload四种不同的上传PHP版</a>
+<p>PHP支持拖拽和裁剪的一款上传插件：zyupload。在js里面可以自定义高度和宽度，类型，远程上传地址等。</p>
+</li>
+<li>
+<a href="http://www.jq22.com/jquery-info13022"><span>&gt;</span> 基于amazeui头像上传</a>
+<p>基于amazeui框架，设计的头像上传插件</p>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript">
+                $(document).ready(function () {
+                    $(".fdr").click(function () {
+                        $(".fdad").hide();
+                    });
+                });
+    </script>
+
+
+
+</div><iframe id="google_osd_static_frame_5595777450810" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_shimpl" style="display: none;"></iframe><iframe id="google_esf" name="google_esf" src="http://googleads.g.doubleclick.net/pagead/html/r20190107/r20180604/zrt_lookup.html#" data-ad-client="ca-pub-2935286260943234" style="display: none;"></iframe></html>

@@ -1,0 +1,203 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=11.0, " name="viewport" id="mixia_vpid">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="blue">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>重庆网站建设|重庆做网站|重庆网站建设公司|重庆网站制作|重庆营销型网站制作-重庆卓光科技有限公司</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="Lukas Postulka, http://www.zhuoguang.net"> 
+	<link rel="apple-touch-icon-precomposed" href="__PUBLIC__/imagestouch-icon.png">
+	
+	
+	<link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css">
+	<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css">
+<script type='text/javascript' src='__PUBLIC__/js/jquery-1.8.1.min.js'></script>
+
+</head>
+<body>
+    <div class="wrap">
+		<!--头部-->
+		<!--<header class="g-hd clearfix">
+	<a class="f-fl" name="logo" href="/"></a>
+	<a class="f-fr" name="tel" href="tel:400-188-9366"></a>
+</header>--> 
+<div class="g-jz clearfix" id="logo">
+	<dl style="width:100%; margin:auto;">
+		<dt style="width:50%; float:left;"><a href="http://m.zhuoguang.net/"><img src="http://m.zhuoguang.net/images/xiaoh_logo.png" class="loaded"></a></dt>
+		<dt style="width:50%; float:left;"><a href="tel:400-188-9366"><img src="http://m.zhuoguang.net/images/xiaoh_tel.png" class="loaded"></a></dt>
+	</dl>
+</div>
+		<!--banner-->
+		<div class="g-adv j-slide-auto">
+	<div class="sclwrap_box" style="position: relative; overflow: hidden; visibility: visible; list-style: none;"><ul class="m-box" id="slides_control_id0" style="position: relative; overflow: hidden; transition: left 400ms ease; width: 1440px; left: -720px;">   
+		<li style="float: left; display: block; width: 360px;"><a href="http://m.zhuoguang.net/" title="重庆卓光将技术转化为生产力"><img src="http://www.zhuoguang.net/uploads/allimg/171016/2-1G0160954100-L.jpg" title="重庆卓光将技术转化为生产力" class="loaded"></a></li>
+<li style="float: left; display: block; width: 360px;"><a href="http://m.zhuoguang.net/" title="网站建设公司"><img src="http://www.zhuoguang.net/uploads/160331/1-1603311Z433301.jpg" title="网站建设公司" class="loaded"></a></li>
+<li style="float: left; display: block; width: 360px;"><a href="http://m.zhuoguang.net/" title="重庆网站建设"><img src="http://www.zhuoguang.net/uploads/160331/1-1603311Z533142.jpg" title="重庆网站建设" class="loaded"></a></li>
+<li style="float: left; display: block; width: 360px;"><a href="http://m.zhuoguang.net/" title="卓光实力"><img src="http://www.zhuoguang.net/uploads/160711/2-160G1100133P6.jpg" title="卓光实力" class="loaded"></a></li>
+
+	</ul></div>
+	<ul class="m-cnt" id="pager_id0">
+		<li style="width:25%" class=""></li>
+<li style="width:25%" class=""></li>
+<li style="width:25%" class="z-on"></li>
+<li style="width:25%" class=""></li>
+
+	</ul>
+</div>
+		<div class="g-prose clearfix">	
+
+{volist name='careRes' id='vo'}
+			<a href="{:url('/mobile/yxxwz',array('fenmianId'=>$vo['id']))}" title="营销型网站">
+				<dl>
+					<dt>
+						<img alt="{$vo['catename']}" src="http://m.zhuoguang.net/images/fw_ico{$i}.jpg" class="loaded">
+					</dt>
+					<dd>
+{if condition="$vo['id'] eq 3"}
+	网站建设
+{elseif condition="$vo['id'] eq 7"/}
+	微信营销
+	{elseif condition="$vo['id'] eq 42"/}
+	整合营销
+{else/}
+{$vo['catename']}
+{/if}
+
+
+					</dd>
+				</dl>
+			</a>
+{/volist}
+		</div>
+        <!--产品服务-->
+		{$artqitaSjs['content']}
+    <!--卓光科技成功案例-->
+     <div class="g-anli j-slide-not">
+
+
+<ul class="m-cnt m-cnt1 clearfix" id="pager_id_0">
+                <li class="z-on">成功案例</li>
+                <li class="">合作伙伴</li>
+            </ul>
+            <div class="sclwrap_box" style="position: relative; overflow: hidden; visibility: visible; list-style: none;"><div class="m-box" id="slides_control_id_0" style="position: relative; overflow: hidden; transition-duration: 0ms; width: 720px; left: 0px;">
+
+
+
+				<div class="con" style="float: left; display: block; width: 360px;">
+
+{volist name='weixin' id='vo'}
+<a href="{:url('/mobile/article',array('tuId'=>$vo['id']))}" title="{$vo['title']|mb_substr=0,5,'utf-8'}"><li> <img src="__IMG__/{$vo['thumb']}" alt="{$vo['title']|mb_substr=0,5,'utf-8'}" class="loaded"><span class="xh_case_t">{$vo['title']|mb_substr=0,5,'utf-8'}</span></li></a>
+  {/volist}
+
+    				 <p class="clear"> </p>
+     			 </div>
+
+
+				<div class="con" style="float: left; display: none; width: 360px;">
+    			{volist name='youhua' id='vo'}
+<a href="{:url('/mobile/article',array('tuId'=>$vo['id']))}" title="{$vo['title']|mb_substr=0,5,'utf-8'}"><li> <img src="__IMG__/{$vo['thumb']}" alt="{$vo['title']|mb_substr=0,5,'utf-8'}" class="loaded"><span class="xh_case_t">{$vo['title']|mb_substr=0,5,'utf-8'}</span></li></a>
+  {/volist}
+
+
+				</div>
+
+
+
+            </div></div>
+        </div> 
+	<!--卓光科技荣誉资质-->
+	<!--<div class="g-ry clearfix index_ryzs" style="margin:0;">
+		<h2 class="jz_nav" style="text-align:center;">荣誉证书</h2>
+		<div style="height:12px;"></div>
+		<ul> 
+			 <li><img src="/images/ryzs.png" alt="祥云平台软件著作证书" title="祥云平台软件著作证书" />
+			 	<span style="width:40%">祥云软件著作权证书</span><span style="width:58%">卓光科技资质证书</span></a></li>
+	   </ul>
+	</div>-->
+	<div class="g-jz clearfix">
+		<dl style="width:100%; margin:auto;">
+			<dt style=" width:100%;"><img src="http://m.zhuoguang.net/images/zg_about.jpg" class="loaded"></dt>
+		</dl>
+	</div>
+	<div class="xh_add_h16"></div>
+	<div class="g-jz clearfix">
+		<dl><dt style="width:100%;"><a href="tel:400-188-9366"><img src="http://m.zhuoguang.net/images/wyjz.png" class="loaded"></a></dt></dl>
+	</div>
+	<div class="xh_add_h16"></div>	
+	<!--卓光科技动态-->
+	<div class="g-news j-slide-not" style="margin:0;">
+		<ul class="m-cnt m-cnt1 clearfix" id="pager_id_1">       
+			 <li class="z-on">行业动态</li><li class="">移动互联网</li><li class="">公司动态</li>
+		</ul>
+		<span></span>
+		<div class="sclwrap_box" style="position: relative; overflow: hidden; visibility: visible; list-style: none;"><div class="m-box" id="slides_control_id_1" style="position: relative; overflow: hidden; transition-duration: 0ms; width: 1080px; left: 0px;">
+			<!--该处的class为外框样式-固定--> 
+			<div class="con" style="float: left; display: block; width: 360px;">
+				<!--该处的class随意  容器不一定是div 容器的内容任意-->
+				<ul>
+	{volist name='hanye' id='vo'}
+					<a href="{:url('/mobile/article',array('lisId'=>$vo['id']))}" title="{$vo['title']}">
+						<li>{$vo['title']}</li></a>
+	{/volist}
+				</ul>
+			</div>
+
+			<div class="con" style="float: left; display: block; width: 360px;">
+				<!--该处的class随意  容器不一定是div 容器的内容任意-->
+				<ul>
+						{volist name='gongsi' id='vo'}
+					<a href="{:url('/mobile/article',array('lisId'=>$vo['id']))}" title="{$vo['title']}">
+						<li>{$vo['title']}</li></a>
+	{/volist}
+
+				</ul>
+			</div><div class="con" style="float: left; display: block; width: 360px;">
+				<!--该处的class随意  容器不一定是div 容器的内容任意-->
+				<ul>
+						{volist name='dongtai' id='vo'}
+					<a href="{:url('/mobile/article',array('lisId'=>$vo['id']))}" title="{$vo['title']}">
+						<li>{$vo['title']}</li></a>
+	{/volist}
+				</ul>
+			</div>  
+		</div></div>
+	</div>
+	<!--底部开始-->
+	{include file='commons/footer'}
+ </div>
+ 
+ 
+
+<script>
+$(function(){
+	$("#pager_id_0 li").bind("click",function(){
+		$the=$(this).index();
+		$(this).addClass("z-on").siblings().removeClass("z-on");
+		$("#slides_control_id_0 .con").eq($the).show().siblings().hide();
+	})
+
+
+
+$("#pager_id_1 li").bind("click",function(){
+		$the=$(this).index();
+		$(this).addClass("z-on").siblings().removeClass("z-on");
+		$("#slides_control_id_1 .con").eq($the).show().siblings().hide();
+	})
+
+
+
+
+	
+
+})
+
+</script>
+
+
+</body></html>

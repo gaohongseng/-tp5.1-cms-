@@ -1,0 +1,48 @@
+<!--底部开始-->
+		<div class="g-ft clearfix">
+    <a class="m-top" href="http://m.zhuoguang.net/yxxwzv/#logo"><div class="u-top f-pr"><span><img title=" " alt="" src="http://m.zhuoguang.net/templets/wap/images/f_logo.png" class="loaded"></span>回到顶部</div></a>
+    <div class="m-bmu">
+		 <p>
+
+{volist name='phoneNav' id='vo'}
+			<a href="
+			{if condition="$vo['id'] eq 33"}
+{:url('/mobile/lxwm',array('theid'=>$vo['id']))}
+			{else/}
+{:url('/mobile/yxxwz',array('theid'=>$vo['id']))}
+			{/if}
+			">{$vo['catename']}</a>|
+{/volist}
+			<br>
+			{$artqitaSjdz['content']}
+		 </p>
+		 <p><br>&nbsp;<br></p>
+		<div class="social_nav5"> 
+			<ul>
+				<li><a id="asn" href="tel:{$confPhone['value']}" style="color: rgb(255, 255, 255);">电话咨询</a></li>
+				<li><a id="asn2" href="sms:{$confPhone['value']}" style="color: rgb(240, 131, 0);">短信咨询</a></li>
+				<li><a href="mqqwpa://im/chat?chat_type=wpa&amp;uin={$confQq['value']}&amp;version=1">在线留言</a></li>
+				<li style=" width:25%;">
+				
+					<a href="{:url('fenmian/lianxi',array('theid'=>33))}">地图导航</a>
+
+				</li>
+			</ul>
+			<div class="clear"></div>
+			<a class="span1" href="http://m.zhuoguang.net/yxxwzv/#"><span>TOP</span></a>448750844
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+$("#xinwen li").bind('click',function(){
+	$the=$(this).index();
+		$(this).addClass("z-on").siblings().removeClass("z-on");
+		$(".m-box .con").eq($the).show().siblings().hide();
+})
+
+
+	})
+
+
+</script>

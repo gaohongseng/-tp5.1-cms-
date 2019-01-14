@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+			<title>{$keywords['catename']}</title>
+	  <meta content="{$keywords['keywords']}" name="Keywords">
+  <meta name="description" content="{$keywords['desc']}" />
+	<link rel="stylesheet" href="__PUBLIC__/css/reset.css">
+	
+	<script type='text/javascript' src='__PUBLIC__/js/jquery-2.1.1.min.js'></script>
+	<link href="__PUBLIC__/css/video-js.css" rel="stylesheet">	
+	<link rel="stylesheet" href="__PUBLIC__/css/fenmian.css">
+</head>
+<body>
+	
+	
+		{include file='commons/header'}
+
+			<div class="banner">
+<img src="__PUBLIC__/images/AD0ImfL4BhACGAAg5vnTzAUo3tSl4wMwgA84kAM.jpg" alt="" style=''>
+			</div>
+
+
+			<div class="topmain">
+				<div class="topstudio">
+
+<h3>{$keywords['catename']}</h3>
+<span>{$keywords['enname']}</span>
+				</div>	
+			
+			</div>
+
+
+
+			<div class="jiedaMain">
+				<div class="jiedaCenter">
+{$keywords['keywords']}
+				</div>
+
+			</div>
+<div class="videoArticle">
+			<!-- <div class="videoTop">
+				<div class="leftvideBar">
+					教学视频
+				</div>
+			</div>
+			<div class="videoArtR">
+<a href="#">MORE</a>
+			</div> -->
+
+	<ul>
+
+
+{volist name='artres' id='vo'}
+		<li>
+			<div class="leftDay">
+				<a href="{:url('/article',array('articleId'=>$vo['id']))}">
+<div class="daytopBar">{$vo['time']|date='d',###}</div>
+<div class="daybtmBar">{$vo['time']|date='Y/m',###}</div>
+				</a>
+			</div>
+			<div class="dayText">
+				<a href="{:url('/article',array('articleId'=>$vo['id']))}">{$vo['title']|mb_substr=0,100,'utf-8'}</a>
+				<p><?php echo mb_substr($vo['desc'],0,100,'utf-8')?>
+
+				</p>
+			</div>
+	    </li>
+{/volist}
+
+
+
+	</ul>
+</div>
+
+{include file='commons/footer'}
+<style>
+.footer{
+	float:left;
+	width:100%;
+}
+</style>
+
+ <script src="__PUBLIC__/js/video.min.js"></script>	
+		  <script type="text/javascript">
+			var myPlayer = videojs('my-video');
+			videojs("my-video").ready(function(){
+				var myPlayer = this;
+				myPlayer.play();
+	
+			});
+		</script>
+
+</body>
+</html>

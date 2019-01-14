@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title> {dede:global.cfg_webname/} </title>
+<meta name="description" content="{dede:global.cfg_keywords/}" />
+<meta name="keywords" content="{dede:global.cfg_description/}" />
+{dede:include filename='head.htm'/}
+<script src='/skin/js/jquery-1.11.3.min.js'></script>
+
+
+
+
+<table width="1024" height="66" border="0" align="center" cellspacing="3">
+<tr>
+<td>
+<span class="title1">{dede:field name='position'/}&gt;</span>
+</td>
+</tr>
+</table>
+<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top" bgcolor="#000000">
+<table width="800" border="0" cellspacing="0">
+<tr>
+<td height="50">
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+body {
+	background-color: #333;
+	color: #666666;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 14px;
+}
+.title1 {
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 24px;
+	color: #999;
+}
+.BAR1 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 20px;
+	color: #CCC;
+}
+.NEWS {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #999;
+	font-weight: bolder;
+}
+a:link {
+	color: #999;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #999;
+}
+a:hover {
+	text-decoration: none;
+	color: #F60;
+}
+a:active {
+	text-decoration: none;
+}
+.BAR2 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 18px;
+	color: #999;
+}
+.bottom {
+	font-size: 12px;
+	color: #333;
+}
+.PIC {
+	border-top-color: #F60;
+	border-right-color: #F60;
+	border-bottom-color: #F60;
+	border-left-color: #F60;
+	height: 168px;
+	width: 168px;
+}
+.product {
+	font-size: 16px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+</style>
+
+<style>
+.gaocomes{
+	width:924px;
+	height:703px;
+	padding:0px 50px;
+	background:black;
+}
+.gaocomes ul li{
+	width:24%;
+	height:236px;
+	list-style:none;
+	position:relative;
+	float:left;
+}
+.gaocomes ul li img{
+	width:167px;
+	height:167px;
+}
+.gaocomes ul li .ojbk{
+	position:absolute;
+	bottom:20px;
+	left:30px;
+
+}
+
+
+</style>
+
+
+
+
+
+<div class="gaocomes">
+	<ul>
+
+
+{dede:channel  typeid='1' addfields='typeimg' channelid='1' }
+		<li>
+		<a href="[field:typelink/]"><img src='[field:typeimg/]'></a>
+
+		<div class="ojbk">
+
+<a href="[field:typelink/]">[field:typename/]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a>
+		
+		</div>
+		</li>
+{/dede:channel}
+
+	</ul>
+
+</div>
+
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+</td>
+</tr>
+
+
+
+{dede:include filename='footer.htm'/}
+<script>
+
+
+
+Array.prototype.remove = function(val) {
+var index = this.indexOf(val);
+if (index > -1) {
+this.splice(index, 1);
+}
+};
+
+
+$(function(){
+
+
+$(".gaocomes li").bind("mouseover",function(){
+	  var $the=$(this).index();
+	  $.ajax({
+            //请求方式为get
+            type:"GET",
+            //json文件位置
+            url:"http://www.ikelighting.net/ceshi/index.html",
+            //返回数据格式为json
+             cache: true,
+            //请求成功完成后要执行的方法
+            success: function(html){
+               html=html.split(",");
+               if(html[0]==''){
+               		html.shift();
+               }
+            
+ $(".gaocomes ul li").eq($the).find("img").attr("src",html[$the]);
+            }
+        });
+
+
+
+
+
+	  $(".gaocomes li").bind("mouseleave",function(){
+	  		var $the=$(this).index();
+	  $.ajax({
+            //请求方式为get
+            type:"GET",
+            //json文件位置
+            url:"http://www.ikelighting.net/ceshi1/index.html",
+            //返回数据格式为json
+             cache: true,
+            //请求成功完成后要执行的方法
+            success: function(html){
+               html=html.split(",");
+               if(html[0]==''){
+               		html.shift();
+               }
+        
+ $(".gaocomes ul li").eq($the).find("img").attr("src",html[$the]);
+            }
+        });
+
+	  })
+
+
+
+})
+
+
+
+})
+</script>
+</table>
+</body>
+</html>

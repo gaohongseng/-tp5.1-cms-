@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<title>{$keywords['catename']}</title><!--兼容-->
+<meta name="keywords" content="{$keywords['keywords']}"/>
+<meta name="description" content="{$keywords['desc']}"/>
+<meta http-equiv="mobile-agent" content="format=xhtml;url=/m/list.php?tid=6">
+<link href="__PUBLIC__/css/contact.css" rel="stylesheet" media="screen" type="text/css"/>
+</head>
+<body>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jquery-1.8.1.min.js"></script>
+<link href="__PUBLIC__/css/video-js.css" rel="stylesheet">	
+{include file='commons/header'}
+
+
+
+
+
+
+
+
+
+
+<div class="clear">
+</div>
+
+
+{include file='commons/position'}
+
+
+<div class="clear">
+</div>
+<div class="case_all">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="main_con">
+	<div class="contact">
+		<div class="h50">
+		</div>
+		<div class="contact_con">
+			<div style="width:800px;margin:0px auto;">
+				<video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="800" height="600"
+				  poster="__PUBLIC__/images/tu1.jpg" data-setup="{}">
+					<source src="http://vjs.zencdn.net/v/oceans.mp4">
+					<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+					<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+					<p class="vjs-no-js">
+					  To view this video please enable JavaScript, and consider upgrading to a web browser that
+					  <a href="#" target="_blank">supports HTML5 video</a>
+					</p>
+				  </video>
+			</div>
+		</div>
+		<div class="clear">
+		</div>
+		<div class="h40">
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="clear">
+</div>
+
+
+
+
+
+
+
+{include file='commons/footerBar'}
+
+
+
+	﻿
+<div class="clear">
+</div>
+
+
+
+
+{include file='commons/footer'}
+
+ <script src="__PUBLIC__/js/video.min.js"></script>	
+		  <script type="text/javascript">
+			var myPlayer = videojs('my-video');
+			videojs("my-video").ready(function(){
+				var myPlayer = this;
+				myPlayer.play();
+	
+			});
+		</script>
+
+
+</body>
+</html>

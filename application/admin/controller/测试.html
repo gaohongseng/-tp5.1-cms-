@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:field name='keywords'/}" />
+<meta name="keywords" content="{dede:field name='description'  function='html2text(@me)'/}" />
+{dede:include filename='head.htm'/}
+
+
+
+
+
+
+
+<table width="1024" height="66" border="0" align="center" cellspacing="3">
+<tr>
+<td>
+<span class="title1">{dede:field.typename/} &gt;</span>
+</td>
+</tr>
+</table>
+<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top" bgcolor="#000000">
+<table width="800" border="0" cellspacing="0">
+<tr>
+<td height="50">
+&nbsp;
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+body {
+	background-color: #333;
+	color: #666666;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 14px;
+}
+.title1 {
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 24px;
+	color: #999;
+}
+.BAR1 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 20px;
+	color: #CCC;
+}
+.NEWS {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #999;
+	font-weight: bolder;
+}
+a:link {
+	color: #999;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #999;
+}
+a:hover {
+	text-decoration: none;
+	color: #F60;
+}
+a:active {
+	text-decoration: none;
+}
+.BAR2 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 18px;
+	color: #999;
+}
+.bottom {
+	font-size: 12px;
+	color: #333;
+}
+.PIC {
+	border-top-color: #F60;
+	border-right-color: #F60;
+	border-bottom-color: #F60;
+	border-left-color: #F60;
+	height: 168px;
+	width: 168px;
+}
+.product {
+	font-size: 16px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+</style>
+
+<style>
+.gaocomes{
+	width:924px;
+	height:703px;
+	padding:0px 50px;
+	background:black;
+}
+.gaocomes ul li{
+	width:24%;
+	height:236px;
+	list-style:none;
+	position:relative;
+	float:left;
+}
+.gaocomes ul li img{
+	width:167px;
+	height:167px;
+}
+.gaocomes ul li .ojbk{
+	position:absolute;
+	bottom:20px;
+	left:30px;
+
+}
+.gaonav{
+	width:924px;
+	height:53px;
+	padding:0px 50px;
+	background:black;
+}
+.gaonav ul li{
+	width:170px;
+	height:50px;
+	float:left;
+	list-style:none;
+	line-height:50px;
+}
+.gaonav ul li a{
+	display:block;
+	width:100%;
+	height:100%;
+	font-size:18px;
+}
+</style>
+
+
+<div class="gaonav">
+	<ul>
+		{dede:channel type='son' row='5'}
+		<li><a href='[field:typelink/]'>[field:typename/]&nbsp;&nbsp;&nbsp;></a></li>
+		{/dede:channel}
+	</ul>
+</div>
+
+<div class="gaocomes">
+	<ul>
+
+
+{dede:list pagesize='8'}
+		<li>
+		<a href="[field:arcurl/]"><img src='[field:picname/]'></a>
+
+		<div class="ojbk">
+
+<a href="[field:arcurl/]">[field:title/]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a>
+		
+		</div>
+		</li>
+{/dede:list}
+
+	</ul>
+
+
+
+
+
+ <style>
+       .pagelist{float:right;width: 100%;flex: 1;display: flex;justify-content: center;}
+       .pagelist li{float:left;margin-left:5px;list-style:none;}
+
+ .page .pagelist li{width:auto;padding:2px 3px;}
+   </style>
+
+<ul class="pagelist">{dede:pagelist     listitem="info,index,end,pre,next,pageno,option"listsize="3"/}</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+</td>
+</tr>
+
+
+
+{dede:include filename='footer.htm'/}
+</table>
+</body>
+</html>

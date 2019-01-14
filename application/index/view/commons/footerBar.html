@@ -1,0 +1,106 @@
+
+<div class="footer_n">
+<div class="h45">
+</div>
+<div class="main_con">
+	<div class="bestcase">
+		<div class="bestcase_fl fl">
+			<p>
+				推荐案例
+				<br/>BEST CASE
+			</p>
+		</div>
+		<div class="bestcase_fr fr">
+			<ul class="ul_fl">
+{volist name='getjindian' id='vo'}
+				<li>
+				<div class="case_fr_d">
+					<div class="case_fr_n">
+						<div class="case_fr_nc">
+							<a href="{:url('/article',array('lisid'=>$vo['id']))}" title="{$vo['title']}"><img src="__IMG__/{$vo['thumb']}"/></a>
+						</div>
+						<div class="case_fr_nt">
+							<a href="{:url('/article',array('lisid'=>$vo['id']))}" title="{$vo['title']}">{$vo['title']}</a>
+						</div>
+					</div>
+				</div>
+				</li>
+{/volist}		
+
+
+
+			</ul>
+		</div>
+	</div>
+	<div class="clear">
+	</div>
+	<div class="case_zx_lxwm">
+		<div class="case_zx_fl fl">
+			<div class="h25">
+			</div>
+			<div class="case_zx_xwdts">
+				<div class="case_zx_xwdt fl">
+					<div class="case_xwdt_t">
+						行业动态
+					</div>
+					<div class="h16">
+					</div>
+					<ul>
+				{volist name='gethanye' id='vo'}
+						<li><a href="{:url('/article',array('artid'=>$vo['id']))}" title="{$vo['title']}">{$vo['title']}</a></li>
+				{/volist}
+					</ul>
+				</div>
+				<div class="case_zx_xwdt fr">
+					<div class="case_xwdt_t">
+						最新资讯
+					</div>
+					<div class="h16">
+					</div>
+					<ul>
+				{volist name='getxinwen' id='vo'}
+						<li><a href="{:url('/article',array('artid'=>$vo['id']))}" title="{$vo['title']}">{$vo['title']}</a></li>
+				{/volist}
+					</ul>
+				
+				</div>
+			</div>
+		</div>
+		<div class="case_lxwm_fr fr">
+			<div class="case_lxwm_bg">
+				<div class="case_lxwm_txt">
+					<ul>
+						<li style="line-height:20px;">
+						<span class="name">联系电话：</span>
+						<span class="txt"><font>{$confDh['value']}</font></span>
+						</li>
+						<li>
+						<span class="name">咨询电话：</span>
+						<span class="txt">{$confDh['value']}</span>
+						</li>
+						<li style="line-height:32px; height:40px;">
+						<span class="name">咨询Q&nbsp;Q：</span>
+						<span class="txt case_qq"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$confQq['value']}&amp;site=qq&amp;menu=yes" target="_blank"><i class="qq1"></i>{$confQq['value']}</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$confQq['value']}&amp;site=qq&amp;menu=yes" target="_blank"><i class="qq2"></i>{$confQq['value']}</a></span>
+						</li>
+						<li>
+						<span class="name">公司地址：</span>
+						<span class="txt">{$confDz['value']}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="case_lxwm_web">
+					<ul class="ul_fl">
+						<li class="lxwm_web1"><a href="{:url('/yxxwz',array('fenmianId'=>3))}" title="营销型网站"><span class="ico"></span><span class="txt1">网站建设</span></a></li>
+						<li class="lxwm_web2"><a href="{:url('/yxxwz',array('fenmianId'=>7))}" title="手机网站"><span class="ico"></span><span class="txt2">手机网站建设</span></a></li>
+						<li class="lxwm_web3"><a href="{:url('/yxxwz',array('fenmianId'=>5))}" title="整站优化"><span class="ico"></span><span class="txt1">整站优化</span></a></li>
+						<li class="lxwm_web4"><a href="{:url('/jdal',array('tulistId'=>4))}" title="经典案例"><span class="ico"></span><span class="txt2">经典案例</span></a></li>
+						<li class="lxwm_web5"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="h35">
+</div>
+</div>

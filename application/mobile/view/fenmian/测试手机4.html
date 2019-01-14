@@ -1,0 +1,69 @@
+<!-- html5 touch事件实现页面上下滑动 - Leinov -->
+
+
+<!doctype html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=0"/> 
+<title>2014-4-29</title> 
+<style> 
+*{margin:0px;padding:0px;}
+#outer{width:90%;height:280px;background:#000;margin:auto;overflow:hidden;}
+#inner{
+    width:80%;height:500px;background:#f67d42;margin:auto;position:relative;top:0px;
+}
+.come{
+    width:100%;
+    height:30px;
+    background:red;
+}
+</style> 
+<script src='js/jquery.js'></script> 
+</head> 
+<body>
+
+<div class="come">
+我们的好
+</div>
+
+
+<div id="outer"> 
+<div id="inner"> 
+
+    非法feafef
+</div> 
+</div>
+
+<script> 
+    var aboveY=0;
+
+    $("#inner").bind("touchstart",function(e){
+        var _touch = e.originalEvent.targetTouches[0];
+        startY = _touch.pageY;
+       
+    })
+
+    $("#inner").bind("touchmove",function(e){
+        var _touch = e.originalEvent.targetTouches[0];
+        y=_touch.pageY-startY;
+        // console.log('top的值'+$("#inner").css("top"));
+      
+        $("#inner").css("top",y+aboveY);
+        
+    })
+
+
+
+    $("#inner").bind("touchend",function(e){
+        var _touch = e.originalEvent.changedTouches[0];
+      aboveY=parseInt($("#inner").css("top"));
+
+      console.log(aboveY);
+
+
+    })
+</script>
+</body>
+
+</html>

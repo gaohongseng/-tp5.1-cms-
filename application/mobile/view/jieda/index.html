@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<title>{$shoujid['catename']}</title>
+	  <meta content="{$shoujid['keywords']}" name="Keywords">
+  <meta name="description" content="{$shoujid['desc']}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+	<link rel="stylesheet" href="__PUBLIC__/css/reset.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/fenmian.css">
+	<script type='text/javascript' src='__PUBLIC__/js/jquery-2.1.1.min.js'></script>
+</head>
+<body>
+<div class="g_body">
+
+	{include file='/commons/header'}
+	
+<div class="contentBox">
+
+
+<div class="contBigBox">
+
+
+	{include file='/commons/left'}
+
+
+
+<div class="contentRight">
+
+
+<div class="jiedaBox">
+	<div class="jiedaNav">
+		<div class="jiedaBar"></div>
+		<h2>招生理念</h2>
+	</div>
+
+<img src="__IMG__/{$jiedaCate['thumb']}" alt="">
+	<div class="jiedaMain">
+
+{$jiedaCate['content']}
+	</div>
+
+
+
+</div>
+
+
+
+
+	<div class="studioBar">
+
+		<div class="leftStudioBar"></div>
+		<h2>{$jiedaCate['catename']}</h2>
+<div class="newsVideo">
+
+
+<ul>
+
+
+{volist name='jiedaArt' id='vo'}
+	<li>
+<a href="{:url('/mobile/article',array('articleId'=>$vo['id']))}">
+
+<div class="artTxt">
+	<img src="__PUBLIC__/image/gao13.png" alt="">
+	<h3>{$vo['title']|mb_substr=0,18,'utf-8'}</h3>
+	<img src="__PUBLIC__/image/gao14.png" alt="">
+</div>
+<span>{$vo['time']|date='Y/m/d',###}</span>
+		</a>
+	</li>
+{/volist}
+
+
+</ul>
+
+<div class="paginate">
+
+
+
+
+<div class="pagLeft"><a href="index.html?page={if condition='$jiedaArt->currentPage()-1 GT 1'}{$jiedaArt->currentPage-1}{else/} 1{/if}">上一页</a></div>
+
+<div class="pagCenter">{$jiedaArt->currentPage()}/{$jiedaArt->lastPage()}</div>
+
+<div class="pagRight"><a href="index.html?page={if condition='$jiedaArt->currentPage() LT $jiedaArt->lastPage()'}{$jiedaArt->currentPage()+1}{else/}{$jiedaArt->lastPage()}{/if}">下一页</a></div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+{include file='commons/footer'}
+
+
+
+
+
+	</div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+{include file='commons/fixbar'}
+<script src='__PUBLIC__/js/fenmian.js'></script>
+
+
+<script>
+var aboveY=0;
+var position=0;
+	/*判断有没有*/
+	if($(".barImg").hasClass("open")){
+	
+	}else{
+
+$(".contentRight").bind("touchstart",function(e){
+	e.preventDefault(); 
+	 var _touch = e.originalEvent.targetTouches[0];
+	 startY = _touch.pageY;
+	 
+})
+$(".contentRight").bind("touchmove",function(e){
+       e.preventDefault(); 
+        var _touch = e.originalEvent.targetTouches[0];
+        y=_touch.pageY-startY;
+        // console.log('top的值'+$("#inner").css("top"));
+      position=y+aboveY;
+      $maxHeight=$(".contentRight").height();
+
+      	if(position>=60){
+      		position=60;
+      	}else if(-position>=($maxHeight-500)){
+      		position=-($maxHeight-550);
+      	}
+
+      	
+        $(".contentRight").css("top",position);
+  	
+    })
+$(".contentRight").bind("touchend",function(e){
+     e.preventDefault(); 
+        var _touch = e.originalEvent.changedTouches[0];
+      aboveY=parseInt($(".contentRight").css("top"));
+      
+    })
+
+$(".contentRight").css("zIndex",0);
+$(".nav").css("zIndex",999);
+$(".fixedBar").css("zIndex",999);
+	}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
