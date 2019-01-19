@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>zyupload拖拽功能上传实例</title>    
+        <script type="text/javascript" src="../../../../public/static/admin/chajian/jquery-1.11.3.js"></script>
+        <link rel="stylesheet" href="../../../../public/static/admin/chajian/uploadfile/css/fileUpload.css" type="text/css">
+        <script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/js/fileUploadPHP.js"></script>
+         <script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/js/moduleBianji37.js"></script>
+    </head>
+    <body>
+        
+       
+
+<div id="fileUploadContent" class="fileUploadContent"></div>  
+      
+
+
+
+<script type="text/javascript">
+/*文件上传的操作，没有这一步那么连基本的样式都不会有*/
+$(function(){
+
+
+    $("#fileUploadContent").initUpload({
+        "uploadUrl":"doActionAdmin.php",  //上传文件信息地址
+        //"size":350,//文件大小限制，单位kb,默认不限制
+        //"maxFileNumber":3,//文件个数限制，为整数
+        //"filelSavePath":"",//文件上传地址，后台设置的根目录
+        "beforeUpload":beforeUploadFun, //在上传前执行的函数
+        "onUpload":onUploadFun,      //在上传后执行的函数
+        //autoCommit:true,//文件是否自动上传
+        "fileType":['png','jpg','docx','doc'],//文件类型限制，默认不限制，注意写的是文件后缀
+           //获取进度信息地址，可选，注意需要返回的data格式如下
+         "progressUrl":"#",//获取进度信息地址，可选，注意需要返回的data格式如下（{bytesRead: 102516060, contentLength: 102516060, items: 1, percent: 100, startTime: 1489223136317, useTime: 2767}）
+         "scheduleStandard":false,//模拟进度的模式
+         "selfUploadBtId":"",//自定义文件上传按钮id
+         "velocity":10,//模拟进度速度
+          "autoCommit":false,//是否自动上传
+          "isHiddenUploadBt":false,//是否隐藏上传按钮
+          "isHiddenCleanBt":false,//是否隐藏清除按钮
+          "isAutoClean":false,//是否上传完成后自动清除
+          "canDrag":true,//是否可以拖动
+          "fileType":"*",//文件类型
+          "size":"-1",//文件大小限制,单位kB
+          "ismultiple":true,//是否选择多文件
+          "showSummerProgress":false,//显示总进度条
+          "showFileItemProgress":true,//是否显示文件单个总进度
+          "filelSavePath":"",//文件上传地址，后台设置的根目录
+    });
+
+
+    })
+</script>
+
+
+        
+
+    </body>
+</html>

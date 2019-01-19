@@ -2,9 +2,8 @@
 namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
-use app\index\controller\Base;
-use app\index\model\cate as CateModel;
-use app\index\model\video as VideoModel;
+use app\index\model\Tonpan2_cate as CateModel;
+use app\index\model\Tonpan2_video as VideoModel;
 class Artlist extends Cms2base
 {
 	public function index(){
@@ -15,7 +14,7 @@ class Artlist extends Cms2base
            
          $allarticleId=$cate->getallArt($catgetid,$catid);
          if($allarticleId!=''){
-$artres=db("article")->where("id IN($allarticleId)")->paginate(6);
+$artres=db("tonpan2_article")->where("id IN($allarticleId)")->paginate(6);
          }else{
 $artres="";
          }
@@ -40,7 +39,7 @@ $artres="";
         $catgetid=$cate->getthechild($catid);
          $allarticleId=$cate->getallArt($catgetid,$catid);
          if($allarticleId!=''){
-$artres=db("article")->where("id IN($allarticleId)")->paginate(6);
+$artres=db("tonpan2_article")->where("id IN($allarticleId)")->paginate(6);
          }else{
 $artres="";
          }

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>百度多图上传控件WebUploader</title>
+	<link href="diyupload/css/webuploader.css" rel="stylesheet"><!-- 多图上传必须样式 -->
+	<link href="diyupload/css/diyUpload.css" rel="stylesheet"><!-- 多图上传必须样式 -->
+	
+	<script src="diyupload/js/jquery-2.1.4.min.js"></script><!-- 必须jq -->
+	<script src="diyupload/js/webuploader.html5only.min.js"></script><!-- 多图上传必须的js -->
+	<script src="diyupload/js/diyUpload.js"></script><!-- 多图上传必须的js -->
+</head>
+<body>
+<form action="">
+<p>图片上传例子1</p>
+	<div id="box">  
+        <div id="test" class="webuploader-container"></div>  <!--上传控件按钮-->
+		
+		<!--回填区域 以下是图片回填的区域，用于编辑页的信息回填-->
+		<div class="parentFileBox" style="" id="gallery">             
+          <ul class="fileBoxUl">
+            
+            <li class="diyUploadHover" id="aaa1"> 
+              <div class="viewThumb">
+              
+                <img src="uploadfiles/57da3c766d143.jpg"/>
+               
+              </div>
+              <div class="diyCancel" onclick="del_img(this);"></div>      
+            </li>
+			
+			<li class="diyUploadHover" id="aaa2"> 
+              <div class="viewThumb">
+              
+                <img src="uploadfiles/d39212643ae699fb82c89e661454_600_469.jpg"/>
+                
+              </div>
+              <div class="diyCancel" onclick="del_img(this);"></div>      
+            </li>
+            
+          </ul>         
+        </div>
+		<!--回填区域-->
+		
+    </div>  
+	
+
+	<!--例子2-->
+	<p>图片上传例子2</p>
+    <div id="demo">  
+        <div id="as"></div>  <!--上传控件按钮-->
+    </div>  
+	
+	<input type="button" value="提交" />
+</form>
+</body>
+<script type="text/javascript">  
+    /*  
+     * 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;  
+     * 其他参数同WebUploader  
+     */  
+    $('#test').diyUpload({  
+        url : 'fileupload.php',  //这个是文件上传处理文件 用框架的请对应文件上传的控制器 
+		//formData: { _token: "{{csrf_token()}}"}, //Laravel 框架下需要 csrf_token 才能上传，可以在 formData 里面添加需要带过去的参数
+		dataType:"json",
+        success : function(data) {  
+            console.info(data); 
+			if(data.status == 1){
+				var span =$("<input type='hidden' value='"+data.imagepath+"' name='img[]'>");//将上传后保存的路径返回 通过隐藏域放进表单里面 
+				$("#test").append(span);
+			}
+			
+        },  
+        error : function(err) {  
+            console.info(err);  
+        }  
+    });  
+  
+	/*下面的这个例子是可以设置多图上传插件的一些参数：最多上传多少个图片，总上传文件大小、单个文件大小等*/
+    $('#as').diyUpload({  
+        url : 'upLoadFile',  
+        success : function(data) {  
+            console.info(data);  
+        },  
+        error : function(err) {  
+            console.info(err);  
+        },  
+        buttonText : '选择文件',  
+        chunked : true,  
+        // 分片大小  
+        chunkSize : 10 * 1024 * 1024,  
+        //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);  
+        fileNumLimit : 50,  
+        fileSizeLimit : 100 * 1024 * 1024,  
+        fileSingleSizeLimit : 10 * 1024 * 1024,  
+        accept : {}  
+    });  
+	
+	/*回填区域图片删除*/
+	function del_img(obj){
+		$(obj).parent().remove();
+	}
+	
+</script> 
+</html>

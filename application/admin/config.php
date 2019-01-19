@@ -8,7 +8,7 @@ return [
 
    'view_replace_str'  =>  [
    '__ADMIN__'=>SITE_URL."/static/admin",
-   '__PUBLIC__'=>SITE_URL,
+   '__PUBLIC__'=>SITE_URL."/",
   '__ROOT__' => '/',
   '__IMG__'=>SITE_URL,
     ],

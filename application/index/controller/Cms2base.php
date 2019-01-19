@@ -2,11 +2,12 @@
 namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
-use app\index\model\cate as CateModel;
+use app\index\model\Tonpan2_cate as CateModel;
 class Cms2base extends Controller
 {
     //如果session
     public function _initialize(){
+
     //取得所有封面栏目
         $this->getNavCates();
         $this->qita();
@@ -14,8 +15,11 @@ class Cms2base extends Controller
         $this->getlinks();
         $this->getlogo();
         $this->getlianxi();
+
         $this->getjindian();
+
         $this->getxinwen();
+
         $this->gethanye();
         $this->getwenti();
         //当前位置的操作
@@ -64,7 +68,7 @@ class Cms2base extends Controller
     }
 
      if(input("theid")){
-        $fenmianId=db("article")->field('cateid')->find(input("theid"));
+        $fenmianId=db("tonpan2_article")->field('cateid')->find(input("theid"));
         $fenmiansId=$this->getfenmiansChild($fenmianId);
         $this->assign('fenmiansId',$fenmiansId);
      }
@@ -75,7 +79,7 @@ $cate=new CateModel();
         if(input("tulistId")==4){
             $thelistId=input("tulistId");
         }else{
-            $thelistIds=db('cate')->field("pid")->find(input("tulistId"));
+            $thelistIds=db('tonpan2_cate')->field("pid")->find(input("tulistId"));
             $thelistId=$thelistIds['pid'];
         }
         $tulistsId=$this->gettulistChild($thelistId);
@@ -85,14 +89,14 @@ $cate=new CateModel();
 
       if(input("lisid")){
         $cate=new CateModel();
-        $thelistIds=db("article")->field('cateid')->find(input("lisid"));
+        $thelistIds=db("tonpan2_article")->field('cateid')->find(input("lisid"));
         $cateIds=$thelistIds['cateid'];
 
    
         if($cateIds==4){
             $thelistId=$cateIds;
         }else{
-            $thelistIds=db('cate')->field("pid")->find($cateIds);
+            $thelistIds=db('tonpan2_cate')->field("pid")->find($cateIds);
             $thelistId=$thelistIds['pid'];
         }
 
@@ -111,7 +115,7 @@ if(input("artlistId")){
         if(input("artlistId")==26){
             $thelistId=input("artlistId");
         }else{
-            $thelistIds=db('cate')->field("pid")->find(input("artlistId"));
+            $thelistIds=db('tonpan2_cate')->field("pid")->find(input("artlistId"));
             $thelistId=$thelistIds['pid'];
         }
         $artlistsId=$this->gettulistChild($thelistId);
@@ -121,13 +125,13 @@ if(input("artlistId")){
 
       if(input("artid")){
         $cate=new CateModel();
-        $thearttIds=db("article")->field('cateid')->find(input("artid"));
+        $thearttIds=db("tonpan2_article")->field('cateid')->find(input("artid"));
         $cateIds=$thearttIds['cateid'];
 
         if($cateIds==26){
             $thearttId=$cateIds;
         }else{
-            $thearttIds=db('cate')->field("pid")->find($cateIds);
+            $thearttIds=db('tonpan2_cate')->field("pid")->find($cateIds);
             $thearttId=$thearttIds['pid'];
         }
 
@@ -148,7 +152,7 @@ if(input("wtlistId")){
         if(input("wtlistId")==40){
             $thelistId=input("wtlistId");
         }else{
-            $thelistIds=db('cate')->field("pid")->find(input("wtlistId"));
+            $thelistIds=db('tonpan2_cate')->field("pid")->find(input("wtlistId"));
             $thelistId=$thelistIds['pid'];
         }
         $wtlistsId=$this->gettulistChild($thelistId);
@@ -158,13 +162,13 @@ if(input("wtlistId")){
 
       if(input("wtid")){
         $cate=new CateModel();
-        $thewttIds=db("article")->field('cateid')->find(input("wtid"));
+        $thewttIds=db("tonpan2_article")->field('cateid')->find(input("wtid"));
         $cateIds=$thewttIds['cateid'];
 
         if($cateIds==40){
             $thewttId=$cateIds;
         }else{
-            $thewttIds=db('cate')->field("pid")->find($cateIds);
+            $thewttIds=db('tonpan2_cate')->field("pid")->find($cateIds);
             $thewttId=$thewttIds['pid'];
         }
 
@@ -187,7 +191,7 @@ if(input("wtlistId")){
 //得到传递过来的fenmiansId的值，
     public function getfenmiansChild($pid){
 
-        $parId=db('cate')->field('pid')->find($pid);
+        $parId=db('tonpan2_cate')->field('pid')->find($pid);
         if($parId['pid']!=0){
             $parId['pid']=32;
         }else{
@@ -196,7 +200,7 @@ if(input("wtlistId")){
         $cate=new CateModel();
         $cateChild=$cate->getchildrenid($parId['pid']);
         $catzi=implode(',',$cateChild);
-        $catziAll=db('cate')->where("id IN($catzi)")->select();
+        $catziAll=db('tonpan2_cate')->where("id IN($catzi)")->select();
         return $catziAll;
     }
 
@@ -204,14 +208,14 @@ if(input("wtlistId")){
         $cate=new CateModel();
         $cateChild=$cate->getchildrenidno($id);
         $catzi=implode(',',$cateChild);
-        $catziAll=db('cate')->where("id IN($catzi)")->select();
+        $catziAll=db('tonpan2_cate')->where("id IN($catzi)")->select();
         return $catziAll;
     }
 //得到所有显示的主栏目
 
      public function getNavCates(){
         $data['rec_index']=1;
-        $cateres=db('cate')->where($data)->order('sort asc')->select();
+        $cateres=db('tonpan2_cate')->where($data)->order('sort asc')->select();
             $this->assign([
             'cateres'=>$cateres
          ]);
@@ -221,11 +225,11 @@ if(input("wtlistId")){
 
 //无论子集还是父级都调用自身
     public function getNavChild($id=0){
-         $cateres=db('cate')->order('sort asc')->where(array('pid'=>$id))->select();
+         $cateres=db('tonpan2_cate')->order('sort asc')->where(array('pid'=>$id))->select();
          //如果是子类的话也需要这样
          if(empty($cateres)){
-            $pid=db('cate')->order('sort asc')->field('pid')->find($id);
-            $cateres=db('cate')->order('sort asc')->where(array('pid'=>$pid['pid']))->select();
+            $pid=db('tonpan2_cate')->order('sort asc')->field('pid')->find($id);
+            $cateres=db('tonpan2_cate')->order('sort asc')->where(array('pid'=>$pid['pid']))->select();
 
          }
 
@@ -235,38 +239,38 @@ if(input("wtlistId")){
 
 //根据当前的栏目得到这个栏目的关键字
     public function getkeywords($cateid){
-        return db('cate')->find($cateid);
+        return db('tonpan2_cate')->find($cateid);
     }
 //根据栏目id的号调用关联的文章
     public function artJoin($cateid,$where='a.catename,a.enname,b.title,b.id,b.time'){
-        return db('cate')->alias('a')->join('article b','a.id=b.cateid')->where(array('a.id'=>$cateid))->field($where)->paginate(8);
+        return db('tonpan2_cate')->alias('a')->join('tonpan2_article b','a.id=b.cateid')->where(array('a.id'=>$cateid))->field($where)->paginate(8);
     }
 //根据文章的id的号关联栏目
     public function cateJoin($theid,$where='b.catename,a.click,a.title,a.id,a.time,a.content'){
-        return db('article')->alias('a')->join('cate b','a.cateid=b.id')->field($where)->find($theid);
+        return db('tonpan2_article')->alias('a')->join('tonpan2_cate b','a.cateid=b.id')->field($where)->find($theid);
     }
 //推荐内容
     public function artNews($num){
-        return db('article')->order('id desc')->paginate($num);
+        return db('tonpan2_article')->order('id desc')->paginate($num);
     }
 
 //热点内容
     public function artHot($num){
 
-        return db('article')->order('click desc')->paginate($num);
+        return db('tonpan2_article')->order('click desc')->paginate($num);
     }
 
 
 //当前位置
   public function getPos($cateid){
-       $cate=new \app\index\model\cate();
+       $cate=new \app\index\model\Tonpan2_cate();
        $posArr=$cate->_getparentid($cateid);
 
        $this->assign('posArr',$posArr);
     }
 
  public function getPosArt($cateid){
-       $cate=new \app\index\model\cate();
+       $cate=new \app\index\model\Tonpan2_cate();
        $posArrart=$cate->_getparentidart($cateid);
 
        $this->assign('posArrart',$posArrart);
@@ -277,13 +281,13 @@ if(input("wtlistId")){
 //得到当前文章的父级id,再通过父级id查找文章
     public function getparentArt($theid){
 
-        $artcatId=db('article')->field('cateid')->find($theid);
+        $artcatId=db('tonpan2_article')->field('cateid')->find($theid);
 
         //查找当前栏目的上一级即pid
-        $parPre=db('cate')->field('pid')->where(array('id'=>$artcatId['cateid']))->find();
+        $parPre=db('tonpan2_cate')->field('pid')->where(array('id'=>$artcatId['cateid']))->find();
         //查找到的上级栏目的文章类型必须一致
-        $parSelf=db('cate')->field('id,type')->find($artcatId['cateid']);
-        $parPar=db('cate')->field('id,type')->find($parPre['pid']);
+        $parSelf=db('tonpan2_cate')->field('id,type')->find($artcatId['cateid']);
+        $parPar=db('tonpan2_cate')->field('id,type')->find($parPre['pid']);
         //当前与父级的type必须一致,如果没有父级就用本身。
         if(empty($parPar)){
 
@@ -298,7 +302,7 @@ if(input("wtlistId")){
             }
         }
 
-       $cate=new \app\index\model\cate();
+       $cate=new \app\index\model\Tonpan2_cate();
        $allArtResId=$cate->getchildrenid($artResId);
        //上一页
        return $allArtResId;
@@ -309,15 +313,15 @@ if(input("wtlistId")){
 
     //得到所有显示的其他文章
     public function qita(){
-        $artqitaDibu=db('articleqita')->find(1);
-        $artqitaSlt=db('articleqita')->find(4);
-        $artqitaLogo=db('articleqita')->find(5);
-        $artqitaDinbu=db('articleqita')->find(8);
-         $artqitaTel=db('articleqita')->find(9);
+        $artqitaDibu=db('tonpan2_articleqita')->find(1);
+        $artqitaSlt=db('tonpan2_articleqita')->find(4);
+        $artqitaLogo=db('tonpan2_articleqita')->find(5);
+        $artqitaDinbu=db('tonpan2_articleqita')->find(8);
+         $artqitaTel=db('tonpan2_articleqita')->find(9);
          //可以
-         $artqitama=db('articleqita')->find(6);
+         $artqitama=db('tonpan2_articleqita')->find(6);
          //可以
- $artqitabeian=db('articleqita')->find(7);
+ $artqitabeian=db('tonpan2_articleqita')->find(7);
         $this->assign([
             'artqitaDibu'=>$artqitaDibu,
             'artqitaSlt'=>$artqitaSlt,
@@ -332,13 +336,13 @@ if(input("wtlistId")){
 
     //得到网站的配置信息
      public function peizhi(){
-$confTitle=db('conf')->find(5);
-$confKey=db('conf')->find(4);
-$confDesc=db('conf')->find(3);
-$confQq=db('conf')->find(9);
-$confDz=db('conf')->find(14);
-$confDh=db('conf')->find(13);
-$confYx=db('conf')->find(15);
+$confTitle=db('tonpan2_conf')->find(5);
+$confKey=db('tonpan2_conf')->find(4);
+$confDesc=db('tonpan2_conf')->find(3);
+$confQq=db('tonpan2_conf')->find(9);
+$confDz=db('tonpan2_conf')->find(14);
+$confDh=db('tonpan2_conf')->find(13);
+$confYx=db('tonpan2_conf')->find(15);
         $this->assign([
             'confTitle'=>$confTitle,
             'confKey'=>$confKey,
@@ -364,21 +368,21 @@ $confYx=db('conf')->find(15);
     }
 /*得到所有的友情链接*/
     public function getlinks(){
-        $link=db('link')->select();
+        $link=db('tonpan2_link')->select();
          $this->assign([
             'getlinks'=>$link,
         ]);
     }
 
     public function getlogo(){
-        $getlogo=db('articleqita')->find(4);
+        $getlogo=db('tonpan2_articleqita')->find(4);
         $this->assign([
             'getlogo'=>$getlogo,
         ]);
     }
 
      public function getlianxi(){
-        $getlianxi=db('articleqita')->find(5);
+        $getlianxi=db('tonpan2_articleqita')->find(5);
         $this->assign([
             'getlianxi'=>$getlianxi,
         ]);
@@ -392,7 +396,11 @@ $confYx=db('conf')->find(15);
         $catgetid=$cate->getthebasechild($catid);
 
         $allarticleId=$cate->getallbaseArt($catgetid,$catid);
-        $getjindian=db("article")->where("id IN($allarticleId)")->paginate(4);
+        if($allarticleId==''){
+            $allarticleId=26;
+        }
+        $getjindian=db("tonpan2_article")->where("id IN($allarticleId)")->paginate(4);
+        
         $this->assign([
             'getjindian'=>$getjindian,
         ]);
@@ -400,7 +408,7 @@ $confYx=db('conf')->find(15);
 
     //行业动态
     public function gethanye(){
-         $gethanye=db('article')->where(array('cateid'=>27))->paginate(7);
+         $gethanye=db('tonpan2_article')->where(array('cateid'=>27))->paginate(7);
           $this->assign([
             'gethanye'=>$gethanye,
         ]);
@@ -414,7 +422,7 @@ $confYx=db('conf')->find(15);
         $catgetid=$cate->getthebasechild($catid);
 
         $allarticleId=$cate->getallbaseArt($catgetid,$catid);
-        $getxinwen=db("article")->where("id IN($allarticleId)")->paginate(4);
+        $getxinwen=db("tonpan2_article")->where("id IN($allarticleId)")->paginate(4);
         $this->assign([
             'getxinwen'=>$getxinwen,
         ]);
@@ -422,7 +430,7 @@ $confYx=db('conf')->find(15);
     //问题
      public function getwenti(){
         $allarticleId='40,41';
-        $getwenti=db("article")->where("cateid IN($allarticleId)")->paginate(4);
+        $getwenti=db("tonpan2_article")->where("cateid IN($allarticleId)")->paginate(4);
           $this->assign([
             'getwenti'=>$getwenti,
         ]);

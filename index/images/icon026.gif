@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>重庆卓光科技有限公司温馨提示</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+	</head>
+	<body>
+		<!--start-wrap--->
+		<div class="wrap">
+			<!---start-header---->
+				<div class="header">
+					<div class="logo">
+						<h1><a href="/">重庆卓光科技有限公司</a></h1>
+					</div>
+				</div>
+			<!---End-header---->
+			<!--start-content------>
+			<div class="content">
+				<img src="images/error-img.png" title="error" />
+				<p><span><label>重庆卓光科技有限公司</label>温馨提示：</span>访问的页面不存在！</p>
+				<a href="/">返回首页</a>
+				<div class="copy-right">
+					<p>Copyright 2015-2025 <a href="/">重庆卓光科技有限公司</a> Group All Rights Reserved. </p>
+				</div>
+   			</div>
+			<!--End-Cotent------>
+		</div>
+		<!--End-wrap--->
+	</body>
+</html>
+

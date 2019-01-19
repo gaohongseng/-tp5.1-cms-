@@ -85,54 +85,29 @@
             <i class="menu-expand"></i>
         </a>
         <ul class="submenu">
+             {if condition="$getarticle"}
             <li>
                 <a href="{:url('tparticle/lists',array('typeid'=>1))}">
                     <span class="menu-text">
-                        所有文章                                    </span>
+                        所有文章列表                                    
+                    </span>
                     <i class="menu-expand"></i>
                 </a>
             </li>
-
-            <li>
-                <a href="{:url('tparticle/liststype',array('typeid'=>1,'cateId'=>4))}">
+        {/if}
+{if condition="$getarticle"}
+{volist name='getarticle' id='vo'}
+ <li>
+                <a href="{:url('tparticle/lists',array('cateId'=>$vo['id']))}">
                     <span class="menu-text">
-                    经典案例文章                                   </span>
+                        {$vo['catename']}                                    
+                    </span>
                     <i class="menu-expand"></i>
                 </a>
             </li>
 
-
-             <li>
-                <a href="{:url('tparticle/liststype',array('typeid'=>1,'cateId'=>26))}">
-                    <span class="menu-text">
-                    新闻咨询文章                                   </span>
-                    <i class="menu-expand"></i>
-                </a>
-            </li>
-
-
-           <li>
-                <a href="{:url('tparticle/liststype',array('typeid'=>1,'cateId'=>40))}">
-                    <span class="menu-text">
-                    常见问题文章                                   </span>
-                    <i class="menu-expand"></i>
-                </a>
-            </li>
-
-             <li>
-                <a href="{:url('tparticle/liststype',array('typeid'=>1,'cateId'=>39))}">
-                    <span class="menu-text">
-                    VIP客户文章                                   </span>
-                    <i class="menu-expand"></i>
-                </a>
-            </li>
-            <li>
-                <a href="{:url('tparticle/liststype',array('typeid'=>1,'cateId'=>37))}">
-                    <span class="menu-text">
-                  团队风采文章                                   </span>
-                    <i class="menu-expand"></i>
-                </a>
-            </li>
+{/volist}
+{/if}
 
             
         </ul>                            
@@ -148,6 +123,7 @@
             <i class="menu-expand"></i>
         </a>
         <ul class="submenu">
+        {if condition="$getarttupian"}
             <li>
                 <a href="{:url('tparttupian/lists',array('typeid'=>3))}">
                     <span class="menu-text">
@@ -156,8 +132,20 @@
                     <i class="menu-expand"></i>
                 </a>
             </li>
+        {/if}
+{if condition="$getarttupian"}
+{volist name='getarttupian' id='vo'}
+ <li>
+                <a href="{:url('tparttupian/lists',array('cateId'=>$vo['id']))}">
+                    <span class="menu-text">
+                        {$vo['catename']}                                    
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
 
-            
+{/volist}
+{/if}
         </ul>                            
     </li> 
 

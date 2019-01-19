@@ -1,13 +1,13 @@
 <?php
 namespace app\admin\model;
 use think\Model;
-class article extends Model
+class Article extends Model
 {
  	protected static function init(){
 
 
  		//新增前
- 		article::event('before_insert',function($data){
+ 		Article::event('before_insert',function($data){
  			if($_FILES['thumb']['tmp_name']){
                  $thumb = request()->file('thumb');
                  $info=$thumb->move(ROOT_PATH."public/static/admin".DS."articleimg");
@@ -17,7 +17,7 @@ class article extends Model
 
 
  		//更新前
- 		article::event('before_update',function($data){
+ 		Article::event('before_update',function($data){
 
 			if($_FILES['thumb']['tmp_name']){
 		        
@@ -45,7 +45,7 @@ class article extends Model
 
 
  		//删除前
- 			article::event('before_delete',function($data){
+ 			Article::event('before_delete',function($data){
  				$arts=article::get(input("cateid"));
 
  				$thumbpath=$_SERVER['DOCUMENT_ROOT'].'/public/'.$arts->thumb;

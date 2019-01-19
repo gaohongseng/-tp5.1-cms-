@@ -2,8 +2,7 @@
 namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
-use app\index\controller\Base;
-use app\index\model\video as VideoModel;
+use app\index\model\Tonpan2_video as VideoModel;
 
 class Video extends Cms2base
 {
@@ -18,7 +17,7 @@ class Video extends Cms2base
 
         $allarticleId=$cate->getallArtVideo($catgetid,$catid);
 
-         $artVideo=db("video")->where("id IN($allarticleId)")->paginate(8);
+         $artVideo=db("tonpan2_video")->where("id IN($allarticleId)")->paginate(8);
 
 
          $this->assign([

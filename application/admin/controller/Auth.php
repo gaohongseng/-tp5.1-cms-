@@ -11,9 +11,9 @@
 namespace app\admin\Controller;
 
 use think\Db;
-use think\Facade\Config;
-use think\Facade\Session;
-use think\Facade\Request;
+use think\Config;
+use think\Session;
+use think\Request;
 use think\Loader;
 
 /**

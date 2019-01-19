@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>电子商务后台管理系统</title>
+		<link rel="stylesheet" type="text/css" href="../../../../public/static/admin/chajian/uploadfile/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/static/admin/chajian/uploadfile/css/index10.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/static/admin/chajian/uploadfile/css/module8.css">
+		<link href="../../../../public/static/admin/chajian/uploadfile/css/iconfont.css" rel="stylesheet" type="text/css"/>
+  		<link href="../../../../public/static/admin/chajian/uploadfile/css/fileUpload.css" rel="stylesheet" type="text/css">	
+		<style>
+			/*防止鼠标滑过编辑器字体颜色发生变化*/
+			.mkIBoxRight .adminAdd tr:hover td #pDesc{
+				color:#000;
+			}
+			.mkIBoxRight .adminAdd tr td.shopImg{
+				background:white;
+			}
+			.mkIBoxRight .adminAdd tr:hover td.shopImg{
+				background-color:white;
+				color:#000;
+			}
+		</style>
+		<script type='text/javascript' src="../../../../public/static/admin/chajian/uploadfile  /jquery-1.11.3.js"></script>
+		<script type='text/javascript' src="../../../../public/static/admin/chajian/uploadfile/js/jquery.pjax.js"></script>
+		<!--引入百度编辑器-->
+		<script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/PHPUditor/ueditor.config.js"></script>
+		<script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/PHPUditor/ueditor.all.min.js"></script>
+		<script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/PHPUditor/lang/zh-cn/zh-cn.js"></script>
+		<!--文件上传-->
+		<script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/js/fileUploadPHP.js"></script>
+		<script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/js/index16.js"></script>
+		<script type="text/javascript" src="../../../../public/static/admin/chajian/uploadfile/js/module42.js"></script>
+
+	</head>
+	<body>
+
+		<div class="mkImmMain">
+        <!--头部的logo-->
+			<div class="mkITop">
+				<div class="mkITopMain">
+                	
+					<h4>电子商务后台管理系统</h4>
+				</div>
+			</div>
+            <!--中间的导航栏-->
+			<div class="mkINav">
+            	<div class="mkINavMain">
+                    <ul>
+                        <li><i class="fontIcon icon-home9"></i><span>首页</span></li>
+                        <li><i class="fontIcon icon-arrow-left6"></i><span>前进</span></li>
+                        <li><i class="fontIcon icon-arrow-right6"></i><span>后退</span></li>
+                        <li><i class="fontIcon icon-rotate-left"></i><span>刷新</span></li>
+                        <li><a href="doActionA.php?act=logout"><i class="fontIcon icon-power-off"></i><span>退出</span></a></li>
+                    </ul>
+                    <div class="mkINavHelo">
+            			欢迎您<strong>
+            			
+            			</strong>
+            		</div>
+                </div>
+                
+			</div>
+			
+			<!--管理员和后台管理-->
+			<div class="mkIaBar">
+				<div class="mkIAdmin">
+					<h4>管理员</h4>
+				</div>
+				<div class="mkIHouTai">
+					<h4>后台管理</h4>
+				</div>
+			</div>
+           <!--页面的主体部分-->
+            <div class="mkIBigBox" style="height:800px">
+            	<!-- <div class="mkIBigBoxMain">-->
+                  <!--页面的主体部分左边的盒子-->
+                 	 <div class="mkIBoxLeft">
+                         <ul class="mkIBoxLeftUl">
+                            <li class="thisLi"><i class="fontIcon icon-jia"></i><span>商品管理</span>
+                            	<ul class="mkadminUl" style="display:none;">
+                            		<li><a href="Mspgl_liebiao.php?page=1" class="spgl_liebiao">商品列表</a></li>
+                            		<li><a href="Mspgl_tianjia.php" class="spgl_tianjia">添加商品</a></li>
+                            		
+                            	</ul>
+                            </li>
+                            <li class="thisLi"><i class="fontIcon icon-jia"></i><span>分类管理</span>
+                            	<ul class="mkadminUl" style="display:none;">
+                            		<li><a href="Mflgl_liebiao.php?page=1" class="flgl_liebiao">分类列表</a></li> 
+                            		<li><a href="Mflgl_tianjia.php?act=addCate" class="flgl_tianjia">添加分类</a></li>                      		                          
+                            	</ul>
+                            </li>
+                            <li class="thisLi"><i class="fontIcon icon-jia"></i><span>订单管理</span>
+                            	<ul class="mkadminUl" style="display:none;">
+                            		<li><a href="#">添加管理员</a></li>
+                            		<li><a href="#">管理员列表</a></li>
+                            		<li><a href="#">添加管理员</a></li>
+                            		<li><a href="#">管理员列表</a></li>
+                            	</ul>
+                            </li>
+                            <li class="thisLi"><i class="fontIcon icon-jia"></i></i><span>用户管理</span>
+                            	<ul class="mkadminUl" style="display:none;">
+                            		<li><a href="Myhgl_liebiao.php" class="yhgl_liebiao">用户列表</a></li>
+                            		<li><a href="Myhgl_tianjia.php" class="yhgl_tianjia">添加用户</a></li>                   		 		
+                            	</ul>
+                            </li>
+                            <li class="thisLi"><i class="fontIcon icon-jia"></i></i><span>管理员管理</span>
+                            	<ul class="mkadminUl">
+                            			<li><a href="Mglylb_liebiao.php?page=1" class="glylb_liebiao">管理员列表</a></li>
+                            			<li><a href="Mglylb_tianjia.php?act=addAdmin" class="glylb_tianjia">添加管理员</a></li>
+                            	</ul>
+                            </li>
+                        </ul>
+                     </div>
+                      <!--页面的主体部分右边的盒子-->
+                      <div class="mkIBoxRight" style="height:auto;">
+                      		<div class="pjaxloading">
+                      			<img src="images/pjax_loading/pjax_loading.gif" >
+                      		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="adminBigBox gaiYes">
+	<div class="adminH1">
+		<h1>添加商品</h1>
+	</div>
+	<div class="adminAdd">
+		<form action="doActionAdmin.php?act=addPro" method="post" target="_blank" enctype="multipart/form-data" onsubmit="return addShopping()" id="myform">
+			<table cellspacing="0" cellpadding="0" width="1000">
+				<tr >
+					<!--商品名称------------------pName-->
+					<td >商品名称</td>
+					<td class="mkRepeatUser mkRepeatOk mkRepeatInfo">
+						<input type="text" placeholder="请输入商品名称" name="pName" id='pName'/>
+						<b class='pRepeatInfo' style="color:red;font:'14px/14px 微软雅黑';font-weight:bold;letter-spacing: 1.5px;text-indent:5px"></b>
+					</td>
+				</tr>
+				<tr>
+					<!--商品分类-------------------->
+					<td >商品分类</td>
+					<td>
+					
+						<select name="cId" id="cId">
+							
+						</select>
+						
+					</td>
+				</tr>
+				<tr>
+					<!--商品货号------------------pSn-->
+					<td >商品货号</td>
+					<td>
+						<input type="text" placeholder="请输入商品货号" name="pSn" id="pSn"/>
+					</td>
+				</tr>
+				<tr>
+					<!--商品数量------------------pNum-->
+					<td >商品数量</td>
+					<td>
+						<input type="text" placeholder="请输入商品数量" name="pNum" id="pNum"/>
+					</td>
+				</tr>
+				<tr>
+					<!--商品市场价------------------mPrice-->
+					<td >商品市场价</td>
+					<td>
+						<input type="text" placeholder="请输入商品市场价" name="mPrice" id="mPrice"/>
+					</td>
+				</tr>
+				<tr>
+					<!--商品本店价------------------iPrice-->
+					<td >商品本店价</td>
+					<td>
+						<input type="text" placeholder="请输入商品本店价" name="iPrice" id="iPrice"/>
+						
+					</td>
+				</tr>
+				<tr>
+					<!--商品描述------------------pDesc-->
+					<!--商品上架时间------------------pubTime-->
+					<!--商品是否上架------------------isShow-->
+					<!--比较火的商品------------------isHot-->
+					<!--所属分类ID------------------cId-->
+					<td >商品描述</td>
+					<td>
+						<textarea name="pDesc" rows="10" cols="10" id="pDesc"></textarea>
+					</td>
+				</tr>
+				<tr >
+					<td class="shopImg" style="width:100px">商品图像</td>
+					<td class="shopImg">
+						<div id="fileUploadContent" class="fileUploadContent" >
+						
+						</div>
+       					
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align:center;">
+						<input  placeholder="添加商品" id="gather" value="提交" type="submit">
+					</td>
+					
+				</tr>
+			</table>
+
+		</form>
+	</div>
+</div>
+
+                     			
+                     			
+                     			
+                     			
+			   
+			   
+			   
+			   
+                    </div>
+            </div>
+            
+		</div>
+
+
+
+
+	</body>
+<script type="text/javascript">
+//调用百度编辑器的代码
+	var pDesc=UE.getEditor('pDesc',{initialFrameWidth:800,initialFrameHeight:200});
+
+
+
+/*百度编辑器内容填充满的时候左边盒子高度相应增加,代码需要写在这里*/
+	$(".mkIBoxRight .adminBigBox").resize(function(){
+		if($(this).hasClass("gaiYes")){
+			$(".mkIBigBox .mkIBoxLeft").css("height","auto");
+			var Left_default=15;
+			var Right_H=$(".mkIBoxRight .adminBigBox").height();
+			var Left_total=Left_default+Right_H;
+			$(".mkIBoxLeft .mkIBoxLeftUl").css("height",Left_total+"px");
+		
+		}else{
+			$(".mkIBigBox .mkIBoxLeft").css("height","100%");
+			$(".mkIBoxRight ").css("height","100%");
+			
+		}
+		
+	})
+	
+	 //点击添加按钮后应该继续给页面在添加样式，回到从前的状态,即右边内容发生变化，左边高度也增加
+	 
+   /* $(".mkIBoxRight .adminBigBox a.btnInputBlue").click(function(){
+    	console.log('left');
+    })*/
+	
+	
+	
+	
+	
+	
+	
+    /*文件上传的操作，没有这一步那么连基本的样式都不会有*/
+	$(".mkIBoxRight .adminAdd tr td #fileUploadContent").initUpload({
+        "uploadUrl":"doActionAdmin.php",//上传文件信息地址
+        //"size":350,//文件大小限制，单位kb,默认不限制
+        //"maxFileNumber":3,//文件个数限制，为整数
+        //"filelSavePath":"",//文件上传地址，后台设置的根目录
+        "beforeUpload":beforeUploadFun,//在上传前执行的函数
+          "onUpload":onUploadFun,//在上传后执行的函数
+        //autoCommit:true,//文件是否自动上传
+        "fileType":['png','jpg','docx','doc'],//文件类型限制，默认不限制，注意写的是文件后缀
+           //获取进度信息地址，可选，注意需要返回的data格式如下
+		 "progressUrl":"#",//获取进度信息地址，可选，注意需要返回的data格式如下（{bytesRead: 102516060, contentLength: 102516060, items: 1, percent: 100, startTime: 1489223136317, useTime: 2767}）
+		 "scheduleStandard":false,//模拟进度的模式
+		 "selfUploadBtId":"",//自定义文件上传按钮id
+		 "velocity":10,//模拟进度速度
+		  "autoCommit":false,//是否自动上传
+		  "isHiddenUploadBt":false,//是否隐藏上传按钮
+		  "isHiddenCleanBt":false,//是否隐藏清除按钮
+		  "isAutoClean":false,//是否上传完成后自动清除
+		  "canDrag":true,//是否可以拖动
+		  "fileType":"*",//文件类型
+		  "size":"-1",//文件大小限制,单位kB
+		  "ismultiple":true,//是否选择多文件
+		  "showSummerProgress":false,//显示总进度条
+		  "showFileItemProgress":true,//是否显示文件单个总进度
+		  "filelSavePath":"",//文件上传地址，后台设置的根目录
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
+</html>
+
+                     			

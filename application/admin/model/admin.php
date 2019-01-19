@@ -65,10 +65,11 @@ return 2;
 //登录模型
      public function login($data)
     {
-        $captcha=new \think\captcha\Captcha();
-        if(!$captcha->check($data['code'])){
-                return 4;
-            }
+        // $captcha=new \think\captcha\Captcha();
+       
+        // if(!$captcha->check($data['code'])){
+        //         return 4;
+        //     }
 
 
         $admin=$this::getByName($data['name']);

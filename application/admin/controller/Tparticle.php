@@ -70,10 +70,182 @@ class Tparticle extends TpBase
 
     public function lists()
     {
-        $artres=db('cate')->field("a.catename,b.*")->alias("a")->join('article b','a.id=b.cateid')->paginate(8);
-        $this->assign('artres',$artres);
+        if(input('typeid')){
+             $listcate=CateModel::where('type',1)->order('sort asc')->select();
+        }else if(input('cateId')){
+
+             $listcate=CateModel::get(input('cateId'));
+             //没有参数的情况下也需要有个列表展示
+        }else if(empty(input('typeid')) && empty(input('cateId'))){
+        
+          
+             $listcate=CateModel::where('type',1)->order('sort asc')->select();
+              
+        }
+
+
+        $this->assign('listcate',$listcate);
         return $this->fetch();
     }
+
+
+//删除文章
+    public function del(){
+         $arts=db('article')->where(array('id'=>input("cateid")))->select();
+        if(ArticleModel::destroy(input("cateid"))){
+            $this->success("删除文章成功!",url("lists"),'',0.5);
+         }else{
+                $this->error("删除文章失败!",url("lists"),'',0.5);
+        }
+
+    }
+
+
+    //视频列表页
+    public function listsvideo()
+    {
+        $artres=db('cate')->field("a.catename,b.*")->alias("a")->join('video b','a.id=b.cateid')->where(array('type'=>input('typeid')))->paginate(8);
+        $this->assign('artres',$artres);
+        return $this->fetch();
+
+    }
+
+
+   public function videoAdd()
+    {
+
+        $cate=new cateModel();
+        $article=new ArticleVideo();
+        $cateres=$cate->cateres();
+        if(request()->isPost()){
+            $data=input("post.");
+            $data['time']=time();
+            if($article->save($data)){
+
+                $this->success('添加文章成功',url('listsvideo',array('typeid'=>3)),'',0.5);
+            }else{
+                $this->error('添加文章失败',url('listsvideo',array('typeid'=>3)),'',0.5);
+            }
+          
+            return;
+        }
+       
+        $this->assign("cateres",$cateres);
+        return $this->fetch();
+
+
+    }
+    
+
+    public function videoEdit()
+    {
+
+//14907797.s21v.faiusr.com/58/ABUIABA6GAAgu6GO3QUomPvmJQ.mp4
+        $arts=db('video')->find(input("videoid"));
+
+        if(request()->isPost()){
+            $article=new ArticleVideo;
+            $data=input("post.");
+            $save=$article->update($data,array('id'=>input('videoid')));
+       
+            //  $save=db("article")->update(input("post."));
+            if($save){
+                $this->success("修改文章成功!",url("listsvideo",array('typeid'=>3)),'',0.5);
+            }else{
+                $this->error("修改文章失败!",url("listsvideo",array('typeid'=>3)),'',0.5);
+            }
+        }
+
+        $cate=new cateModel();
+        // $article=new ArticleModel();
+        $cateres=$cate->cateres();
+        $this->assign([
+
+            "cateres"=>$cateres,
+            'arts'=>$arts
+        ]);
+
+        return $this->fetch();
+    }
+
+
+
+    public function videoDel()
+    {
+
+// {:url('tparticle/listsvideo',array('typeid'=>3))}
+        if(ArticleVideo::destroy(input("videoid"))){
+            $this->success("删除文章成功!",url("listsvideo",array('typeid'=>3)),'',0.5);
+         }else{
+                $this->error("删除文章失败!",url("listsvideo",array('typeid'=>3)),'',0.5);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //文章列表页
 public function liststype()
     {
@@ -193,104 +365,16 @@ public function liststypethe()
 
 
 
-//删除文章
-    public function del(){
-         $arts=db('article')->where(array('id'=>input("cateid")))->select();
-        if(ArticleModel::destroy(input("cateid"))){
-            $this->success("删除文章成功!",url("lists"),'',0.5);
-         }else{
-                $this->error("删除文章失败!",url("lists"),'',0.5);
-        }
-
-    }
 
 
 
 
-    //视频列表页
-    public function listsvideo()
-    {
-        $artres=db('cate')->field("a.catename,b.*")->alias("a")->join('video b','a.id=b.cateid')->where(array('type'=>input('typeid')))->paginate(8);
-        $this->assign('artres',$artres);
-        return $this->fetch();
-
-    }
 
 
 
 
-   public function videoAdd()
-    {
-
-        $cate=new cateModel();
-        $article=new ArticleVideo();
-        $cateres=$cate->cateres();
-        if(request()->isPost()){
-            $data=input("post.");
-            $data['time']=time();
-            if($article->save($data)){
-
-                $this->success('添加文章成功',url('listsvideo',array('typeid'=>3)),'',0.5);
-            }else{
-                $this->error('添加文章失败',url('listsvideo',array('typeid'=>3)),'',0.5);
-            }
-          
-            return;
-        }
-       
-        $this->assign("cateres",$cateres);
-        return $this->fetch();
 
 
-    }
-    
-
-    public function videoEdit()
-    {
-
-//14907797.s21v.faiusr.com/58/ABUIABA6GAAgu6GO3QUomPvmJQ.mp4
-        $arts=db('video')->find(input("videoid"));
-
-        if(request()->isPost()){
-            $article=new ArticleVideo;
-            $data=input("post.");
-            $save=$article->update($data,array('id'=>input('videoid')));
-       
-            //  $save=db("article")->update(input("post."));
-            if($save){
-                $this->success("修改文章成功!",url("listsvideo",array('typeid'=>3)),'',0.5);
-            }else{
-                $this->error("修改文章失败!",url("listsvideo",array('typeid'=>3)),'',0.5);
-            }
-        }
-
-        $cate=new cateModel();
-        // $article=new ArticleModel();
-        $cateres=$cate->cateres();
-        $this->assign([
-
-            "cateres"=>$cateres,
-            'arts'=>$arts
-        ]);
-
-        return $this->fetch();
-    }
-
-
-
-    public function videoDel()
-    {
-
-// {:url('tparticle/listsvideo',array('typeid'=>3))}
-        if(ArticleVideo::destroy(input("videoid"))){
-            $this->success("删除文章成功!",url("listsvideo",array('typeid'=>3)),'',0.5);
-         }else{
-                $this->error("删除文章失败!",url("listsvideo",array('typeid'=>3)),'',0.5);
-        }
-
-
-
-    }
 
 
 }

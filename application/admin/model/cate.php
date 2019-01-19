@@ -66,19 +66,6 @@ public function _getchildrenid($catid){
       
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*从前端拿过来的代码*/
 
 
@@ -102,19 +89,6 @@ public function getchildrenidno($catid){
       return $attr;
       
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //通过递归找到所有的分类
    public function cateres(){
@@ -165,11 +139,14 @@ public function getchildrenidno($catid){
          });
    }
 
-
+//关联图片集
    public function arttupian(){
       return $this->hasMany('arttupian','cateid');
    }
 
-
+//关联文章列表
+  public function article(){
+      return $this->hasMany('article','cateid');
+   }
 
 }

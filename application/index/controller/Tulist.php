@@ -2,8 +2,7 @@
 namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
-use app\index\controller\Base;
-use app\index\model\cate as CateModel;
+use app\index\model\Tonpan2_cate as CateModel;
 class Tulist extends Cms2base
 {
 
@@ -23,7 +22,7 @@ class Tulist extends Cms2base
 
 
          if($allarticleId!=''){
-$artres=db("article")->where("id IN($allarticleId)")->paginate(9);
+$artres=db("tonpan2_article")->where("id IN($allarticleId)")->paginate(9);
          }else{
 $artres="";
          }
@@ -44,7 +43,7 @@ $artres="";
         $cate=new CateModel();
         $catgetid=$cate->getthechild($catid);
          $allarticleId=$cate->getallArt($catgetid,$catid);
-        $artres=db("article")->where("id IN($allarticleId)")->paginate(6);
+        $artres=db("tonpan2_article")->where("id IN($allarticleId)")->paginate(6);
 
        
         $this->assign([

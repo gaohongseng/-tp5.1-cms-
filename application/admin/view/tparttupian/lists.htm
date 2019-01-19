@@ -46,7 +46,7 @@
 <!-- Page Body -->
 <div class="page-body">
 
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('tparticle/add')}'"> <i class="fa fa-plus"></i> Add
+<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('tparttupian/add',array('cateId'=>input('cateId')))}'"> <i class="fa fa-plus"></i> Add
 </button>
 <div class="row">
 <div class="col-lg-12 col-sm-12 col-xs-12">
@@ -67,12 +67,14 @@
 </tr>
 </thead>
 <tbody>
-   aa
+  
 
+{if input('typeid') or empty(input('cateId'))}
+
+{volist name='listcate' id='list'}
 
 {volist name='list.arttupian' id='vo'}
 
-      
     <tr>
         <td align="center">{$vo['id']}</td>
         <td align="center">{$vo['title']}</td>
@@ -80,7 +82,36 @@
          
         <td align="center">{$list['catename']}</td>
 
-    
+<td align="center">推荐</td>
+        <td align="center">
+缩略图
+
+        </td>
+        <td align="center">
+            <a href="{:url('tparttupian/edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-sm shiny">
+                <i class="fa fa-edit"></i> 编辑
+            </a>
+            <a href="#" onClick="warning('确实要删除吗', '{:url('tparttupian/del',array('id'=>$vo['id']))}')" class="btn btn-danger btn-sm shiny">
+                <i class="fa fa-trash-o"></i> 删除
+            </a>
+        </td>
+    </tr>
+
+{/volist}
+
+{/volist}
+
+{elseif input('cateId')/}
+
+
+{volist name='listcate.arttupian' id='vo'}
+
+    <tr>
+        <td align="center">{$vo['id']}</td>
+        <td align="center">{$vo['title']}</td>
+         <td align="center">{$vo['author']}</td>
+         
+        <td align="center">{$listcate['catename']}</td>
 
 <td align="center">推荐</td>
         <td align="center">
@@ -88,16 +119,18 @@
 
         </td>
         <td align="center">
-            <a href="{:url('tparticle/edit')}" class="btn btn-primary btn-sm shiny">
+            <a href="{:url('tparttupian/edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-sm shiny">
                 <i class="fa fa-edit"></i> 编辑
             </a>
-            <a href="#" onClick="warning('确实要删除吗', '{:url('tparticle/del')}')" class="btn btn-danger btn-sm shiny">
+            <a href="#" onClick="warning('确实要删除吗', '{:url('tparttupian/del')}')" class="btn btn-danger btn-sm shiny">
                 <i class="fa fa-trash-o"></i> 删除
             </a>
         </td>
     </tr>
 
 {/volist}
+
+{/if}
 
 
                         </tbody>

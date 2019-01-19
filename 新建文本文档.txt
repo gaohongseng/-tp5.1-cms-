@@ -1,0 +1,422 @@
+<div class="w960 clear center mt1">
+  <div class="sp-title">
+    <h2>在线咨询</h2>
+    <span class="more">
+    	 <a href="#write">[发布留言]</a> &nbsp; 
+    	 <a href="http://lvshi120.86lawyer.net/">[返回主页]</a>
+    </span> 
+  </div>
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#FBFEED">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>刘德华</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:52      	  &nbsp; 
+      	  主题：刘德华      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/01.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：188888888888888</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd">刘德华刘德华刘德华</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:feafae"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=18"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#ffffff">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>刘德华</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:50      	  &nbsp; 
+      	  主题：刘德华      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/01.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：刘德华</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd">刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华刘德华</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:刘德华"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=17"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#FBFEED">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>刘德华</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:49      	  &nbsp; 
+      	  主题：回复：刘德华刘德华刘德华刘德华刘德华刘德华      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/03.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：刘德华</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd"><div class="‘rebox‘">Always keep in mind that the price of diamond reduces as much <br>
+as 10 % due to lower clarity. It tells the world that you\‘re <br>
+committed all night for being married sookn using your special someone.<br>
+This just really demonstrates that diamonds will still <br>
+bbe all of which will continually be a ladies eevery bride\‘s best <br>
+friend.</div>
+刘德华</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:刘德华"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://刘德华" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=16"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#ffffff">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>feaf</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:16      	  &nbsp; 
+      	  主题：鸿运国际      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/01.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：aef</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd">faef</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:aefae"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=15"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#FBFEED">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>feaf</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:15      	  &nbsp; 
+      	  主题：回复：回复：回复：分阿法尔      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/08.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：aef</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd"><div class="‘rebox‘"><div class="‘rebox‘"><div class="‘rebox‘">adf</div>
+aefa</div>
+eafa</div>
+af</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:fea"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://aef" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=14"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#ffffff">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>奥特曼</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:12      	  &nbsp; 
+      	  主题：回复：回复：df      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/15.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：feaf</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd"><div class="‘rebox‘"><div class="‘rebox‘">adf</div>
+aefa</div>
+eafa</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:eafa"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://eafa" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=13"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#FBFEED">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>faf</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-18 15:11      	  &nbsp; 
+      	  主题：回复：df      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/05.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：110.53.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：aef</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd"><div class="‘rebox‘">adf</div>
+aefa</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:eaf"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://aef" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=12"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#ffffff">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>eaf</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-12 23:08      	  &nbsp; 
+      	  主题：faef      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/01.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：119.39.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：aef</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd">feafa</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:aef"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=11"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#FBFEED">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>daf</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-11 16:32      	  &nbsp; 
+      	  主题：df      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/01.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：119.39.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：daf</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd">adf</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:df"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=10"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background:#ffffff">
+      <tbody><tr>
+        <td width="160" align="center" class="ltd">
+        	<b>dsf</b>
+        </td>
+      	<td height="26" class="timetd">
+      		<img height="16" src="guestbook/images/time.gif" width="16"> 时间: 09-11 16:31      	  &nbsp; 
+      	  主题：f大幅      	</td>
+      </tr>
+      <tr>
+      	<td width="160" rowspan="2" align="center" class="lefttd">
+        	<table width="160" border="0" align="center" cellpadding="1" cellspacing="2">
+          	<tbody><tr>
+            	<td height="80" align="center">
+            		<img src="guestbook/images/01.gif" border="0">             	</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;来自：119.39.*.*</td>
+          	</tr>
+          	<tr>
+            	<td height="20">&nbsp;QQ：dasf</td>
+          	</tr>
+        	</tbody></table>
+        </td>
+      	<td class="msgtd">dsfa</td>
+      </tr>
+      <tr>
+      	<td height="26" class="bottomtd">
+      		<a href="mailto:dsf"><img src="guestbook/images/mail.gif" border="0" width="16" height="16">[邮件]</a> &nbsp;
+      		<a href="http://" target="_blank"><img src="guestbook/images/home.gif" border="0" width="16" height="16">[主页]</a> &nbsp;
+      		<a href="guestbook.php?action=admin&amp;id=9"><img src="guestbook/images/quote.gif" border="0" height="16" width="16">[回复/编辑]</a> &nbsp;
+      		      	</td>
+      </tr>
+    </tbody></table>
+        
+   <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="pagetable">
+     <tbody><tr>
+        <td align="center" height="28"> <div class="pagelistbox">
+<span>共 2 页/18条记录 </span><span class="indexPage">首页 
+</span><strong>1</strong>
+<a href="/plus/guestbook.php?gotopagerank=&amp;totalresult=18&amp;pageno=2">2</a>
+<a class="nextPage" href="/plus/guestbook.php?gotopagerank=&amp;totalresult=18&amp;pageno=2">下页</a> 
+<a class="endPage" href="/plus/guestbook.php?gotopagerank=&amp;totalresult=18&amp;pageno=2">末页</a> 
+</div>
+ </td>
+     </tr>
+   </tbody></table>
+    
+   <table width="100%" border="0" cellspacing="1" cellpadding="4" align="center" bgcolor="#dedede" class="writetable">
+      <form method="post" action="guestbook.php" name="form1"></form>
+        <input type="hidden" name="action" value="save">
+        <tbody><tr>
+          <td colspan="2" class="writetd"><b>发布留言：</b><a name="write"></a></td>
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td width="15%" align="center" nowrap=""><font color="#FF0000">*</font>标题：</td>
+          <td width="85%"><input type="text" maxlength="50" name="title" size="30" class="ipt-txt"></td>
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td width="15%" align="center" nowrap=""><font color="#FF0000">*</font>姓名：</td>
+          <td width="85%"><input type="text" maxlength="10" name="uname" size="30" value="" class="ipt-txt"></td>
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td height="12" align="center" nowrap="">电话号码：</td>
+          <td><input maxlength="20" type="text" name="qq" size="20" class="ipt-txt"></td>
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td height="12" align="center" nowrap="">&nbsp;电子邮件：</td>
+          <td><input maxlength="80" type="text" name="email" size="30" class="ipt-txt">
+          <input maxlength="80" type="text" name="homepage" size="20" class="ipt-txt" style="display:none">
+          <input type="radio" name="img" value="01" style="display:none" checked=""></td> 
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td width="15%" height="2" align="center" nowrap=""><font color="#FF0000">*</font>留言内容：<br>
+            (1000字内) </td>
+          <td align="left" width="85%">
+          	<textarea name="msg" cols="38" rows="5" class="textarea ipt-txt"></textarea>          </td>
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td height="2" align="center" nowrap="">验 证 码：</td>
+          <td align="left"><table border="0" cellspacing="0" cellpadding="0">
+            <tbody><tr>
+              <td width="70"><input name="validate" type="text" id="vdcode2" class="ipt-txt" style="width:60px;text-transform: uppercase;"></td>
+              <td><img src="../include/vdimgck.php"></td>
+            </tr>
+          </tbody></table></td>
+        </tr>
+        <tr bgcolor="#ffffff">
+          <td colspan="2" align="center" nowrap=""><input maxlength="1000" type="submit" name="Submit" value="提 交" class="btn-2">
+            &nbsp;&nbsp;
+            <input type="reset" name="Submit2" value="取 消" class="btn-2"></td>
+        </tr>
+      
+    </tbody></table>
+  <br>
+</div>
