@@ -1,0 +1,8 @@
+<div class="daohang">
+               <dl><a href="/phone"><dt><img src="/static/phone/images/nav_tb1.png" /></dt><dd>首页</dd></a></dl>
+
+			{volist name='getNav' id='vo'}
+               <dl><a href="/phone/{if $vo['id'] eq 42}rzal{elseif $vo['id'] eq 39/}sjtd{elseif $vo['id'] eq 5/}#liucheng{elseif $vo['id'] eq 41/}khkb{elseif $vo['id'] eq 44/}rzgl{elseif $vo['id'] eq 7/}gywm{elseif $vo['id'] eq 45/}hdzq{/if}{if $vo['id'] eq 42}/navcateId/{$vo['id']}?page=1{elseif $vo['id'] eq 5/}{else/}/navcateId/{$vo['id']}{/if}"><dt><img src="/static/phone/images/nav_tb{$i+1}.png" /></dt><dd>{$vo['catename']}</dd></a></dl>
+			{/volist}
+
+            </div> 

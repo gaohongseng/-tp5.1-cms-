@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\cate as CateModel;
-use app\admin\model\article as ArticleModel;
+use app\admin\model\Article as ArticleModel;
 use app\admin\model\video as ArticleVideo;
 use app\admin\model\Arttupian as ArttupianModel;
 use app\admin\model\Arttusrc as ArttusrcModel;
@@ -10,10 +10,10 @@ use app\admin\controller\Upload as Upload;
 use think\Cookie;
 class Tparttupian extends TpBase
 {
-      public function addss(){
-        $duotu=new \duotuuploads\Duotuupload();
-        dump($duotu);
-    }
+    //   public function addss(){
+    //     $duotu=new \duotuuploads\Duotuupload();
+    //     dump($duotu);
+    // }
      public function test(){
         $res=CateModel::hasWhere('ArttupianModel',['id'=>42])->select();
         dump($res);
@@ -33,7 +33,7 @@ class Tparttupian extends TpBase
                 $listcate=CateModel::where('type',3)->select();
               
         }
-        
+
        
         $this->assign([
             "listcate"=>$listcate,
@@ -86,12 +86,26 @@ class Tparttupian extends TpBase
                     $exnbspimg['imgid']=$arttupian->id;
                     $tusrcRes=ArttusrcModel::create($exnbspimg);
                 }
-                
             }
-            if($tupianRes){
-                $this->success('添加图集成功',url('tparttupian/lists'),'',0.5);
+
+
+
+            $type=$cate->where('id',$data['cateid'])->value('type');
+            if($type==2){
+                    if(!$cateId){
+                        $this->success('封面页不能添加文章',url('lists',array('typeid'=>3)),'',0.5);
+                    }else{
+                        $this->success('封面页不能添加文章',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
             }else{
-                $this->error('添加图集失败!',url('tparttupian/lists'),'',0.5);
+
+
+                if($tupianRes){
+                    $this->success('添加图集成功',url('tparttupian/lists',array('cateId'=>input('cateId'))),'',0.5);
+                }else{
+                    $this->error('添加图集失败!',url('tparttupian/lists',array('cateId'=>input('cateId'))),'',0.5);
+                }
+
             }
             // if($arttupian->save($data)){
 
@@ -136,12 +150,23 @@ class Tparttupian extends TpBase
                 
             }
 
-            if($tupianRes){
-                $this->success('更新图集成功',url('tparttupian/lists'),'',0.5);
+            $type=$cate->where('id',$data['cateid'])->value('type');
+            if($type==2){
+                    if(!$cateId){
+                        $this->success('封面页不能添加文章',url('lists',array('typeid'=>3)),'',0.5);
+                    }else{
+                        $this->success('封面页不能添加文章',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
             }else{
-                $this->error('更新图集失败!',url('tparttupian/lists'),'',0.5);
-            }
 
+
+
+                if($tupianRes){
+                    $this->success('更新图集成功',url('tparttupian/lists',array('cateId'=>input('cateId'))),'',0.5);
+                }else{
+                    $this->error('更新图集失败!',url('tparttupian/lists',array('cateId'=>input('cateId'))),'',0.5);
+                }
+            }
 
 
         }
@@ -159,9 +184,9 @@ class Tparttupian extends TpBase
         $arttuRes=ArttupianModel::destroy(input('id'));
         $artsrcRes=ArttusrcModel::destroy(['imgid'=>input('id')]);
         if($arttuRes or $artsrcRes){
-            $this->success('删除图集成功!',url('tparttupian/lists'),'',0.5);
+            $this->success('删除图集成功!',url('tparttupian/lists',array('cateId'=>input('cateId'))),'',0.5);
         }else{
-            $this->success('删除图集失败!',url('tparttupian/lists'),'',0.5);
+            $this->success('删除图集失败!',url('tparttupian/lists',array('cateId'=>input('cateId'))),'',0.5);
         }
     }
 

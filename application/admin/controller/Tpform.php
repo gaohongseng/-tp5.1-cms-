@@ -10,7 +10,7 @@ class Tpform extends TpBase
 
 	public function lists(){
 
-   		$list=Db::name("form")->paginate(5);
+   		$list=Db::name("form")->order('id desc')->paginate(5);
 	
 		$this->assign('list',$list);
 		return $this->fetch();

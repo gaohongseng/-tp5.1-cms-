@@ -1,161 +1,317 @@
 
-<div class="floor floor09">
-<div class="main_con">
-	<div class="f9_fl_c fl">
-		<div class="h45">
+<!--翻页 end-->
+<div class="jz_nav">
+
+
+
+	<a href="/">时光里首页</a>
+
+{volist name='getNav' id='vo'}
+      <a href="/{if $vo['id'] eq 42}rzal{elseif $vo['id'] eq 39/}sjtd{elseif $vo['id'] eq 5/}#liucheng{elseif $vo['id'] eq 41/}khkb{elseif $vo['id'] eq 44/}rzgl{elseif $vo['id'] eq 7/}gywm{elseif $vo['id'] eq 45/}hdzq{/if}/navcateId/{if $vo['id'] eq 42}{$vo['id']}?page=1{else/}{$vo['id']}{/if}">{$vo['catename']}</a>
+      {/volist}
+
+
+
+
+
+</div>
+<div class="jz_m">
+	<div class="main clearfix">
+		<style>
+
+.jz_m .z2 li {
+    width: 100px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    margin-right: 26px;
+}
+	</style>
+		<div class="jz_logo">
+			{$articleqita3['content']}
 		</div>
-		<div class="f9_fl_more">
-			<div class="f9_fl_fwfw f9_fl_0">
-				<div class="f9_fl_title">
-					<span class="cn">服务范围</span>
-					<span class="en">Service</span>
-				</div>
-				<div class="f9_fl_ul">
-					<ul class="ul_fl">
-						<li><a href="/yxxwz/fenmianId/3" title="营销型网站">营销型网站</a></li>
-						<li><a href="/yxxwz/fenmianId/7" title="手机网站">手机网站</a></li>
-				
-					</ul>
-				</div>
-			</div>
-			<div class="f9_fl_fwfw f9_fl_0">
-				<div class="f9_fl_title">
-					<span class="cn">经典案例</span>
-					<span class="en">Classic case</span>
-				</div>
-				<div class="f9_fl_ul">
-					<ul class="ul_fl">
-						<li><a href="/jdal/tulistId/25" title="营销型网站">营销型网站</a></li>
-						<li><a href="/jdal/tulistId/8" title="网站优化排名">网站优化排名</a></li>
-						<li><a href="/jdal/tulistId/16" title="手机网站">手机网站</a></li>
-					
-					</ul>
-				</div>
-			</div>
-			<div class="f9_fl_fwfw f9_fl_0">
-				<div class="f9_fl_title">
-					<span class="cn">新闻资讯</span>
-					<span class="en">Information</span>
-				</div>
-				<div class="f9_fl_ul">
-					<ul class="ul_fl">
-						<li><a href="/xwzx/artlistId/27" title="行业动态">行业动态</a></li>
-						<li><a href="/xwzx/artlistId/28" title="营销干货">营销干货</a></li>
-						<li><a href="/xwzx/artlistId/29" title="移动互联网">移动互联网</a></li>
-						<li><a href="/xwzx/artlistId/30" title="公司动态">公司动态</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="f9_fl_fwfw f9_fl_0">
-				<div class="f9_fl_title">
-					<span class="cn">关于我们</span>
-					<span class="en">About us</span>
-				</div>
-				<div class="f9_fl_ul">
-					<ul class="ul_fl">
-						<li><a href="/gywm/fenmiansId/32" title="关于我们">关于我们</a></li>
-						<li><a href="/lxwm/fenmiansId/33" title="联系我们">联系我们</a></li>
-						<li><a href="/zzry/fenmiansId/34" title="资质荣誉">资质荣誉</a></li>
-						<li><a href="/hkfs/fenmiansId/35" title="汇款方式">汇款方式</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="W_ctc fl">
-				<h2 class="title">您可以在线咨询...</h2>
-				<dl class="qqlist">
-					<dd>
-					<a target="_blank" title="业务顾问" href="http://wpa.qq.com/msgrd?v=3&uin={$confQq['value']}&site=qq&menu=yes"><span><i class="qq"></i></span></a>
-					<a target="_blank" title="售后顾问" href="http://wpa.qq.com/msgrd?v=3&uin={$confQq['value']}&site=qq&menu=yes"><span><i class="qq"></i></span></a>
-					<a target="_blank" title="技术顾问" href="http://wpa.qq.com/msgrd?v=3&uin={$confQq['value']}&site=qq&menu=yes"><span><i class="qq"></i></span></a>
-					</dd>
-				</dl>
-<style>
-.f9_fl_more .W_ctc .title {
-    width: 180px;
-    padding-left: 14px;
-    margin-top: -20px;
-   }
-</style>
-				<span class="tel2"><a title="咨询电话{$confDh['value']}" href="tel:{$confDh['value']}">{$confDh['value']}</a></span>
-				<p class="tel">
-					<i class="icon"></i>{$confDh['value']}
-				</p>
-				<p class="email">
-					<i class="icon"></i>{$confYx['value']}
-				</p>
-				<p class="address">
-					<i class="icon"></i>{$confDz['value']}
-				</p>
-			</div>
+		<div class="z2">
+			 {$articleqita2['content']}
+			<dl>
+				{$articleqita4['content']}
+			</dl>
+		</div>
+		<div class="z1">
+			<!--<img src="/static/index/images/jz_dt.jpg" />-->
+			<iframe class="ueditor_baidumap" src="/static/admin/ditu/maps.html" frameborder="0" width="455" height="285">
+			</iframe>
 		</div>
 	</div>
-	<div class="f9_fl_weix fl">
-		<div class="h45">
-		</div>
-		<div class="f9_weixin">
-			{$artqitama['content']}
-		</div>
+	<!-- / main 结束 -->
+</div>
+<ul class="fd_m">
+	<li><a target="_blank" href="#"><img src="/static/index/images/fd_tb1.png"/>
+	<p>
+		在线咨询
+	</p>
+	</a></li>
+	<li><a target="_blank" href="#"><img src="/static/index/images/fd_tb2.png"/>
+	<p>
+		0元设计
+	</p>
+	</a></li>
+	<li>
+	<a target="_blank" href=""><img src="/static/index/images/fd_tb3.png"/>
+	<p>
+		咨询热线
+	</p>
+	</a>
+	<div class="z1">
+		<img src="/static/index/images/fd_tb3.png"/>咨询热线<b>{$boxconf17['value']}</b>
 	</div>
-</div>
-</div>
-
-
-
-<div class="clear">
-</div>
-<div class="floor floor10" style="height:auto;">
-<div class="main_con">
-	<div class="h16">
-	</div>
-	{$artqitabeian['content']}
-	<center style="height:100px;">
-	<iframe style="display:block;height:auto;" frameborder="0" height="90" width="90" allowtransparency="true" scrolling="no" src="http://www.cqgseb.cn/ztgsgl/WebMonitor/GUILayer/eImgMana/gshdimg.aspx?sfdm=120101104152157198464">
-	</iframe>
-	</center>
-	<div class="h25">
-	</div>
-</div>
-</div>
-
-
-<!-- 代码 开始 -->
-<div id="rightArrow">
-<a href="javascript:;" title="在线客户"></a>
-</div>
-<div id="floatDivBoxs">
-<div class="floatDtt">
-	在线客服
-</div>
-<div class="floatShadow">
-	<ul class="floatDqq">
-		<li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin={$confQq['value']}&Site=www.zhuoguang.net&Menu=yes"><img src="__PUBLIC__/images/qq_xh.png" align="absmiddle">  业务顾问</a></li>
-		<li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin={$confQq['value']}&Site=www.zhuoguang.net&Menu=yes"><img src="__PUBLIC__/images/qq_xh.png" align="absmiddle">  技术顾问</a></li>
-	</ul>
-	{$getlianxi['content']}
-
-
-</div>
-<div class="floatDbg">
-</div>
-</div>
-<script type="text/javascript">
-var xh_flag=1;
-$('#rightArrow').click(function(){
-	if(xh_flag==1){
-		$("#floatDivBoxs").animate({right: '-155px'},300);
-		$(this).animate({right: '-5px'},300);
-		$(this).css('background-position','-50px 0');
-		xh_flag=0;
-	}else{
-		$("#floatDivBoxs").animate({right: '0'},300);
-		$(this).animate({right: '150px'},300);
-		$(this).css('background-position','0px 0');
-		xh_flag=1;
-	}
-});
-</script>
-<!-- /footer -->
-<script type="text/javascript" language="javascript" src="__PUBLIC__/js/jquery.SuperSlide.2.1.js"></script>
-<script type="text/javascript" language="javascript">
-	$(".tels_f5_02").slide({ mainCell:".case_more_list", effect:"left",vis:4, pnLoop:false, scroll:4, autoPage:true,autoPlay:true});
+	</li>
+	<li><a class="go-top" href="#"><img src="/static/index/images/fd_tb4.png"/>
+	<p>
+		top
+	</p>
+	</a></li>
+</ul>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/huidingbu.js"></script>
+<script src="__PUBLIC__/js/jquery.animateNumber.min.js"></script>
+<script>
+		function myBrowser(){
+			var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+			var isOpera = userAgent.indexOf("Opera") > -1;
+			if (isOpera) {
+				return "Opera"
+			}; //判断是否Opera浏览器
+			if (userAgent.indexOf("Firefox") > -1) {
+				return "FF";
+			} //判断是否Firefox浏览器
+			if (userAgent.indexOf("Chrome") > -1){
+		  return "Chrome";
+		 }
+			if (userAgent.indexOf("Safari") > -1) {
+				return "Safari";
+			} //判断是否Safari浏览器
+			if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) {
+				return "IE";
+			}; //判断是否IE浏览器
+		}
+			var ww=$(window).width();
+			var winh=$(window).height();
+			var wh=$(document).height();
+			var scroll=0;
+			var jian=0;
+		//以下是调用上面的函数
+		var mb = myBrowser();
+		if ("Safari" != mb) {
+			$(window).scroll(function(){
+				scroll=$(window).scrollTop();
+				jian=wh-scroll-winh;
+				if(scroll>=38){
+					$(".header").addClass("nav_fix");
+				}else{
+					$(".header").removeClass("nav_fix");
+				}
+			});  
+		}	
 	</script>
+<script type="text/javascript">
+	//窗口显示才加载
+	var wrapTop = $(".digital").offset().top;
+	var istrue = true;
+	$(window).on("scroll",
+	function() {
+	    var s = $(window).scrollTop();
+	    if (s > wrapTop - 500 && istrue) {
+	        $(".timer").each(count);
+	        function count(a) {
+	            var b = $(this);
+	            a = $.extend({},
+	            a || {},
+	            b.data("countToOptions") || {});
+	            b.countTo(a)
+	        };
+	        istrue = false;
+	    };
+	})
+	//设置计数
+	$.fn.countTo = function (options) {
+		options = options || {};
+		return $(this).each(function () {
+			//当前元素的选项
+			var settings = $.extend({}, $.fn.countTo.defaults, {
+				from:            $(this).data('from'),
+				to:              $(this).data('to'),
+				speed:           $(this).data('speed'),
+				refreshInterval: $(this).data('refresh-interval'),
+				decimals:        $(this).data('decimals')
+			}, options);
+			//更新值
+			var loops = Math.ceil(settings.speed / settings.refreshInterval),
+			    increment = (settings.to - settings.from) / loops;
+			//更改应用和变量
+			var self = this,
+			$self = $(this),
+			loopCount = 0,
+			value = settings.from,
+			data = $self.data('countTo') || {};
+			$self.data('countTo', data);
+			//如果有间断，找到并清除
+			if (data.interval) {
+				clearInterval(data.interval);
+			};
+			data.interval = setInterval(updateTimer, settings.refreshInterval);
+			//初始化起始值
+			render(value);
+			function updateTimer() {
+				value += increment;
+				loopCount++;
+				render(value);
+				if (typeof(settings.onUpdate) == 'function') {
+					settings.onUpdate.call(self, value);
+				}
+				if (loopCount >= loops) {
+					//移出间隔
+					$self.removeData('countTo');
+					clearInterval(data.interval);
+					value = settings.to;
+					if (typeof(settings.onComplete) == 'function') {
+						settings.onComplete.call(self, value);
+					}
+				}
+			}
+			function render(value) {
+				var formattedValue = settings.formatter.call(self, value, settings);
+				$self.html(formattedValue);
+			}
+			});
+        };
+        $.fn.countTo.defaults={
+        	from:0,               //数字开始的值
+        	to:0,                 //数字结束的值
+        	speed:1000,           //设置步长的时间
+        	refreshInterval:100,  //隔间值
+        	decimals:0,           //显示小位数
+        	formatter: formatter, //渲染之前格式化
+        	onUpdate:null,        //每次更新前的回调方法
+        	onComplete:null       //完成更新的回调方法
+        };
+        function formatter(value, settings){
+        	return value.toFixed(settings.decimals);
+        }
+        //自定义格式
+        $('#count-number').data('countToOptions',{
+        	formmatter:function(value, options){
+        		return value.toFixed(options.decimals).replace(/\B(?=(?:\d3)+(?!\d))/g, ',');
+        	}
+        });
+        //定时器
+        $('.timer').each(count);
+        function count(options){
+        	var $this=$(this);
+        	options=$.extend({}, options||{}, $this.data('countToOptions')||{});
+        	$this.countTo(options);
+        }
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+    /* 控制左右按钮显示 */
+    jQuery(".fullSlide").hover(function () { jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.9) }, function () { jQuery(this).find(".prev,.next").fadeOut() });
+    /* 调用SuperSlide */
+    jQuery(".fullSlide").slide({ titCell: ".hd ul", mainCell: ".bd ul", effect: "fold", interTime: 5500, autoPlay: true, autoPage: true, trigger: "click",
+        startFun: function (i) {
+            var curLi = jQuery(".fullSlide .bd li").eq(i); /* 当前大图的li */
+            if (!!curLi.attr("_src")) {
+                curLi.css("background-image", curLi.attr("_src")).removeAttr("_src") /* 将_src地址赋予li背景，然后删除_src */
+            }
+        }
+    });
+</script>
+
+<script type="text/javascript">    jQuery(".m2_m .slideTxtBox").slide();</script>
+<script type="text/javascript">
+    jQuery(".m3_m .scrollBox").slide({ titCell: ".list li", mainCell: ".piclist", effect: "left", vis: 4, scroll: 1, delayTime: 800, trigger: "click", easing: "easeOutCirc" });
+</script>
+<script type="text/javascript">
+    jQuery(".m5_m .multipleColumn").slide({ titCell: ".hd ul", mainCell: ".bd .ulWrap", autoPage: true, effect: "leftLoop", vis: 1 });
+</script>
+<script type="text/javascript">
+    jQuery(".m5_m .picScroll-left").slide({ titCell: ".hd ul", mainCell: ".bd ul", autoPage: true, effect: "left", vis: 2, scroll: 2, trigger: "click" });
+</script>
+<script type="text/javascript">
+    jQuery(".m6_m .picMarquee-left").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 6, interTime: 30 });
+</script>
+<script language="javascript" type="text/javascript">
+      window.onload = function(){
+               
+                    $.ajax({
+                    type: "get",
+                    contentType: "application/json",
+                    url: "/plugins/feedback/tools/ajax.ashx?action=sum&site=main",
+                    dataType: "json",
+                    success: function (msg) {
+                         var x=document.getElementById("p11");
+                         x.innerHTML=msg.msg+200+"位客户预约中";
+                    }
+                    });
+
+          }
+</script>
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            var txtUserName = $("#txtUserName").val(),
+                                    txtUserTel = $("#txtUserTel").val(),
+                                    txtTitle = $("#txtTitle").val();
+            var txtContent = $("input[name='radio1']:checked").val();
+           
+            if (txtUserName != "" && txtContent != "" && txtUserTel != "" && txtTitle != "") {
+                $.ajax({
+                    type: "get",
+                    contentType: "application/json",
+                    url: "/plugins/feedback/tools/ajax.ashx?action=add&site=main",
+                    data: { 'txtUserName': txtUserName, 'txtUserTel': txtUserTel, 'txtTitle': txtTitle, 'txtContent': txtContent },
+                    dataType: "json",
+                    success: function (msg) {
+                        alert(msg.msg);
+                        history.go(0) 
+                    }
+                });
+            } else {
+                alert("请填写完整的信息");
+                return false;
+            }
+
+        });
+    });
+</script>
+
+<script src="__PUBLIC__/js/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.countup.min.js"></script>
+<script type="text/javascript">
+	$('.counter').countUp();
+</script>
+
+

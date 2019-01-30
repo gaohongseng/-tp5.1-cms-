@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+
+
+
+{include file='commons/banner'}
+
+<!--/ 内页广告 结束 ------------------------------------------->
+
+<!-- / 搜索 结束 ----->
+<dl class="al_fl">
+   <form id="filterForm" name="form1" method="get" action="filter.php">
+      <input id="pid" type="hidden" value="" name="pid" to="filter">
+      <input id="theme" type="hidden" value="" name="theme" to="filter">
+	<div class="main">
+		<h6><a>风格</a></h6>
+		<p>
+			<a href="javascript:Filter('pid','0');" pid='0'>所有</a>
+		{volist name='showone' id='vo'}
+			<a href="javascript:Filter('pid','{$vo}');" pid="{$vo}">{$vo}</a>
+		{/volist}
+		
+		</p>
+	</div>
+	<div class="main">
+		<h6><a>项目类型</a></h6>
+		<p>
+				<a href="javascript:Filter('theme','0');" theme='0'>所有</a>
+		{volist name='showtwo' id='vo'}
+			<a href="javascript:Filter('theme','{$vo}');" theme="{$vo}">{$vo}</a>
+		{/volist}
+	
+		</p>
+	</div>
+</form>
+</dl>
+<div class="al_m1">
+	<!--取得一个分页DataTable-->
+
+
+
+	{volist name='imgRes' id='list'}
+	{volist name='list.arttupian' id='vo'}
+	<dl>
+		<dt><a title="{$vo['title']}" target="_blank" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}"><img src="{volist name='$vo.arttusrc' id='src' offset='0' length='1'}__IMG__/admin/arttupian/ben/{$src['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}"/></a></dt>
+		<dd>
+		<h3>{$vo['title']}</h3>
+		<p>
+			{$vo['desc']}
+		</p>
+		<a class="more1" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}">more</a>
+		</dd>
+	</dl>
+	{/volist}
+	{/volist}
+
+
+</div>
+<!--------ny_anli1 end------------>
+<div class="digg t">
+	<span>共45记录</span><span class="disabled">上一页</span><span class="current">1</span><a href="/case/1/2.html">2</a><a href="/case/1/3.html">3</a><a href="/case/1/4.html">4</a><a href="/case/1/5.html">5</a><a href="/case/1/2.html">下一页</a>
+</div>
+
+
+{include file='commons/footer'}
+
+<script>
+     $(function(){
+       <?php
+          if($_GET){
+            echo 'var obj='.json_encode($_GET).';';
+          }
+       ?>
+      if(typeof(obj)!='undefined'){
+          for(k in obj){
+            $("#"+k).val(obj[k]);
+            $("a["+k+"="+obj[k]+"]").parent().addClass("in").siblings().removeClass("in");
+          }
+      }
+     })
+    </script>
+    <script>
+        function Filter(a,b){
+          var $ = function(e){return document.getElementById(e);}
+          var ipts = $('filterForm').getElementsByTagName('input'),result=[];
+          for(var i=0,l=ipts.length;i<l;i++){
+          if(ipts[i].getAttribute('to')=='filter'){
+          result.push(ipts[i]);
+          }
+          }
+          if($(a)){
+          $(a).value = b;
+          for(var j=0,len=result.length;j<len;j++){
+          
+            if(result[j].value=='' || result[j].value=='0'){
+            result[j].parentNode.removeChild(result[j]);
+            }
+          }
+            document.forms['filterForm'].submit();
+          }
+          return false;
+          } 
+    </script>
+
+</body>
+</html>

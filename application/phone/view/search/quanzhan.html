@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+
+{include file='commons/banner'}
+
+
+
+
+
+
+    <div class="ny clearfix">
+        {include file='commons/left'}
+        <!-- ny_l 结束 ------------------------------------------->
+        <div class="ny_r fr">
+          
+
+
+          <div class="ntitle">
+              <h2><a>站内搜索</a></h2>
+                <span>搜索关健字： <b class="blue"><?php echo $_GET['keyword']?></b> ，共有 <b class="red">{if $quansearchlen}{$quansearchlen}{else/}0{/if}</b> 条记录<span>
+            </span></span>
+          </div>
+
+
+          
+          <!--------news_main1 end------------>
+          <div class="news_main2">   
+              <!--取得一个分页DataTable--> 
+{if $quansearch}
+        {volist name='quansearch' id='vo'}
+              <dl>
+                      <dt><a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}"><img src="/{$vo['thumb']}" title="{$vo['title']}" alt="{$vo['title']}"></a></dt>
+                      <dd>
+                          <h3><a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}" title="{$vo['title']}">{$vo['title']}</a></h3>
+                          <p class="dd_p">{$vo['desc']}</p>
+                          <span class="news_more"><a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">了解详情 +</a></span>
+                      </dd>
+                  </dl>
+            {/volist}
+
+{else/}
+      暂无搜索结果
+
+{/if}       
+
+                 
+           </div>
+           <!--------news_main2 end------------>   
+           <div class="digg">
+                {$quansearch->render()}
+           </div>
+           <!--翻页 end-->          
+
+            <div class="xnav_m3">
+               <h2>热门文章<em>/ Popular articles</em></h2>
+               <span></span>
+           </div> 
+            <ul class="nycp_news1 clearfix"> 
+                  
+              {volist name='glueManRes' id='vo'}
+                  
+                    <li><a title="{$vo['title']}" target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">{$vo['title']}</a><span>[{$vo['time']|date='Y-m-d',###}]</span></li>
+                 
+              {/volist}    
+                    
+            </ul>
+            <!--------nycp_news end------------>
+        </div>
+        <!-- ny_r 结束 ------------------------------------------->
+        <div class="clear"></div>
+    </div>
+
+
+
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

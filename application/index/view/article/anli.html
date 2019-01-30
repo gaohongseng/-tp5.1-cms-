@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+{include file='commons/header'}
+
+{include file='commons/banner'}
+
+
+{include file='commons/position'}
+
+
+
+
+
+
+
+
+<div id="gallery" class="ad-gallery">
+  <h3>{$anliThe['title']}</h3>
+  <div class="ad-image-wrapper">
+    <div class="ad-image" style="width: 605px; height: 403px; top: 98.5px; left: 197.5px;">
+      <img src="__PUBLIC__/images/201812011731460468.png" width="605" height="403">
+    </div>
+    <img class="ad-loader" src="loader.gif" style="display: none;">
+
+
+
+    <div class="ad-next" style="height: 600px;">
+      <div class="ad-next-image" style="opacity: 0.7; display: none;">
+      </div>
+    </div>
+    <div class="ad-prev" style="height: 600px;">
+      <div class="ad-prev-image" style="opacity: 0.7; display: none;">
+      </div>
+    </div>
+  </div>
+  <div class="ad-controls">
+    <p class="ad-info">
+      1 / 2
+    </p>
+    <div class="ad-slideshow-controls">
+      <span class="ad-slideshow-start"></span><span class="ad-slideshow-stop"></span><span class="ad-slideshow-countdown" style="display: none;"></span>
+    </div>
+  </div>
+  <div class="ad-nav">
+    <div class="ad-back" style="opacity: 0.6;">
+    </div>
+    <div class="ad-thumbs">
+      <ul class="ad-thumb-list" style="width: 302px;">
+
+{volist name='anliThe.arttusrc' id='vo'}
+        <li><a href="/static/admin/arttupian/ben/{$vo['imgsrc']}" class="ad-thumb0 ad-active"><img src="/static/admin/arttupian/ben/{$vo['imgsrc']}" style="opacity: 1;"></a></li>
+{/volist}
+      </ul>
+    </div>
+    <div class="ad-forward" style="opacity: 0.6;">
+    </div>
+  </div>
+  <div class="ad_ms">
+{$anliThe['content']}
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ny clearfix">
+        <div class="xnav_m3">
+           <h2>经典案例<em>/ classic case</em></h2>
+           <span></span>
+        </div> 
+        <div class="w_al w_al4">
+           <ul>
+
+{volist name='glueManRes' id='vo'}
+
+               <li>
+                   <div class="tu">
+                       <a target="" title="{$vo['title']}" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}">
+                          <img src="{volist name='vo.arttusrc' id='imgsrc' offset='0' length='1'}/static/admin/arttupian/ben/{$imgsrc['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}">
+                          <div class="title"><h3>{$vo['title']}</h3><p>时光里软装巴中光雾和谷售楼部新中式风格软装案例欣赏</p></div>
+                       </a>
+                   </div>
+               </li>
+ 
+{/volist}    
+           </ul>
+        </div>
+        <!--------w_al end------------>
+    </div>
+
+
+
+
+{include file='commons/footer'}
+<script type="text/javascript" src="__PUBLIC__/js/jquery.ad-gallery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/zzsc.js"></script>
+
+</body>
+</html>

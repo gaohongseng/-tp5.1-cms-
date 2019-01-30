@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="loading">
+<head>
+
+
+
+{include file='commons/header'}
+<script type="text/javascript" src="__PUBLIC__/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/TouchSlide.1.1.js"></script>
+
+
+
+
+
+<div id="container">
+    <main class="cd-main-content" id="f1">
+    <!--首页幻灯片-->
+    <div id="focus" class="focus">
+        <div class="hd">
+            <ul>
+            </ul>
+        </div>
+        <div class="bd">
+          {$articleqita9['content']}
+        </div>
+    </div>
+    <script type="text/javascript">
+                TouchSlide({ 
+                    slideCell:"#focus",
+                    titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                    mainCell:".bd ul", 
+                    effect:"left", 
+                    autoPlay:true,//自动播放
+                    autoPage:true, //自动分页
+                    switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+                });
+            </script>
+    <!--/首页幻灯片-->
+  {include file='commons/nav'}
+    <!--header-->
+    <div class="xian1">
+    </div>
+    <div class="m1_m">
+        <div class="sy_xnav">
+            <h6>ADVANTAGE</h6>
+            <p>
+                用设计诠释生活美学
+            </p>
+        </div>
+        <div class="m1_tu">
+            <img src="__PUBLIC__/images/m1_tu1.jpg"/>
+        </div>
+        <dl class="main">
+            <dt><img src="__PUBLIC__/images/m1_tb1.png"/>
+            <h6>汇聚成都高端楼盘</h6>
+            <p>
+                样板间现场参观
+            </p>
+            </dt>
+            <dd><img src="__PUBLIC__/images/m1_tb2.png"/>
+            <h6>强大的供应链实力</h6>
+            <p>
+                比业主购买更省钱
+            </p>
+            </dd>
+            <dd><img src="__PUBLIC__/images/m1_tb3.png"/>
+            <h6>30人+高级软装设计师</h6>
+            <p>
+                平均从业经验7年以上
+            </p>
+            </dd>
+            <dt><img src="__PUBLIC__/images/m1_tb4.png"/>
+            <h6>专业项目管理分工明确</h6>
+            <p>
+                每一个环节做到客户满意
+            </p>
+            </dt>
+        </dl>
+    </div>
+    <!-- m1_m -->
+    <div class="m3_m">
+        <div class="sy_xnav">
+            <h6>CASE SHOW</h6>
+            <p>
+                项目案例展示
+            </p>
+        </div>
+        <div id="leftTabBox" class="tabBox">
+            <div class="hd">
+                <ul>
+
+                {volist name='showtwo' id='vo'}
+                    <li>
+                    <p>
+                        {$vo}
+                    </p>
+                    </li>
+                {/volist}
+                </ul>
+            </div>
+            <div class="sy_xnav1">
+                <span>500</span>家实景项目案例供您参考
+            </div>
+            <div class="bd">
+                <ul>
+
+
+
+            {volist name='bsRes' id='vo'}
+                    <li>
+                    <a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}">
+                    <img src="{volist name='$vo.arttusrc' id='src' offset='0' length='1'}/static/admin/arttupian/ben/{$src['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}"/>
+                    <div class="wz">
+                        <p class="z1">
+                            {$vo['title']}<span>预约设计</span>
+                        </p>
+                        <p class="z2">
+                            {$vo['desc']}
+                        </p>
+                    </div>
+                    </a>
+                    </li>
+                    {/volist}
+
+
+                </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <ul>
+
+
+
+            {volist name='jzRes' id='vo'}
+                    <li>
+                    <a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}">
+                    <img src="{volist name='$vo.arttusrc' id='src' offset='0' length='1'}/static/admin/arttupian/ben/{$src['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}"/>
+                    <div class="wz">
+                        <p class="z1">
+                            {$vo['title']}<span>预约设计</span>
+                        </p>
+                        <p class="z2">
+                            {$vo['desc']}
+                        </p>
+                    </div>
+                    </a>
+                    </li>
+                    {/volist}
+
+                </ul>
+                <ul>
+   {volist name='syRes' id='vo'}
+                    <li>
+                    <a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}">
+                    <img src="{volist name='$vo.arttusrc' id='src' offset='0' length='1'}/static/admin/arttupian/ben/{$src['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}"/>
+                    <div class="wz">
+                        <p class="z1">
+                            {$vo['title']}<span>预约设计</span>
+                        </p>
+                        <p class="z2">
+                            {$vo['desc']}
+                        </p>
+                    </div>
+                    </a>
+                    </li>
+                    {/volist}
+
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">TouchSlide({ slideCell:"#leftTabBox" });</script>
+        <div class="more">
+            <a href="{:url('/phone/rzal',array('navcateId'=>42))}?page=1">查看更多案例<img src="__PUBLIC__/images/more_xb1.png"/></a>
+        </div>
+    </div>
+    <!-- m3_m -->
+    <div class="m4_m">
+        <div class="sy_xnav">
+            <h6>DESIGNER</h6>
+            <p>
+                专业设计团队
+            </p>
+        </div>
+        <div id="picScroll_s" class="picScroll_t">
+            <div class="bd">
+                <ul>
+
+                    {volist name='sjManRes1' id='vo' offset='0' length='2'}
+                    <li><a href="/team/show-24.html">
+                    <div class="tu">
+                        <img src="/{$vo['thumb']}"/>
+                    </div>
+                    <h6>{$vo['author']}</h6>
+                    <p>
+                        {$vo['desc']}
+                    </p>
+                    </a></li>
+                    {/volist}
+                </ul>
+             
+
+
+ <ul>
+
+                    {volist name='sjManRes1' id='vo' offset='2' length='2'}
+                    <li><a href="/team/show-24.html">
+                    <div class="tu">
+                        <img src="/{$vo['thumb']}"/>
+                    </div>
+                    <h6>{$vo['author']}</h6>
+                    <p>
+                        {$vo['desc']}
+                    </p>
+                    </a></li>
+                    {/volist}
+                </ul>
+
+
+
+ <ul>
+
+                    {volist name='sjManRes1' id='vo' offset='4' length='2'}
+                    <li><a href="/team/show-24.html">
+                    <div class="tu">
+                        <img src="/{$vo['thumb']}"/>
+                    </div>
+                    <h6>{$vo['author']}</h6>
+                    <p>
+                        {$vo['desc']}
+                    </p>
+                    </a></li>
+                    {/volist}
+                </ul>
+
+
+             
+            </div>
+            <span class="prev">< </span><span class="next"> > </span>
+            <div class="hd">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+                    TouchSlide({ 
+                        slideCell:"#picScroll_s",
+                        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                        autoPage:true, //自动分页
+                        pnLoop:"false", // 前后按钮不循环
+                        switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+                    });
+                </script>
+        <div class="more">
+            <a href="{:url('/phone/sjtd',array('navcateId'=>39))}">查看更多设计师<img src="__PUBLIC__/images/more_xb1.png"/></a>
+        </div>
+    </div>
+    <!-- m4_m -->
+    <div class="yban">
+        <img src="__PUBLIC__/images/yban1.jpg"/>
+    </div>
+    <div class="lc_m" id="liucheng">
+        <div class="sy_xnav">
+            <h6>PROCESS</h6>
+            <p>
+                服务流程
+            </p>
+        </div>
+        <div class="main">
+            <div class="wz">
+                <dl>
+                    <img src="__PUBLIC__/images/lc_tu1.jpg"/>
+                    <dt>
+                    <p class="z1">
+                        step1：前期沟通
+                    </p>
+                    <p class="z1">
+                        ● 沟通客户需求
+                    </p>
+                    <p class="z1">
+                        ● 收取项目定金
+                    </p>
+                    <p class="z1">
+                        ● 首次空间测量
+                    </p>
+                    </dt>
+                </dl>
+            </div>
+            <div class="wz">
+                <dl>
+                    <img src="__PUBLIC__/images/lc_tu2.jpg"/>
+                    <dt>
+                    <p class="z1">
+                        step2：方案确定
+                    </p>
+                    <p class="z1">
+                        ● 初步方案沟通
+                    </p>
+                    <p class="z1">
+                        ● 方案修改调整
+                    </p>
+                    <p class="z1">
+                        ● 确定深化方案
+                    </p>
+                    </dt>
+                </dl>
+            </div>
+            <div class="wz">
+                <dl>
+                    <img src="__PUBLIC__/images/lc_tu3.jpg"/>
+                    <dt>
+                    <p class="z1">
+                        step3：采购下单
+                    </p>
+                    <p class="z1">
+                        ● 确定报价清单
+                    </p>
+                    <p class="z1">
+                        ● 签订软装采购合同
+                    </p>
+                    <p class="z1">
+                        ● 采购产品进度跟进
+                    </p>
+                    </dt>
+                </dl>
+            </div>
+            <div class="wz">
+                <dl>
+                    <img src="__PUBLIC__/images/lc_tu4.jpg"/>
+                    <dt>
+                    <p class="z1">
+                        step4：验收售后
+                    </p>
+                    <p class="z1">
+                        ● 安装、摆场、陈设
+                    </p>
+                    <p class="z1">
+                        ● 客户现场验收
+                    </p>
+                    <p class="z1">
+                        ● 终身售后服务
+                    </p>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- lc_m -->
+    <div class="m5_m">
+        <div class="sy_xnav">
+            <h6>APPRAISE</h6>
+            <p>
+                客户口碑
+            </p>
+            <div class="sy_xnav1">
+                <img src="__PUBLIC__/images/xnav_tb1.png"/>完工客户满意度评价
+            </div>
+        </div>
+        <div id="picScroll_t" class="picScroll_t">
+            <div class="bd">
+                <ul>
+
+
+
+{volist name='kbManRes' id='vo' offset='0' length='4'}
+                    <li>
+                    <a href="{:url('/phone/artkhkb',array('kbeiartId'=>$vo['id']))}">
+                    <div class="tu">
+                        <img src="/{$vo['thumb']}"/>
+                    </div>
+                    <div class="tit">
+                        <h6>{$vo['title']}</h6>
+                        <p>
+                           {$vo['desc']}
+                        </p>
+                    </div>
+                    </a>
+                    </li>
+{/volist}
+
+
+
+
+
+                </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <ul>
+{volist name='kbManRes' id='vo' offset='4' length='4'}
+                    <li>
+                    <a href="{:url('/phone/artkhkb',array('kbeiartId'=>$vo['id']))}">
+                    <div class="tu">
+                        <img src="/{$vo['thumb']}"/>
+                    </div>
+                    <div class="tit">
+                        <h6>{$vo['title']}</h6>
+                        <p>
+                           {$vo['desc']}
+                        </p>
+                    </div>
+                    </a>
+                    </li>
+{/volist}
+                </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <ul>
+                  {volist name='kbManRes' id='vo' offset='8' length='4'}
+                    <li>
+                    <a href="{:url('/phone/artkhkb',array('kbeiartId'=>$vo['id']))}">
+                    <div class="tu">
+                        <img src="/{$vo['thumb']}"/>
+                    </div>
+                    <div class="tit">
+                        <h6>{$vo['title']}</h6>
+                        <p>
+                           {$vo['desc']}
+                        </p>
+                    </div>
+                    </a>
+                    </li>
+{/volist}
+                </ul>
+                <li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{volist name='kbManRes' id='vo' offset='12' length='1'}
+                <a href="{:url('/phone/artkhkb',array('kbeiartId'=>$vo['id']))}">
+                <div class="tu">
+                    <img src="/{$vo['thumb']}"/>
+                </div>
+                <div class="tit">
+                    <h6> {$vo['title']}</h6>
+                    <p>
+                    {$vo['desc']}
+                    </p>
+                </div>
+                </a>
+{/volist}
+
+                </li>
+            </div>
+            <div class="hd">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+                    TouchSlide({ 
+                        slideCell:"#picScroll_t",
+                        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                        autoPage:true, //自动分页
+                        pnLoop:"false", // 前后按钮不循环
+                        switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+                    });
+                </script>
+        <div class="more">
+            <a href="{:url('/phone/khkb',array('navcateId'=>41))}">查看更多内容<img src="__PUBLIC__/images/more_xb1.png"/></a>
+        </div>
+    </div>
+    <!-- m5_m -->
+    <div class="m6_m">
+        <div class="sy_xnav">
+            <h6>NEWS & STRATEGY</h6>
+            <p>
+                全方位媒体报道
+            </p>
+        </div>
+        <div id="leftTabBox1" class="tabBox">
+            <div class="hd">
+                <ul>
+                    <li>新闻中心</li>
+                    <li>软装攻略</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                {volist name='sglManRes' id='vo' offset='0' length='1'}
+                    <dl>
+                        <a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}">
+                        <dt><img src="/{$vo['thumb']}"/></dt>
+                        <dd>
+                        <h6>{$vo['title']}</h6>
+                        <p>
+                            {$vo['desc']}
+                        </p>
+                        </dd>
+                        </a>
+                    </dl>
+                {/volist}
+                    <div class="news_t">
+
+ {volist name='sglManRes' id='vo' offset='1' length='5'}
+                        <li><a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}">{$vo['title']}</a></li>
+                            {/volist}
+                    </div>
+                </ul>
+                <ul>
+                     {volist name='rzgManRes' id='vo' offset='0' length='1'}
+                    <dl>
+                        <a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}">
+                        <dt><img src="/{$vo['thumb']}"/></dt>
+                        <dd>
+                        <h6>{$vo['title']}</h6>
+                        <p>
+                            {$vo['desc']}
+                        </p>
+                        </dd>
+                        </a>
+                    </dl>
+                {/volist}
+                    <div class="news_t">
+                        {volist name='rzgManRes' id='vo' offset='1' length='6'}
+                        <li><a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}">{$vo['title']}</a></li>
+                        {/volist}
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">TouchSlide({ slideCell:"#leftTabBox1" });</script>
+        <div class="more">
+            <a href="{:url('/phone/rzal',array('navcateId'=>42))}?page=1">查看更多新闻<img src="__PUBLIC__/images/more_xb1.png"/></a>
+        </div>
+    </div>
+    <!-- m6_m -->
+    <div class="m7_m">
+        <div class="container">
+<style>
+
+.m7_m #btnSubmit {
+    display: block;
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px auto 0;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+</style>
+<form action="" method='post'>
+            <h5><img src="images/input4.png" alt=""/>填写您的信息获取专业软装建议、报价</h5>
+            <input class="input1" name="chenhu" id="txtUserName" type="text" placeholder="请输入您的称呼"/>
+            <input class="input1" type="text" name="shouji" id="txtUserTel" placeholder="请输入您的手机号"/>
+            <input class="input1" type="text" name="mianji" id="txtTitle" placeholder="请输入您的房屋面积"/>
+            <input class="input2" type="radio" name="fang" value="1"/><span>新房</span>
+            <input class="input2" type="radio" name="fang" value="0"/><span>旧房</span>
+            <button id="btnSubmit" type='submit'>立即报名</button>
+
+</form>
+
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            var txtUserName = $("#txtUserName").val(),
+                                    txtUserTel = $("#txtUserTel").val(),
+                                    txtTitle = $("#txtTitle").val();
+            var txtContent = $("input[name='radio1']:checked").val();
+            if (txtUserName != "" && txtContent != "" && txtUserTel != "" && txtTitle != "") {
+                $.ajax({
+                    type: "get",
+                    contentType: "application/json",
+                    url: "/plugins/feedback/tools/ajax.ashx?action=add&site=main",
+                    data: { 'txtUserName': txtUserName, 'txtUserTel': txtUserTel, 'txtTitle': txtTitle, 'txtContent': txtContent },
+                    dataType: "json",
+                    success: function (msg) {
+                        alert(msg.msg);
+                        history.go(0) 
+                    }
+                });
+            } else {
+                alert("请填写完整的信息");
+                return false;
+            }
+        });
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+    {include file='commons/footer'}
+</body>
+</html>

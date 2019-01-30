@@ -1,0 +1,137 @@
+<dl class="dl-lst clear">
+<dt>房型：</dt>
+<dd class="dd show-more">
+<div class="option-list" data-type="fangxing">
+<a href="javascript:void(0);" data-xftrack="10134"  rel="nofollow" class="on">不限</a>
+<a href="javascript:goSort('goods_htypeid',1);" data-xftrack="10134"  rel="nofollow" >1室</a>
+<a href="javascript:goSort('goods_htypeid',2);" data-xftrack="10134"  rel="nofollow" >2室</a>
+<a href="javascript:goSort('goods_htypeid',3);" data-xftrack="10134"  rel="nofollow" >3室</a>
+<a href="javascript:goSort('goods_htypeid',4);" data-xftrack="10134"  rel="nofollow" >4室</a>
+</div>
+</dd>
+</dl>
+<dl class="dl-lst clear">
+<dt>售价：</dt>
+<dd class="dd show-more">
+<div class="option-list" >
+<a href="javascript:void(0);" data-xftrack="10134" class="on" rel="nofollow">不限</a>
+<a href="javascript:goSort('price',1);" data-xftrack="10134"  rel="nofollow">100万以下</a>
+<a href="javascript:goSort('price',2);" data-xftrack="10134"  rel="nofollow">100-150万</a>
+<a href="javascript:goSort('price',3);" data-xftrack="10134"  rel="nofollow">150-200万</a>
+<a href="javascript:goSort('price',4);" data-xftrack="10134"  rel="nofollow">200-250万</a>
+<a href="javascript:goSort('price',5);" data-xftrack="10134"  rel="nofollow">250-300万</a>
+<a href="javascript:goSort('price',6);" data-xftrack="10134"  rel="nofollow">300万以上</a>
+<div class="custom" data-type="price">
+<!-- <div class="txt-box">
+<input type="text" class="txt" name="min_price" data-index="2" value="" />
+</div> - 
+<div class="txt-box">
+<input type="text" class="txt" name="max_price" data-index="2" value="" />
+</div>
+ 万
+<input type="button" data-type="price" class="ok" value="确定" /> -->
+</div>
+</div>
+</dd>
+</dl>
+<dl class="dl-lst clear">
+<dt>特色：</dt>
+<dd class="dd show-more">
+<div class="option-list" >
+<a href="javascript:void(0);" data-xftrack="10134" class="on" rel="nofollow">不限</a>
+<a href="javascript:goSort('tese',1);" data-xftrack="10134"  rel="nofollow">观景飘窗</a>
+<a href="javascript:goSort('tese',2);" data-xftrack="10134"  rel="nofollow">低密度</a>
+<a href="javascript:goSort('tese',3);" data-xftrack="10134"  rel="nofollow">花园洋房</a>
+<a href="javascript:goSort('tese',4);" data-xftrack="10134"  rel="nofollow">车位充足</a>
+</div>
+</dd>
+</dl>
+<dl class="dl-lst clear">
+<dt>类型：</dt>
+<dd class="dd show-more">
+<div class="option-list" >
+<a href="javascript:void(0);" data-xftrack="10134" class="on" rel="nofollow">不限</a>
+<a href="javascript:goSort('goods_wy_type',1);" data-xftrack="10134"  rel="nofollow">住宅</a>
+<a href="javascript:goSort('goods_wy_type',2);" data-xftrack="10134"  rel="nofollow">别墅</a>
+<a href="javascript:goSort('goods_wy_type',3);" data-xftrack="10134"  rel="nofollow">写字楼</a>
+<a href="javascript:goSort('goods_wy_type',4);" data-xftrack="10134"  rel="nofollow">商铺</a>
+<a href="javascript:goSort('goods_wy_type',5);" data-xftrack="10134"  rel="nofollow">底商</a>
+</div>
+</dd>
+</dl>
+<dl class="dl-lst clear">
+<dt>售卖：</dt>
+<dd class="dd show-more">
+<div class="option-list" >
+<a href="javascript:void(0);" data-xftrack="10134" class="on" rel="nofollow">不限</a>
+<a href="javascript:goSort('ifshou',1);" data-xftrack="10134"  rel="nofollow">在售</a>
+<a href="javascript:goSort('ifshou',2);" data-xftrack="10134"  rel="nofollow">售罄</a>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function getQueryString(){
+     var result = location.search.match(new RegExp("[\?\&][^\?\&]+=[^\?\&]+","g"));
+     if(result == null){
+         return "";
+     }
+     for(var i = 0; i < result.length; i++){
+         result[i] = result[i].substring(1);
+     }
+     return result;
+}
+function goSort(name,value){
+    var string_array = getQueryString();
+    var oldUrl = (document.URL.indexOf("loupan.html")==-1)?document.URL+"loupan.html":document.URL;
+    var newUrl;
+    // alert(name)
+    // alert(value)
+    
+    if(string_array.length>0)//如果已经有筛选条件
+    {   
+        var repeatField = false;
+        for(var i=0;i<string_array.length;i++){
+            if(!(string_array[i].indexOf(name)==-1)){
+                repeatField = true;//如果有重复筛选条件，替换条件值
+                newUrl = oldUrl.replace(string_array[i],name+"="+value);
+            }
+        }
+        // 如果没有重复的筛选字段
+        if(repeatField == false){
+            newUrl = oldUrl+"&"+name+"="+value;
+        }
+    }
+    if(string_array.length==false)
+    {
+        newUrl = document.URL+"?"+name+"="+value;
+    }
+    // alert(newUrl)
+    //跳转
+    window.location = newUrl;
+}
+function setSelected(name,value){
+    var all_li = $("#"+name).find("li");
+    //清除所有li标签的selected类
+    all_li.each(function(){
+        $(this).removeClass("selected");
+    });
+    //为选中的li增加selected类
+    all_li.eq(value).addClass("selected");
+}
+$(document).ready(function(){
+    var string_array = getQueryString();
+    for(var i=0;i<string_array.length;i++){
+        var tempArr = string_array[i].split("=");
+        setSelected(tempArr[0],tempArr[1]);//设置选中的筛选条件
+    }
+});
+</script>
+--------------------- 
+作者：丶焦人 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_39780174/article/details/79456817 
+版权声明：本文为博主原创文章，转载请附上博文链接！

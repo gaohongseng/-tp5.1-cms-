@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+
+{include file='commons/banner'}
+
+
+{include file='commons/position'}
+
+
+
+
+    <div class="ny clearfix">
+
+
+          {include file='commons/left'}
+
+
+
+
+
+
+        <!-- ny_l 结束 ------------------------------------------->
+        <div class="ny_r fr">
+           <div class="bt_h"><i class="icon_xb xw"></i><a href="">软装产品介绍</a></div>
+           <dl class="news_main1">
+              
+              {volist name='glueRes' id='vo' offset='0' length='1'}
+                  <dt>
+                     <a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">{$vo['title']}</a>
+                  </dt>
+                  <dd class="dd_p">{$vo['desc']}<a href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">【查看详情】</a>
+                  </dd>
+              {/volist}
+          </dl>
+          <!--------news_main1 end------------>
+          <div class="news_main2">   
+              <!--取得一个分页DataTable--> 
+
+       
+            {volist name='glueRes' id='vo'}
+              <dl>
+                      <dt><a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}"><img src="{if $vo['thumb']}/{$vo['thumb']}{else/}__DEDEIMG__{/if}" title="{$vo['title']}" alt="{$vo['title']}"></a></dt>
+                      <dd>
+                          <h3><a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}" title="{$vo['title']}">{$vo['title']}</a></h3>
+                          <p class="dd_p">{$vo['desc']}</p>
+                          <span class="news_more"><a target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">了解详情 +</a></span>
+                      </dd>
+                  </dl>
+      
+        {/volist}     
+           </div>
+           <!--------news_main2 end------------>   
+           <div class="digg">
+           <!--    <span>共131记录</span><span class="disabled">上一页</span><span class="current">1</span><a href="/news/20/2.html">2</a><a href="/news/20/3.html">3</a><a href="/news/20/4.html">4</a><span>...</span><a href="/news/20/14.html">14</a><a href="/news/20/2.html">下一页</a> -->
+
+          {$glueRes->render()}
+
+           </div>
+           <!--翻页 end-->          
+
+            <div class="xnav_m3">
+               <h2>热门文章<em>/ Popular articles</em></h2>
+               <span></span>
+           </div> 
+            <ul class="nycp_news1 clearfix"> 
+                  
+
+                  {volist name='glueManRes' id='vo' offset='0' length='10'} 
+                    <li><a title="{$vo['title']}" target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">{$vo['title']}</a><span>[{$vo['time']|date='Y-m-d',###}]</span></li>
+                  {/volist}
+                    
+            </ul>
+            <!--------nycp_news end------------>
+        </div>
+        <!-- ny_r 结束 ------------------------------------------->
+        <div class="clear"></div>
+    </div>
+
+
+
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

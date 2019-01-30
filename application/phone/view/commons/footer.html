@@ -1,0 +1,136 @@
+
+    <footer id="footer">
+        {$articleqita10['content']}
+    </footer>
+
+
+
+
+        </main>
+        <!-- cd-main-content -->
+<!-- 网站侧导航 -->
+    <nav id="cd-lateral-nav">
+            <ul class="cd-navigation cd-single-item-wrapper">
+               <li><a href="/phone">首页</dd></a></li>
+
+{volist name='getNav' id='vo'}
+               <li><a href="/phone/{if $vo['id'] eq 42}rzal{elseif $vo['id'] eq 39/}sjtd{elseif $vo['id'] eq 5/}#liucheng{elseif $vo['id'] eq 41/}khkb{elseif $vo['id'] eq 44/}rzgl{elseif $vo['id'] eq 7/}gywm{elseif $vo['id'] eq 45/}hdzq{/if}{if $vo['id'] eq 42}/navcateId/{$vo['id']}?page=1{elseif $vo['id'] eq 5/}{else/}/navcateId/{$vo['id']}{/if}">{$vo['catename']}</a></li>
+        
+{/volist}
+
+
+            </ul> <!-- cd-single-item-wrapper -->
+        </nav>
+    <script src="/static/phone/js/nav.js"></script>
+    <!-- 网站侧导航 end -->
+    </div>
+    
+    <nav id="tool">
+        <ul>
+            <li><a href="#"><img src="/static/phone/images/jz_tb1.png" /><span>在线咨询</span></a></li> 
+            <li><a href="tel:{$boxconf17['value']}"><img src="/static/phone/images/jz_tb2.png" /></em><span>电话咨询</span></a></li> 
+            <li><a href="{:url('/phone/rzal',array('navcateId'=>42))}?page=1"><img src="/static/phone/images/jz_tb3.png" /><span>案例中心</span></a> </li>
+            <li><a href="{:url('/phone/gywm',array('navcateId'=>7))}"><img src="/static/phone/images/jz_tb4.png" /><span>关于我们</span></a> </li>
+        </ul>
+    </nav>
+	<div id="sort_content">
+        <div class="asort">
+            <div class="hd">
+                <div class="wrap">
+                    <div class="fl">
+                        <i></i><span>软装案例</span><div class="clear">
+                        </div>
+                    </div>
+                    <div class="fr">
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="ct">
+                <div class="wrap">
+                    <ul>
+        
+                   <a href="/case/17.html"><li><i></i><span>别墅</span><i class="e"></i></li></a>
+                    
+                     <dl>
+                    
+                     </dl>
+                
+                   <a href="/case/16.html"><li><i></i><span>精装房</span><i class="e"></i></li></a>
+                    
+                     <dl>
+                    
+                     </dl>
+                
+                   <a href="/case/18.html"><li><i></i><span>商业空间</span><i class="e"></i></li></a>
+                    
+                     <dl>
+                    
+                     </dl>
+                 
+                    </ul>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="asort">
+            <div class="hd">
+                <div class="wrap">
+                    <div class="fl">
+                        <i></i><span>
+{if $getnavDing}
+ {$getnavDing['catename']}
+ {/if}
+                       
+
+                    </span><div class="clear">
+                        </div>
+                    </div>
+                    <div class="fr">
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="ct">
+                <div class="wrap">
+                    <ul>
+              
+
+    {if input('navcateId') eq 42} 
+
+
+        {volist name='showtwo' id='vo'}       
+         <a href="javascript:goSort('leixin','{$vo}');" leixin="{$vo}"><li><i></i><span>{$vo}</span><i class="e"></i></li></a>
+          
+           <dl>
+          
+           </dl>
+        {/volist}
+
+    {else/}
+
+        {volist name='getnavPos' id='vo'}       
+         <a href="/phone/{if $vo['id'] eq 42}rzal{elseif $vo['id'] eq 39/}sjtd{elseif $vo['id'] eq 5/}#liucheng{elseif $vo['id'] eq 41/}khkb{elseif $vo['id'] eq 44/}rzgl{elseif $vo['id'] eq 46/}rzgl{elseif $vo['id'] eq 47/}rzgl{elseif $vo['id'] eq 48/}rzgl{elseif $vo['id'] eq 49/}rzgl{elseif $vo['id'] eq 50/}rzgl{elseif $vo['id'] eq 7/}gywm{elseif $vo['id'] eq 45/}hdzq{/if}/navcateId/{if $vo['id'] eq 42}{$vo['id']}?page=1{elseif $vo['id'] eq 5/}{else/}{$vo['id']}{/if}"><li><i></i><span>{$vo['catename']}</span><i class="e"></i></li></a>
+           <dl>
+           </dl>
+        {/volist}
+
+    {/if}       
+                        
+                          
+                    </ul>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  <script language="javascript" src="/static/phone/js/zepto.min.js"></script>
+
+	<script language="javascript" src="/static/phone/js/fx.js"></script>
+
+	<script language="javascript" src="/static/phone/js/script1.js"></script>

@@ -10,7 +10,7 @@
 <!-- Sidebar Menu -->
 <ul class="nav sidebar-menu">
     <!--Dashboard-->
-  
+
     <li>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa fa-user"></i>
@@ -85,7 +85,7 @@
             <i class="menu-expand"></i>
         </a>
         <ul class="submenu">
-             {if condition="$getarticle"}
+ {if condition="$getarticle"}
             <li>
                 <a href="{:url('tparticle/lists',array('typeid'=>1))}">
                     <span class="menu-text">
@@ -171,6 +171,25 @@
         </ul>                            
     </li> 
 
+
+
+    <li>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa  fa-chain"></i>
+            <span class="menu-text">搜索标签</span>
+            <i class="menu-expand"></i>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="{:url('tpsearch/lists')}">
+                    <span class="menu-text">
+                        搜索列表                                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+        </ul>                            
+    </li> 
+    
 
 
     <li>

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="loading">
+              
+
+   {include file='commons/header'}
+    <div id="container">
+    
+    <main class="cd-main-content" id="f1">
+             {include file='commons/nav'}
+    <!--ward-->
+         
+ {include file='commons/position'}
+
+
+
+
+
+
+
+<div class="inabout-info">
+  <div class="newstit">
+    {$gongThe['title']}
+  </div>
+  <div class="newsdate">
+     {$gongThe['time']|date="Y-m-d H:i",###}
+  </div>
+  <div>
+    {$gongThe['content']}
+    <!--推荐阅读-->
+    <div class="section">
+      <h1>推荐阅读</h1>
+    </div>
+    <div>
+      <ul class="list listview">
+
+          {volist name='glueanli' id='vo' offset='0' length='10'}
+        <li>
+        <a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}" data-ignore="true">
+        <i class="date">{$vo['create_time'|date='m-d',###]}</i>
+        <span class="text">{$vo['title']}</span>
+        </a>
+        </li>
+       {/volist}
+      </ul>
+    </div>
+    <!--/推荐阅读-->
+  </div>
+</div>
+
+
+
+  {include file='commons/footer'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -48,7 +48,7 @@ class TpBase extends Controller
 
 	//得到所有的文章
 	public function getarticle(){
-		$getarticle=db('cate')->where("type",1)->field('catename,id')->select();
+		$getarticle=db('cate')->where("type",1)->field('catename,id')->order('sort asc')->select();
 		
 		$this->assign('getarticle',$getarticle);
 	}

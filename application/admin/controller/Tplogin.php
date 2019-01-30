@@ -10,13 +10,18 @@ class Tplogin extends Controller
  		$data=input('post.'); 
 
         if(request()->isPost()){
-          // $this->check(input("code"));
+          $this->check(input("code"));
 
           $login=new AdminModel();
           $res=$login->login($data);
+         
+
+    
+
 
        if($res==1){
   $this->success('信息正确!正在调整....',url('tpindex/index'),'',0.5);  
+
        }elseif($res==4){
 $this->error('验证码错误','tplogin/login','',0.5);
        }else if($res==2){

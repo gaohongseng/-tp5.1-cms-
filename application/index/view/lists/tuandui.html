@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+{include file='commons/banner'}
+
+
+{include file='commons/position'}
+
+
+
+
+  
+
+
+
+
+
+  <ul class="ln-lst f-cb">
+        <!--取得一个分页DataTable--> 
+
+        {volist name='tuanduiRes' id='vo'}
+       
+        <li>
+            <div class="ln-lt-i"><a href="{:url('/artsjtd',array('tuanartId'=>$vo['id']))}"><img src="/{$vo['thumb']}" alt=""></a></div>
+            <h3>{$vo['title']}<span><a href="{:url('/artsjtd',array('tuanartId'=>$vo['id']))}">{$vo['author']}</a></span></h3>
+            <h6>{$vo['desc']}</h6>
+            <a class="more1" href="{:url('/artsjtd',array('tuanartId'=>$vo['id']))}">more</a>
+        </li>
+       
+        {/volist}
+      
+        
+        <div class="clear"></div>
+    </ul>
+
+
+
+
+
+    <div class="digg t">
+
+
+        {$tuanduiRes->render()}
+
+
+    </div>
+
+
+
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

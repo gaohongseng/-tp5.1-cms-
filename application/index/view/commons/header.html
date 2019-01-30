@@ -1,120 +1,55 @@
+<title>{$boxconf5['value']}</title>
+<meta name="keywords" content="{$boxconf4['value']}"/>
+<meta name="description" content="{$boxconf3['value']}"/>
+<link href="__PUBLIC__/css/Index.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Common.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.ad-gallery.css"/>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/common.js"></script>
+</head>
+<body>
+<div class="top_m">
+  <div class="dingbu clearfix">
+    <p>
+      您好，欢迎访问{$boxconf18['value']}官方网站！
+    </p>
+    <ul>
+      <li id="moquu_wxin" class="moquu_wxin">
+      <a rel="nofollow" href="javascript:void(0)" looyu_bound="1"><img class="t" src="__PUBLIC__/images/top_tb1.png"/>关注微信
+      <div class="moquu_wxinh">
 
-<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" language="javascript">
- function mobile_device_detect()
- {
-  var thisOS=navigator.platform;
-  var os=new Array("iPhone","iPod","iPad","android","Nokia","SymbianOS","Symbian","Windows Phone","Phone","Linux armv71","MAUI","UNTRUSTED/1.0","Windows CE","BlackBerry","IEMobile");
-   var url = 0;  
-   var now_url = window.location.href;
-   now_url = now_url.replace("www.","m.");
-   for(var i=0;i<os.length;i++){
-    if(thisOS.match(os[i]) && url == 0){
-      url = now_url;
-      window.location.href = ""+url;
-      return;
-    }  
-   }
-   //因为相当部分的手机系统不知道信息,这里是做临时性特殊辨认
-   url = 0;
-   if(navigator.platform.indexOf('iPad') != -1  && url == 0){
-    url = now_url;
-    window.location.href = ""+url;
-    return;
-   }
-   //做这一部分是因为Android手机的内核也是Linux
-   //但是navigator.platform显示信息不尽相同情况繁多,因此从浏览器下手，即用navigator.appVersion信息做判断
-    var check = navigator.appVersion;
-    if( check.match(/linux/i) ){
-       //X11是UC浏览器的平台 ，如果有其他特殊浏览器也可以附加上条件
-       url = 0;
-       if((check.match(/mobile/i) || check.match(/X11/i)) && url == 0 ){
-        url = now_url;
-        window.location.href = ""+url;
-        return;
-       }  
-    }
-   //类in_array函数
-   Array.prototype.in_array = function(e){
-      for(i=0;i<this.length;i++)
-      {
-         if(this[i] == e)
-         return true;
-      }
-      return false;
-   }
- } 
-mobile_device_detect();
-</script>
-<style type="text/css">
-.logo_tel .logo a img{ position:relative;top:-16px;}
-</style>
-<!--<div style="width:100%;height:135px;background:url(__PUBLIC__/images/cqzgkj_ganenj.jpg) no-repeat top center; cursor:pointer;"><a href="http://www.zhuoguang.net/newv/gsdtv/354.html" title="5折封顶感恩大促一样的质量不一样的价格买2送2买3送3" style="width:100%;height:130px;display:block;"></a>
-</div>
--->
-<div class="top">
-<div class="main_con">
-  <div class="top_l fl">
-    您好！欢迎进入卓光科技
-  </div>
-  <div class="top_r fr">
-    <ul class="ul_fl">
-      <li><a href="/" id="addHomePage" rel="sidebar" title="设为首页">设为首页</a><span>|</span></li>
-      <li><a href="/" id="favorites" rel="sidebar" title="收藏本站">收藏本站</a><span>|</span></li>
-      <li><a href="/sitemap.html" title="网站地图" target="_blank">网站地图</a><span>|</span></li>
-      <!--<li><a href="/rssmap.html" title="rssmap" target="_blank">rss</a><span>|</span></li>
-      -->
-      <li><a href="#" title="手机网站" target="_blank">手机网站</a><span>|</span></li>
-      <li><a href="javascript:void();" title="官方微信" id="top_weixin">官方微信</a></li>
+
+        <div class="z">
+         {$articleqita7['content']}
+        </div>
+
+
+
+      </div>
+      </a>
+      </li>
+      <li><a><img class="t" src="__PUBLIC__/images/top_tb2.png"/>{$boxconf17['value']}</a></li>
+      <li><a href="#"><img class="t" src="__PUBLIC__/images/top_tb3.png"/>网站地图</a></li>
     </ul>
-    <div class="top_weixin fr">
-      <img src="__PUBLIC__/images/weixin.jpg"/>
+  </div>
+</div>
+<!-- / top_m 结束 -->
+
+<div class="header">
+  <div class="main clearfix">
+    <div class="logo">
+     {$articleqita1['content']}
     </div>
-  </div>
-</div>
-<div class="clear">
-</div>
-</div>
-<div class="logo_tel">
-<div class="main_con">
-  <div class="h16">
-  </div>
-  <div class="logo fl">
-
-
-{$getlogo['content']}
-
-
-    <script type="text/javascript">
-        var logo_t = Math.random();
-        var logo_src = "__PUBLIC__/images/logo.gif?"+logo_t;
-        $("#xh_add_logo").attr("src",logo_src);
-      </script>
-    <div class="fl logo_txt">
-      为企业创造价值，我们懂技术，更懂营销！
+    <div class="zi">
+     {$articleqita5['content']}
     </div>
+    <ul class="nav_sy">
+      <li><a rel="nofollow" href="/">首页</a><i></i></li>
+
+      {volist name='getNav' id='vo'}
+      <li><a href="/{if $vo['id'] eq 42}rzal{elseif $vo['id'] eq 39/}sjtd{elseif $vo['id'] eq 5/}#liucheng{elseif $vo['id'] eq 41/}khkb{elseif $vo['id'] eq 44/}rzgl{elseif $vo['id'] eq 7/}gywm{elseif $vo['id'] eq 45/}hdzq{/if}/navcateId/{if $vo['id'] eq 42}{$vo['id']}?page=1{elseif $vo['id'] eq 5/}{else/}{$vo['id']}{/if}">{$vo['catename']}</a><i></i></li>
+      {/volist}
+    </ul>
   </div>
-  <div class="tel fr">
-  </div>
-</div>
-<div class="clear">
-</div>
-</div>
-<div class="header_nav">
-<div class="header_nav_ul">
-  <ul class="ul_fl">
-    <li class ="" ''><span><a href="/" title="首页">首页</a></span><span class="line">|</span></li>
-
-{volist name='cateres' id='cate'}
-    <li class=""><span><a href="/{if condition="$cate['type'] eq 1 && $cate['id'] eq 4"/}jdal{elseif condition="$cate['type'] eq 1 && $cate['id'] eq 26"/}xwzx{elseif condition="$cate['id'] eq 32 && $cate['type'] eq 2"}gywm{elseif condition="$cate['id'] eq 33 && $cate['type'] eq 2"/}lxwm{else/}yxxwz{/if}/{if condition="$cate['type'] eq 1 && $cate['id'] eq 4"}tulistId{elseif condition="$cate['type'] eq 1 && $cate['id'] eq 26"/}artlistId{/if}{if condition="$cate['type'] eq 2 && $cate['id'] eq 3"}fenmianId{elseif condition="$cate['type'] eq 2 && $cate['id'] eq 5"/}fenmianId{elseif condition="$cate['type'] eq 2 && $cate['id'] eq 7"/}fenmianId{elseif condition="$cate['type'] eq 2 && $cate['id'] eq 32"/}fenmiansId{elseif condition="$cate['type'] eq 2 && $cate['id'] eq 33"/}fenmiansId{/if}{if condition="$cate['type'] eq 3"}videoId{/if}/{$cate['id']}" title="营销型网站">{$cate['catename']}</a></span><span class="line">|</span></li>
-{/volist}
-  </ul>
-</div>
-<div class="clear">
 </div>
 
-
-</div>
-<!-- /header -->
-<div class="banner_n" style="background-image:url(__PUBLIC__/images/1-150929163024l8.jpg);">
-</div>
+<!-- / 导航 结束 --->

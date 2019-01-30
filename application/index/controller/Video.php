@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
-use app\index\model\Tonpan2_video as VideoModel;
+use app\index\model\video as VideoModel;
 
 class Video extends Cms2base
 {

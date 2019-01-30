@@ -22,7 +22,7 @@ class Article extends Model
 			if($_FILES['thumb']['tmp_name']){
 		        
 		       
-		       $arts=article::get(input("cateid"));
+		       $arts=article::get(input("artid"));
 		       $thumbpath=$_SERVER['DOCUMENT_ROOT'].'/public/'.$arts->thumb;
 		
 		   		if(file_exists($thumbpath)){
@@ -46,7 +46,7 @@ class Article extends Model
 
  		//删除前
  			Article::event('before_delete',function($data){
- 				$arts=article::get(input("cateid"));
+ 				$arts=article::get(input("artid"));
 
  				$thumbpath=$_SERVER['DOCUMENT_ROOT'].'/public/'.$arts->thumb;
 		   		if(file_exists($thumbpath)){

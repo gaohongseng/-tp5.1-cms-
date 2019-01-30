@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+{include file='commons/banner'}
+{include file='commons/position'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ny clearfix">
+        <div class="ny_r fr">
+           <div class="xnav_m3">
+               <h2>{$tuanThe['author']}简介<em>/ The teacher introduction</em></h2>
+               <span></span>
+            </div>
+           <div class="team_t1 clearfix">
+                <div class="tu fl"><img src="{if $tuanThe['thumb']} /{$tuanThe['thumb']}{else/}__DEDEIMG__{/if}"></div>
+                <div class="zi fr">
+                <div class="zi1"><h6>{$tuanThe['author']}<span></span></h6></div>
+                <dl class="zi3">
+                   <dt>
+                       <div class="t">摘要：</div>
+                       <div class="b"><p><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">{$tuanThe['author']}</span></strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"> {$tuanThe['title']}</span></p><p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">{$tuanThe['desc']}</span></p><p><br></p></div>
+                   </dt>
+                   <dt style="position:absolute;bottom:0;"><a target="_blank" href="#">快速咨询</a></dt>
+                </dl>
+            </div>
+           </div>
+           <div class="entry">
+{$tuanThe['content']}
+           	
+
+           </div>
+          
+          
+           <div class="next-prev-single">
+          <p class="prev">
+ {if $tuanPrev}
+	上一篇:<a href="{:url('/artsjtd',array('tuanartId'=>$tuanPrev[0]['id']))}">{$tuanPrev[0]['title']}</a>
+{else/}
+	上一篇：没有了
+{/if}
+
+          </p>
+              <p class="next">
+
+{if $tuanNext}
+	下一篇: <a href="{:url('/artsjtd',array('tuanartId'=>$tuanNext[0]['id']))}">{$tuanNext[0]['title']}</a>
+{else/}
+	下一篇：没有了
+{/if}
+              	
+
+              </p>
+           </div>
+           <!--/上下篇-->
+           <div class="xnav_m3">
+               <h2>热门文章<em>/ Popular articles</em></h2>
+               <span></span>
+           </div> 
+            <ul class="nycp_news1 clearfix"> 
+                
+                    {volist name='glueManRes' id='vo' offset='0' length='10'}
+                
+                    <li><a title="{$vo['title']}" target="_blank" href="/news/show-502.html">{$vo['title']}</a><span>[{$vo['time']|date='Y-m-d',###}]</span></li>
+            
+             	 {/volist}    
+                
+            </ul>
+            <!--------nycp_news end------------>
+            <div class="xnav_m3">
+               <h2>经典案例<em>/ CLASSIC CASE</em></h2>
+               <span></span>
+            </div> 
+            <div class="w_al w_al2">
+               <ul>
+                {volist name='anliManRes' id='vo' offset='0' length='2'}
+             
+                      <li>
+                       <div class="tu">
+                           <a target="_blank" title="{$vo['title']}" href="/case/show-444.html">
+                              <img src="{volist name='vo.arttusrc' id='imgs' offset='0' length='1'}/static/admin/arttupian/ben/{$imgs['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}">
+                              <div class="title"><h3>{$vo['title']}</h3><p>{$vo['desc']}</p></div>
+                           </a>
+                       </div>
+                   </li>
+                
+             	 {/volist}    
+                   
+                   
+               </ul>
+            </div>
+            <!--------w_al end------------>
+        </div>
+        <!-- ny_r 结束 ------------------------------------------->
+        <div class="ny_l fl">
+           <div class="sideMenu">
+              <div class="xnav">
+                  <i></i>
+                  <a title="" href="{:url('/sjtd',array('navcateId'=>39))}"><em class="icon_xb xc"></em>设计团队</a>
+              </div>
+              <ul>
+                  
+                      <li><a href="{:url('/sjtd',array('navcateId'=>39))}" class="ce_dianji">设计团队<i></i></a></li>
+                      
+
+              </ul>
+           </div>
+           <!-- sideMenu 结束 ------------------------------------------->
+           
+<div class="sideMenu1">
+              <h2><a href="/rzal/navcateId/42?page=1">软装案例</a></h2>
+              <div class="side_t">
+               
+
+
+                {volist name='anliManRes' id='vo' offset='0' length='7'}
+              
+                   <h5 class="on"><em>1</em><a title="{$vo['title']}" href="/case/show-444.html">{$vo['title']}</a></h5>
+                      <dl style="display: block;">
+                          <a title="{$vo['title']}" href="/case/show-444.html" target="_blank"><img src="{volist name='vo.arttusrc' id='imgs' offset='0' length='1'}/static/admin/arttupian/ben/{$imgs['imgsrc']}{/volist}" title="" alt=""></a>
+                      </dl>
+                       
+                  
+              {/volist}
+                  
+                        
+
+
+              </div>
+              <!-- side_t 结束 -->
+           </div>
+           
+           
+
+<div class="ny_contact">
+
+
+
+               <div class="zi1">
+                  <p><img src="/static/index/images/top_dh1.png">{$boxconf17['value']}</p>
+               </div>
+
+
+              {$articleqita6['content']}
+           </div>
+         </div>
+         <!-- ny_l 结束 ------------------------------------------->
+         <div class="clear"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

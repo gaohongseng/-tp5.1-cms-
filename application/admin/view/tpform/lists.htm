@@ -60,8 +60,8 @@
     <th class="text-center">ID</th>
     <th class="text-center">姓名</th>
     <th class="text-center">手机号码</th>
-    <th class="text-center">QQ号码</th>
-  <th class="text-center">留言内容</th>
+    <th class="text-center">房屋面积</th>
+  <th class="text-center">是否新房</th>
    
     <th class="text-center">操作</th>
 </tr>
@@ -70,12 +70,12 @@
     {volist name='list' id='vo'}
 <tr>
     <td align="center">{$vo.id}</td>
-     <td align="center"><?php echo mb_substr($vo['xinmin'],0,20,'utf-8');if(strlen($vo['xinmin'])>20){echo '...';}?></td>
+     <td align="center"><?php echo mb_substr($vo['chenhu'],0,20,'utf-8');if(strlen($vo['chenhu'])>20){echo '...';}?></td>
 
     <td align="center"><?php echo mb_substr($vo['shouji'],0,20,'utf-8');if(strlen($vo['shouji'])>20){echo '...';}?></td>
-    <td align="center"><?php echo mb_substr($vo['qq'],0,20,'utf-8');if(strlen($vo['qq'])>20){echo '...';}?></td>
+    <td align="center"><?php echo mb_substr($vo['mianji'],0,20,'utf-8');if(strlen($vo['mianji'])>20){echo '...';}?></td>
 
-    <td align="center"><?php echo mb_substr($vo['content'],0,20,'utf-8');if(strlen($vo['content'])>20){echo '...';}?></td>
+    <td align="center">{if $vo['fang'] eq 0}旧房{else/}新房{/if}</td>
 
 
 

@@ -1,57 +1,11 @@
-<div class="case_nav">
-<div class="main_con">
-	<ul class="ul_fl">
 
-{if condition="input('fenmiansId') neq '' or input('theid') neq ''"}
-	{volist name='fenmiansId' id='vo'}
-		<li class=""><a href="/{if condition='$vo["id"] eq 32'}gywm{elseif condition='$vo["id"] eq 33'/}lxwm{elseif condition='$vo["id"] eq 34'/}zzry{elseif condition='$vo["id"] eq 35'/}hkfs{elseif condition='$vo["id"] eq 36'/}tgsp{elseif condition='$vo["id"] eq 37'/}tdfc{/if}/{if condition='$vo["id"] neq 37'}fenmiansId{else/}fenmiansId{/if}/{$vo['id']}" title="{$vo['catename']}">{$vo['catename']}</a></li>
-	{/volist}
-{/if}
-
-<!-- tulistsId -->
-
-
-{if condition="input('tulistId') neq '' or input('lisid') neq ''"}
-	{volist name='tulistsId' id='vo'}
-		<li class=""><a href="/jdal/tulistId/{$vo['id']}" title="{$vo['catename']}">{$vo['catename']}</a></li>
-	{/volist}
-{/if}
-
-
-
-
-{if condition="input('artlistId') neq '' or input('artid') neq ''"}
-	{volist name='artlistsId' id='vo'}
-		<li class=""><a href="/xwzx/artlistId/{$vo['id']}" title="{$vo['catename']}">{$vo['catename']}</a></li>
-	{/volist}
-{/if}
-
-
-
-{if condition="input('wtlistId') neq '' or input('wtid') neq ''"}
-	{volist name='wtlistsId' id='vo'}
-		<li class=""><a href="/cjwt/wtlistId/{$vo['id']}" title="{$vo['catename']}">{$vo['catename']}</a></li>
-	{/volist}
-{/if}
-
-
-
-	</ul>
-	<div class="nav_postion fr">
-		当前位置：
-{if condition="input('tulistId') neq '' or input('artlistId') or input('fenmiansId') or input('wtlistId')"}
-
-	{volist name='posArr' id='vo'}
-		<a href='#'>{$vo['catename']}</a> > 
-	{/volist}
-{/if}
-
-{if condition="input('lisid') neq '' or input('artid') or input('theid') or input('wtid')"}
-
-	{volist name='posArrart' id='vo'}
-		<a href='#'>{$vo['catename']}</a> > 
-	{/volist}
-{/if}
-	</div>
-</div>
-</div>
+<div class="search">
+        <div class="main clearfix">
+           <p>您的位置：<a href="/">首页</a>&nbsp;&gt;&nbsp;
+{volist name='getPos' id='vo'}
+	<a href="/{if $vo['id'] eq 42}rzal{elseif $vo['id'] eq 39/}sjtd{elseif $vo['id'] eq 5/}fwlc{elseif $vo['id'] eq 41/}khkb{elseif $vo['id'] eq 44/}rzgl{elseif $vo['id'] eq 46/}rzgl{elseif $vo['id'] eq 47/}rzgl{elseif $vo['id'] eq 48/}rzgl{elseif $vo['id'] eq 49/}rzgl{elseif $vo['id'] eq 50/}rzgl{elseif $vo['id'] eq 7/}gywm{elseif $vo['id'] eq 45/}hdzq{/if}/navcateId/{$vo['id']}">{$vo['catename']}</a> >
+{/volist}
+           </p>   
+           <div class="search1"><input type="text" class="inp01" onfocus="this.value=''" id="keyword" name="keyword" value="请输入您的关键词" placeholder="" onkeydown="if(event.keyCode==13){SiteSearch('/search/quanzhan', '#keyword');return false};" x-webkit-speech=""><input type="button" title="搜索" value="搜索" class="inpso" onclick="SiteSearch('/search/quanzhan', '#keyword');"></div>
+        </div>
+    </div>

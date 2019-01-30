@@ -1,0 +1,188 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="loading">
+              
+
+   {include file='commons/header'}
+    <div id="container">
+    
+    <main class="cd-main-content" id="f1">
+             {include file='commons/nav'}
+    <!--ward-->
+	       
+ {include file='commons/position'}
+
+
+
+	<div class="inabout">
+       <div class="newslistwrap">     
+          <!--取得一个分页DataTable-->
+{volist name='imgRes' id='vo'}  
+        <ul>
+            <div class="newslistbox">
+
+                <li class="newsdate2"><img src="/static/admin/arttupian/ben/{volist name='$vo.arttusrc' id='list' offset='0' length='1'}{$list['imgsrc']}{/volist}" /></li>
+
+                <li class="newsinfo">
+    					<a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}" class="nbut1" ><div class="news-tit">{$vo['title']}</div></a>
+                        <a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}" class="nbut1" ><div class="news-zy">{$vo['desc']}</div></a>
+                </li>
+
+                <div class="clear"></div>
+
+            </div>
+		</ul>
+{/volist}           
+       
+          
+                        
+     		<div class="pager">
+
+                {$imgRes->render()}
+
+
+
+                </div>
+			            <div style="height:30px" ></div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+  {include file='commons/footer'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function getQueryString(){
+     var result = location.search.match(new RegExp("[\?\&][^\?\&]+=[^\?\&]+","g"));
+
+     if(result == null){
+         return "";
+     }
+     for(var i = 0; i < result.length; i++){
+         result[i] = result[i].substring(1);
+     }
+     return result;
+}
+function goSort(name,value){
+    var string_array = getQueryString();
+
+    // var oldUrl = (document.URL.indexOf("loupan.html")==-1)?document.URL+"loupan.html":document.URL;
+    var oldUrl = document.URL;
+    var newUrl;
+    // alert(name)
+    // alert(value)
+    
+    if(string_array.length>0)//如果已经有筛选条件
+    {   
+
+        var repeatField = false;
+        for(var i=0;i<string_array.length;i++){
+            if(!(string_array[i].indexOf(name)==-1)){
+                repeatField = true;//如果有重复筛选条件，替换条件值
+                //这里我多加了一个判断，如果值重复，那么把&+参数还有值都替换
+                if(value==0){
+                    var arr = oldUrl.indexOf("&");
+                    if(arr>=0){
+                        newUrl = oldUrl.replace('&'+string_array[i],'');
+                    }else{
+                         newUrl = oldUrl.replace('?'+string_array[i],'');
+
+                    }
+                    // var arrs = oldUrl.indexOf("page");
+                    // if(arrs>=50){
+                    //     newUrl = oldUrl.replace('&page=','');
+                    // }
+                     
+                }else{
+
+                     newUrl = oldUrl.replace(string_array[i],name+"="+value);
+                }
+               
+                
+            }
+        }
+        // 如果没有重复的筛选字段
+        if(repeatField == false){
+            //如果参数不为0才加新的值，如果为0了那还保持原来的不变
+            if(value!=0){
+                newUrl = oldUrl+"&"+name+"="+value;
+
+            }else{
+                newUrl = oldUrl;
+            }
+            
+
+        }else{
+
+        }
+    }
+    if(string_array.length==false)
+    {
+        if(value==0){
+
+newUrl = document.URL;
+        }else{
+
+            newUrl = document.URL+"?"+name+"="+value;
+        }
+        
+       
+    }
+  
+
+    // alert(newUrl)
+    //跳转
+    window.location = newUrl;
+}
+function setSelected(name,value,t){
+    // var value = encodeURI(encodeURI(value));
+    var value = decodeURIComponent(value);
+
+    var all_li = $("."+name).find("a");
+
+    //清除所有li标签的selected类
+    all_li.each(function(){
+        
+        $(this).removeClass("ghsStyle");
+    });
+    //为选中的li增加selected类
+    // all_li.eq(value).addClass("selected");
+    // alert($("#man a["+name+"="+value+"]").text());
+   
+    $("a["+name+"="+value+"]").addClass("ghsStyle");
+   
+}
+$(document).ready(function(){
+    
+    var string_array = getQueryString();
+
+    for(var i=0;i<string_array.length;i++){
+        var tempArr = string_array[i].split("=");
+        var t = "这是中文";
+    
+        setSelected(tempArr[0],tempArr[1],t);//设置选中的筛选条件
+    }
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+{include file='commons/banner'}
+{include file='commons/position'}
+
+
+
+
+
+<div class="ny clearfix">
+        <div class="fuwu_wenz">
+
+{$kbeiThe['content']}
+        </div>
+        <div class="xnav_m3">
+           <h2>经典案例<em>/ classic case</em></h2>
+           <span></span>
+        </div> 
+        <div class="w_al w_al4">
+           <ul>
+                
+                  {volist name='anliManRes' id='vo' offset='0' length='4'}
+          
+                      <li>
+                       <div class="tu">
+                           <a target="_blank" title="{$vo['title']}" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}">
+                              <img src="{volist name='vo.arttusrc' id='imgs' offset='0' length='1'}/static/admin/arttupian/ben/{$imgs['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}">
+                              <div class="title"><h3>{$vo['title']}</h3><p>{$vo['desc']}</p></div>
+                           </a>
+                       </div>
+                   </li>
+              
+             	 {/volist}    
+                   
+           </ul>
+        </div>
+        <!--------w_al end------------>
+    </div>
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

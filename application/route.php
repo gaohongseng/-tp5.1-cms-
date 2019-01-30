@@ -10,40 +10,59 @@
 // +----------------------------------------------------------------------
 
 return [
-	//营销型网络
-  	'yxxwz'=>'index/fenmian/index',
-  	//经典案例
-  	'jdal'=>'index/tulist/index',
-  	// 新闻资讯
-  	'xwzx'=>'index/artlist/index',
-  	//关于我们
-  	'gywm'=>'index/fenmian/guanyu',
-  	//联系我们
-  	'lxwm'=>'index/fenmian/lianxi',
-  	//资质荣誉
-  	'zzry'=>'index/fenmian/zizhi',
-  	//汇款方式
-  	'hkfs'=>'index/fenmian/huikuan',
-  	//推广视频
-  	'tgsp'=>'index/fenmian/tuiguan',
-  	//团队风采
-  	'tdfc'=>'index/tulist/tuandui',
-  	//常见问题
-  	'cjwt'=>'index/artlist/wenti',
 
-  	//文章
-  	'article'=>'index/article/index',
+    'rzal'=>'index/imglist/index',
+    'khkb'=>'index/lists/koubei',
+    'rzgl'=>'index/lists/gonglue',
+    'sjtd'=>'index/lists/tuandui',
+    'gywm'=>'index/fenmian/index',
+    'hdzq'=>'index/fenmian/huodong',
 
-    //手机路由
-    
-    //营销型网络
-    'mobile/yxxwz'=>'mobile/fenmian/index',
+    'artsjtd'=>'index/article/tuandui',
+    'artkhkb'=>'index/article/koubei',
+    'artrzgl'=>'index/article/gonglue',
+    //图片集的方法
+    'artrzal'=>'index/article/anli',
+   
+    'search/quanzhan'=>'index/search/quanzhan',
 
-    'mobile/article'=>'mobile/article/index',
+    //手机站的开始.copy and  copy
+   
+    'phone/rzal'=>'phone/imglist/index',
+    'phone/khkb'=>'phone/lists/koubei',
+    'phone/rzgl'=>'phone/lists/gonglue',
 
-    'mobile/lxwm'=>'mobile/fenmian/lianxi',
+    'phone/sjtd'=>'phone/lists/tuandui',
 
-    'mobile/artlist'=>'mobile/artlist/index',
+    'phone/sjtds'=>'phone/lists/tuanduis',
+
+
+    'phone/gywm'=>'phone/fenmian/index',
+    'phone/hdzq'=>'phone/fenmian/huodong',
+
+    'phone/artsjtd'=>'phone/article/tuandui',
+    'phone/artkhkb'=>'phone/article/koubei',
+    'phone/artrzgl'=>'phone/article/gonglue',
+    //图片集的方法
+    'phone/artrzal'=>'phone/article/anli',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 'rzals'=>'index/imglist/test',
+
+
   
 
     //文章

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+
+{include file='commons/banner'}
+{include file='commons/position'}
+<style>
+.ghsStyle{
+	color:red!important;
+}
+</style>
+
+<!--/ 内页广告 结束 ------------------------------------------->
+
+<!-- / 搜索 结束 ----->
+<dl class="al_fl">
+
+	<div class="main">
+		<h6><a>风格</a></h6>
+		<p class='fenge'>
+			<a href="javascript:goSort('fenge',0);"  class='in' >所有</a>
+		{volist name='showone' id='vo'}
+			<a href="javascript:goSort('fenge','{$vo}');" fenge="{$vo}">{$vo}</a>
+		{/volist}
+		
+		</p>
+	</div>
+	<div class="main">
+		<h6><a>项目类型</a></h6>
+		<p class='leixin'>
+				<a href="javascript:goSort('leixin',0);" >所有</a>
+		{volist name='showtwo' id='vo'}
+			<a href="javascript:goSort('leixin','{$vo}');" leixin="{$vo}">{$vo}</a>
+		{/volist}
+	
+		</p>
+	</div>
+
+</dl>
+
+
+<div class="al_m1">
+	<!--取得一个分页DataTable-->
+
+{if !$saiCount}
+
+	{volist name='imgRes' id='vo'}
+	<dl>
+		<dt><a title="{$vo['title']}" target="_blank" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}"><img src="{volist name='$vo.arttusrc' id='src' offset='0' length='1'}__IMG__/admin/arttupian/ben/{$src['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}"/></a></dt>
+		<dd>
+		<h3>{$vo['title']}</h3>
+		<p>
+			{$vo['desc']}
+		</p>
+		<a class="more1" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}">more</a>
+		</dd>
+	</dl>
+	{/volist}
+{else /}
+
+	{volist name='imgRes' id='vo'}
+	<dl>
+		<dt><a title="{$vo['title']}" target="_blank" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}"><img src="{volist name='$vo.arttusrc' id='src' offset='0' length='1'}__IMG__/admin/arttupian/ben/{$src['imgsrc']}{/volist}" alt="{$vo['title']}" title="{$vo['title']}"/></a></dt>
+		<dd>
+		<h3>{$vo['title']}</h3>
+		<p>
+			{$vo['desc']}
+		</p>
+		<a class="more1" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}">more</a>
+		</dd>
+	</dl>
+	{/volist}
+
+
+{/if}
+
+</div>
+<!--------ny_anli1 end------------>
+<div class="digg t">
+		{$imgRes->render()}
+</div>
+
+
+
+
+
+
+
+      
+
+{include file='commons/footer'}
+
+
+<script src="__PUBLIC__/js/jquery.js"></script>
+
+<script type="text/javascript">
+    function getQueryString(){
+     var result = location.search.match(new RegExp("[\?\&][^\?\&]+=[^\?\&]+","g"));
+
+     if(result == null){
+         return "";
+     }
+     for(var i = 0; i < result.length; i++){
+         result[i] = result[i].substring(1);
+     }
+     return result;
+}
+function goSort(name,value){
+    var string_array = getQueryString();
+
+    // var oldUrl = (document.URL.indexOf("loupan.html")==-1)?document.URL+"loupan.html":document.URL;
+    var oldUrl = document.URL;
+    var newUrl;
+    // alert(name)
+    // alert(value)
+    
+    if(string_array.length>0)//如果已经有筛选条件
+    {   
+
+        var repeatField = false;
+        for(var i=0;i<string_array.length;i++){
+            if(!(string_array[i].indexOf(name)==-1)){
+                repeatField = true;//如果有重复筛选条件，替换条件值
+                //这里我多加了一个判断，如果值重复，那么把&+参数还有值都替换
+                if(value==0){
+                    var arr = oldUrl.indexOf("&");
+                    if(arr>=0){
+                        newUrl = oldUrl.replace('&'+string_array[i],'');
+                    }else{
+                         newUrl = oldUrl.replace('?'+string_array[i],'');
+
+                    }
+                    // var arrs = oldUrl.indexOf("page");
+                    // if(arrs>=50){
+                    //     newUrl = oldUrl.replace('&page=','');
+                    // }
+                     
+                }else{
+
+                     newUrl = oldUrl.replace(string_array[i],name+"="+value);
+                }
+               
+                
+            }
+        }
+        // 如果没有重复的筛选字段
+        if(repeatField == false){
+            //如果参数不为0才加新的值，如果为0了那还保持原来的不变
+            if(value!=0){
+                newUrl = oldUrl+"&"+name+"="+value;
+
+            }else{
+                newUrl = oldUrl;
+            }
+            
+
+        }else{
+
+        }
+    }
+    if(string_array.length==false)
+    {
+        if(value==0){
+
+newUrl = document.URL;
+        }else{
+
+            newUrl = document.URL+"?"+name+"="+value;
+        }
+        
+       
+    }
+  
+
+    // alert(newUrl)
+    //跳转
+    window.location = newUrl;
+}
+function setSelected(name,value,t){
+	// var value = encodeURI(encodeURI(value));
+	var value = decodeURIComponent(value);
+
+    var all_li = $("."+name).find("a");
+
+    //清除所有li标签的selected类
+    all_li.each(function(){
+    	
+        $(this).removeClass("ghsStyle");
+    });
+    //为选中的li增加selected类
+    // all_li.eq(value).addClass("selected");
+    // alert($("#man a["+name+"="+value+"]").text());
+   
+    $("a["+name+"="+value+"]").addClass("ghsStyle");
+   
+}
+$(document).ready(function(){
+    
+    var string_array = getQueryString();
+
+    for(var i=0;i<string_array.length;i++){
+        var tempArr = string_array[i].split("=");
+        var t = "这是中文";
+	
+        setSelected(tempArr[0],tempArr[1],t);//设置选中的筛选条件
+    }
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+{include file='commons/banner'}
+
+
+{include file='commons/position'}
+
+
+
+
+
+
+
+
+<div class="ny clearfix">
+        <div class="ny_r fr">
+           <div class="news_que2">
+            <h2>{$gongThe['title']}</h2>
+             <h3>
+                 <span class="news_xb1">{$gongThe['time']|date="Y-m-d H:i:s",###}</span>
+                 <span class="news_xb3"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_article_click&amp;id=502&amp;click=1"></script>{$gongThe['click']}次浏览</span>
+             </h3>
+          </div>
+          <div class="fuwu_wenz">
+
+{$gongThe['content']}
+
+          </div>
+       
+           <div class="next-prev-single">
+
+
+              <p class="prev">
+
+  {if $gongPrev}
+  上一篇:<a href="{:url('/artrzgl',array('gongartId'=>$gongPrev[0]['id']))}">{$gongPrev[0]['title']}</a>
+{else/}
+  上一篇：没有了
+{/if}
+
+              </p>
+                  <p class="next">
+
+  {if $gongNext}
+  下一篇:<a href="{:url('/artrzgl',array('gongartId'=>$gongNext[0]['id']))}">{$gongNext[0]['title']}</a>
+{else/}
+  下一篇：没有了
+{/if}
+
+
+                </p>
+
+           </div>
+           <!--/上下篇-->
+           <div class="xnav_m3">
+               <h2>热门文章<em>/ Popular articles</em></h2>
+               <span></span>
+           </div> 
+            <ul class="nycp_news1 clearfix"> 
+                  
+               {volist name='glueManRes' id='vo' offset='0' length='10'}
+               
+                    <li><a title="{$vo['title']}" target="_blank" href="{:url('/artrzgl',array('gongartId'=>$vo['id']))}">{$vo['title']}</a><span>[{$vo['time']|date='Y-m-d',###}]</span></li>
+                
+              {/volist}  
+                     
+            </ul>
+            <!--------nycp_news end------------>
+            <div class="xnav_m3">
+               <h2>经典案例<em>/ classic case</em></h2>
+               <span></span>
+            </div> 
+            <div class="w_al w_al2">
+               <ul>
+                   
+
+            {volist name='glueanli' id='vo' offset='0' length='3'}
+             
+                      <li><div class="tu"><a target="_blank" title="{$vo['title']}" href="{:url('/artrzal',array('anliimgId'=>$vo['id']))}"><img src="{volist name='vo.arttusrc' id='imgs' offset='0' length='1'}/static/admin/arttupian/ben/{$imgs['imgsrc']}{/volist}" style="height:241px;" alt="{$vo['title']}"><div class="title"><h3>{$vo['title']}</h3><p>{$vo['desc']}</p></div></a></div></li>
+                  
+              {/volist}
+                         
+                 
+                      
+               </ul>
+            </div>
+            <!--------w_al end------------>
+        </div>
+        <!-- ny_r 结束 ------------------------------------------->
+        <div class="ny_l fl">
+
+{include file='commons/left'}
+
+        </div>
+        <!-- ny_l 结束 ------------------------------------------->
+        <div class="clear"></div>
+
+    </div>
+
+
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

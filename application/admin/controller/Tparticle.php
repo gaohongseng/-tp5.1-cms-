@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\cate as CateModel;
-use app\admin\model\article as ArticleModel;
+use app\admin\model\Article as ArticleModel;
 use app\admin\model\video as ArticleVideo;
 class Tparticle extends TpBase
 {
@@ -22,16 +22,36 @@ class Tparticle extends TpBase
     //         $info=$thumb->move(ROOT_PATH."public/static/admin".DS."articleimg");
     // $data['thumb']="static/admin/articleimg/".$info->getSaveName();
     //         }
+// $data['tpid']=CateModel::get($data['cateid'])->value('type');
+            
             $data['time']=time();
+            $cateId=empty(input('cateId'))?'':input('cateId');  
 
-            if($article->save($data)){
-
-                $this->success('添加文章成功',url('lists'),'',0.5);
+            $type=$cate->where('id',$data['cateid'])->value('type');
+            if($type==2){
+                    if(!$cateId){
+                        $this->success('封面页不能添加文章',url('lists',array('typeid'=>1)),'',0.5);
+                    }else{
+                        $this->success('封面页不能添加文章',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
             }else{
-                $this->error('添加文章失败',url('lists'),'',0.5);
+                if($article->save($data)){
+                    if(!$cateId){
+                        $this->success('添加文章成功',url('lists',array('typeid'=>1)),'',0.5);
+                    }else{
+                        $this->success('添加文章成功',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
+                    
+                }else{
+                    if(!$cateId){
+                        $this->success('添加文章失败',url('lists',array('typeid'=>1)),'',0.5);
+                    }else{
+                        $this->success('添加文章失败',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
+                }
             }
-          
-            return;
+
+
         }
        
         $this->assign("cateres",$cateres);
@@ -40,23 +60,45 @@ class Tparticle extends TpBase
 
     public function edit()
     {
+
         if(request()->isPost()){
             $article=new ArticleModel;
-            $data=input("post.");
+            $data=input('post.');
             $save=$article->update($data);
-       
+            $cateId=empty(input('cateId'))?'':input('cateId');  
             //  $save=db("article")->update(input("post."));
-            if($save){
-                $this->success("修改文章成功!",url("lists"),'',0.5);
+        
+
+          $type=$cate->where('id',$data['cateid'])->value('type');
+            if($type==2){
+                    if(!$cateId){
+                        $this->success('封面页不能添加文章',url('lists',array('typeid'=>1)),'',0.5);
+                    }else{
+                        $this->success('封面页不能添加文章',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
             }else{
-                $this->error("修改文章失败!",url("lists"),'',0.5);
+
+
+                if($save){
+                     if(!$cateId){
+                        $this->success('修改文章成功',url('lists',array('typeid'=>1)),'',0.5);
+                    }else{
+                        $this->success('修改文章成功',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
+                }else{
+                    if(!$cateId){
+                        $this->success('修改文章失败',url('lists',array('typeid'=>1)),'',0.5);
+                    }else{
+                        $this->success('修改文章失败',url('lists',array('cateId'=>$cateId)),'',0.5);
+                    }
+                }
             }
         }
 
         $cate=new cateModel();
         // $article=new ArticleModel();
         $cateres=$cate->cateres();
-        $arts=db('article')->where(array('id'=>input("cateid")))->select();
+        $arts=db('article')->where(array('id'=>input("artid")))->select();
 
         $this->assign([
 
@@ -91,11 +133,24 @@ class Tparticle extends TpBase
 
 //删除文章
     public function del(){
-         $arts=db('article')->where(array('id'=>input("cateid")))->select();
-        if(ArticleModel::destroy(input("cateid"))){
-            $this->success("删除文章成功!",url("lists"),'',0.5);
+         $arts=db('article')->where(array('id'=>input("artid")))->select();
+         $cateId=empty(input('cateId'))?'':input('cateId');  
+        if(ArticleModel::destroy(input("artid"))){
+
+               if(!$cateId){
+                    $this->success('删除文章成功',url('lists',array('typeid'=>1)),'',0.5);
+                }else{
+                    $this->success('删除文章成功',url('lists',array('cateId'=>$cateId)),'',0.5);
+                }
+
          }else{
-                $this->error("删除文章失败!",url("lists"),'',0.5);
+
+                if(!$cateId){
+                    $this->success('删除文章失败',url('lists',array('typeid'=>1)),'',0.5);
+                }else{
+                    $this->success('删除文章失败',url('lists',array('cateId'=>$cateId)),'',0.5);
+                }
+
         }
 
     }

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="loading">
+              
+
+   {include file='commons/header'}
+    <div id="container">
+    
+    <main class="cd-main-content" id="f1">
+             {include file='commons/nav'}
+    <!--ward-->
+           
+ {include file='commons/position'}
+
+
+
+    <div class="inabout">
+       <div class="newslistwrap">     
+          <!--取得一个分页DataTable-->
+{volist name='navRes' id='vo'}  
+        <ul>
+            <div class="newslistbox">
+
+                <li class="newsdate2"><img src="/{$vo['thumb']}" /></li>
+
+                <li class="newsinfo">
+                        <a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}" class="nbut1" ><div class="news-tit">{$vo['title']}</div></a>
+                        <a href="{:url('/phone/artrzgl',array('gongartId'=>$vo['id']))}" class="nbut1" ><div class="news-zy">{$vo['desc']}</div></a>
+                </li>
+
+                <div class="clear"></div>
+
+            </div>
+        </ul>
+{/volist}           
+       
+          
+                        
+            <div class="pager">
+
+                {$navRes->render()}
+
+
+
+                </div>
+                        <div style="height:30px" ></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  {include file='commons/footer'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

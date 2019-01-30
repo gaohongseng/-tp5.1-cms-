@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+{include file='commons/header'}
+
+
+{include file='commons/banner'}
+
+
+
+
+{include file='commons/position'}
+
+
+
+
+    <div class="ny">
+        <div class="cp_m">
+            <!--取得一个分页DataTable-->
+            
+		{volist name='koubeiRes' id='vo'}
+            <dl> 
+                <dt><a href="{:url('/artkhkb',array('kbeiartId'=>$vo['id']))}"><img src="/{$vo['thumb']}" alt="{$vo['title']}" title="{$vo['title']}"></a></dt>
+                <dd>
+                    <h6>{$vo['title']}</h6>
+                    <p>{$vo['desc']}</p>
+                    <span><a href="{:url('/artkhkb',array('kbeiartId'=>$vo['id']))}">查看详情</a></span>
+                </dd> 
+            </dl>
+		{/volist}
+        
+            
+            
+        </div>
+        <!--------cp_m end------------>  
+        <div class="digg t">
+            {$koubeiRes->render()}
+
+            
+         </div>
+         <!--翻页 end--> 
+    </div>
+
+
+
+
+
+
+{include file='commons/footer'}
+
+</body>
+</html>

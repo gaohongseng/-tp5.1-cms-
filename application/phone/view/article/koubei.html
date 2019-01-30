@@ -1,0 +1,74 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="loading">
+              
+
+   {include file='commons/header'}
+    <div id="container">
+    
+    <main class="cd-main-content" id="f1">
+             {include file='commons/nav'}
+    <!--ward-->
+         
+ {include file='commons/position'}
+
+
+<div class="pro-info">
+
+
+{$kbeiThe['content']}
+</div>
+
+
+
+<div class="section"><h1>推荐案例</h1> </div>
+
+
+
+
+
+
+<div class="newslistwrap news_wrap1">
+  {volist name='anliManRes' id='vo' offset='0' length='3'}
+  <div class="newslistbox">
+    <li class="newsdate2"><img src="{volist name='vo.arttusrc' offset='0' length='1' id='list'}/static/admin/arttupian/ben/{$list['imgsrc']}{/volist}"></li>
+    <li class="newsinfo">
+    <a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}" class="nbut1">
+    <div class="news-tit">
+      {$vo['title']}
+    </div>
+    </a>
+    <a href="{:url('/phone/artrzal',array('anliimgId'=>$vo['id']))}" class="nbut1">
+    <div class="news-zy">
+      {$vo['desc']}
+    </div>
+    </a>
+    </li>
+    <div class="clear">
+    </div>
+  </div>
+  {/volist}
+</div>
+
+
+
+
+
+
+  {include file='commons/footer'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

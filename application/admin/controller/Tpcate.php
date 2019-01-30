@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\cate as CateModel;
-use app\admin\model\article as ArticleModel;
+use app\admin\model\Article as ArticleModel;
 class Tpcate extends TpBase
 {
     
