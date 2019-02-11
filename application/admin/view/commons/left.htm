@@ -77,27 +77,27 @@
 
 
 
-
+<!-- 
     <li>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa fa-file-text"></i>
             <span class="menu-text">文章管理</span>
             <i class="menu-expand"></i>
         </a>
-        <ul class="submenu">
+        <ul class="submenu"> -->
  {if condition="$getarticle"}
-            <li>
+        <!--     <li>
                 <a href="{:url('tparticle/lists',array('typeid'=>1))}">
                     <span class="menu-text">
                         所有文章列表                                    
                     </span>
                     <i class="menu-expand"></i>
                 </a>
-            </li>
+            </li> -->
         {/if}
 {if condition="$getarticle"}
 {volist name='getarticle' id='vo'}
- <li>
+<!--  <li>
                 <a href="{:url('tparticle/lists',array('cateId'=>$vo['id']))}">
                     <span class="menu-text">
                         {$vo['catename']}                                    
@@ -105,13 +105,46 @@
                     <i class="menu-expand"></i>
                 </a>
             </li>
-
+ -->
 {/volist}
 {/if}
 
             
-        </ul>                            
+  <!--       </ul>                            
+    </li>  -->
+
+
+
+
+    <li>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa fa-file-text"></i>
+            <span class="menu-text">文档管理</span>
+            <i class="menu-expand"></i>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="{:url('tparthives/lists',array('typeid'=>1))}">
+                    <span class="menu-text">
+                        文档列表                                    
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{:url('tparthives/add',array('typeid'=>1))}">
+                    <span class="menu-text">
+                        添加文档                                   
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+ </ul>                            
     </li> 
+
+
+
+
 
 
 
@@ -154,7 +187,7 @@
     
 
 
-    <li>
+    <li {if $lowercon eq 'tplink'}class='open'{/if}>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa  fa-chain"></i>
             <span class="menu-text">友情链接</span>
@@ -173,7 +206,7 @@
 
 
 
-    <li>
+    <li {if $lowercon eq 'tpsearch'}class='open'{/if}>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa  fa-chain"></i>
             <span class="menu-text">搜索标签</span>
@@ -192,7 +225,83 @@
     
 
 
-    <li>
+    <li {if $lowercon eq 'tpmodel'}class='open'{/if}>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa  fa-maxcdn"></i>
+            <span class="menu-text">模型管理</span>
+            <i class="<menu-exp></menu-exp>and"></i>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="{:url('tpmodel/add')}">
+                    <span class="menu-text">
+                        添加模型                                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+              <li>
+                <a href="{:url('tpmodel/lists')}">
+                    <span class="menu-text">
+                        模型列表                                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+        </ul>                            
+    </li> 
+
+
+
+<li {if $lowercon eq 'tpnote'}class='open'{/if}>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa  fa-list-ul"></i>
+            <span class="menu-text">字段管理</span>
+            <i class="<menu-exp></menu-exp>and"></i>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="{:url('tpfield/add')}">
+                    <span class="menu-text">
+                        添加字段                                   </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+              <li>
+                <a href="{:url('tpfield/lists')}">
+                    <span class="menu-text">
+                        字段列表                                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+        </ul>                            
+    </li> 
+
+
+<li {if $lowercon eq 'tpnote'}class='open'{/if}>
+        <a href="#" class="menu-dropdown">
+            <i class="menu-icon fa  fa-list-ul"></i>
+            <span class="menu-text">采集管理</span>
+            <i class="<menu-exp></menu-exp>and"></i>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="{:url('tpnote/add')}">
+                    <span class="menu-text">
+                        添加节点                                   </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+              <li>
+                <a href="{:url('tpnote/lists')}">
+                    <span class="menu-text">
+                        节点列表                                  </span>
+                    <i class="menu-expand"></i>
+                </a>
+            </li>
+        </ul>                            
+    </li> 
+
+
+    <li {if $lowercon eq 'tpqtarticle'}class='open'{/if}>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa  fa-h-square"></i>
             <span class="menu-text">其他修改</span>
@@ -210,7 +319,7 @@
     </li> 
 
 
-<li>
+<li {if $lowercon eq 'tpform'}class='open'{/if}>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa   fa-comments"></i>
             <span class="menu-text">表单管理</span>
@@ -228,7 +337,7 @@
     </li> 
 
 
-    <li>
+    <li {if $lowercon eq 'tpconf'}class='open'{/if}>
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa fa-gear"></i>
             <span class="menu-text">系统</span>

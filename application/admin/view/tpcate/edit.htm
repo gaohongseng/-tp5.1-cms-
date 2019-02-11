@@ -66,6 +66,46 @@
 <div class="widget-body">
 <div id="horizontal-form">
 <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="username" class="col-sm-2 control-label no-padding-right">所属模型</label>
+<div class="col-sm-6">
+
+<select name="modelid" id="">
+    {volist name='modelres' id='vo'}
+<option value="{$vo.id}" {if $cates['modelid'] eq $vo['id']}selected{/if}>{$vo.model_name}</option>
+	{/volist}
+
+</select>
+
+
+</div>
+
+<p class="help-block col-sm-4 red">* 必填</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="form-group">
 <label for="username" class="col-sm-2 control-label no-padding-right">上级栏目</label>
 <div class="col-sm-6">

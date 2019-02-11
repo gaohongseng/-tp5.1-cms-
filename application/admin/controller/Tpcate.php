@@ -12,6 +12,7 @@ class Tpcate extends TpBase
 
         $cate=new cateModel();
         $cateres=$cate->cateres();
+
         if(request()->isPost()){
             $sorts=input("post.");
 
@@ -27,29 +28,40 @@ class Tpcate extends TpBase
         return $this->fetch();
     }
 
+     public function test(){
+
+        return view();
+     }
+/*添加的函数*/
      public function add(){
         $cate=new CateModel();
         $cateres=$cate->cateres();
+        $modelres=$this->getselRes('models','id desc');
         if(request()->isPost()){
             $data=input("post.");
             $plevel=explode(",",$data['pid']);
             $data['pid']=$plevel[0];
             $data['level']=$plevel[1]+1;
-            if($_FILES['thumb']['tmp_name']){
-                $file=request()->file('thumb');
-                $info=$file->rule("date")->move(ROOT_PATH.'public/static/admin'.DS.'cateimg');
-                $data['thumb']='/static/admin/cateimg/'.$info->getSaveName();
-            }
+            $data['thumb']=$this->add_files('thumb','/static/admin/cateimg/');
+            // if($_FILES['thumb']['tmp_name']){
+            //     $file=request()->file('thumb');
+            //     $info=$file->rule("date")->move(ROOT_PATH.'public/static/admin/cateimg');
+            //     $data['thumb']='/static/admin/cateimg/'.$info->getSaveName();
+            // }
+            $this->add_cateModel($data,$cate,'tpcate/lists','添加栏目');
 
-            $add=$cate->save($data);
-            if($add){
-                $this->success('添加栏目成功!',url('tpcate/lists'),'',0.5);
-            }else{
-                $this->error('添加栏目失败!',url('tpcate/lists'),'',0.5);
-            }
+            // $add=$cate->save($data);
+            // if($add){
+            //     $this->success('添加栏目成功!',url('tpcate/lists'),'',0.5);
+            // }else{
+            //     $this->error('添加栏目失败!',url('tpcate/lists'),'',0.5);
+            // }
         }
          
-        $this->assign('cateres',$cateres);
+        $this->assign([
+            'cateres'=>$cateres,
+            'modelres'=>$modelres
+        ]);
         return $this->fetch();
      }
 
@@ -70,6 +82,7 @@ class Tpcate extends TpBase
         $cate=new CateModel();
         $cateres=$cate->cateres();
         $cates=$cate->find(input("catid"));
+        $modelres=$this->getselRes('models','id desc');
         if(request()->isPost()){
             $data=input("post.");
             $plevel=explode(",",$data['pid']);
@@ -89,12 +102,28 @@ class Tpcate extends TpBase
         }
         $this->assign([
             'cateres'=>$cateres,
-            'cates'=>$cates
+            'cates'=>$cates,
+            'modelres'=>$modelres,
         ]);
         return $this->fetch();
      }
 
-
+//收缩栏目的操作
+     public function ajaxlists(){
+        if(request()->isAjax()){
+            $dataid=input('cateid');
+            $cate=new CateModel();
+            $catezi=$cate->_getchildrenid($dataid);
+             return $catezi;
+        }else{
+            $this->error('非法操作');
+        }
+       
+     }
+//显示隐藏栏目的操作
+     public function changestatus(){
+        return $this->changestat('cate',input('cateid'),'rec_index');
+    }
 
 
 

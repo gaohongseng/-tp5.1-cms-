@@ -1,5 +1,5 @@
 <?php
-namespace app\validate\validate;
+namespace app\admin\validate;
 use think\Validate;
 class link extends Validate
 {

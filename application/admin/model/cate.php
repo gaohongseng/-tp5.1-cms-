@@ -69,26 +69,15 @@ public function _getchildrenid($catid){
 /*从前端拿过来的代码*/
 
 
-public function getchildrenidno($catid){
+public function getchildrenidquan($catid){
       $data=db("cate")->select();
-      $arr=$this->_getchildrenidins($data,$catid);
+      $arr=$this->getchildrenid($data,$catid);
       $arr[]=$catid;
       return $arr;
    }
 
 
-   public function _getchildrenidins($data,$id){
-      static $attr=array();
-      foreach($data as $key=>$val){
-         if($val['pid']==$id){
-            array_push($attr,$val['id']);
-             $this->_getchildrenidins($data,$val['id']);
-         }
 
-      }
-      return $attr;
-      
-   }
 
 //通过递归找到所有的分类
    public function cateres(){
@@ -139,14 +128,18 @@ public function getchildrenidno($catid){
          });
    }
 
-//关联图片集
+//关联图片集,一个栏目多个图片集
    public function arttupian(){
       return $this->hasMany('arttupian','cateid');
    }
 
-//关联文章列表
+//关联文章列表,一个栏目可以很多个文章
   public function article(){
       return $this->hasMany('article','cateid');
+   }
+///关联模型列表，多个栏目可以被定义为一个模型，这里用belongsTo的关系
+   public function models(){
+      return $this->belongsTo('models','modelid');
    }
 
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"F:\phpstu\PHPTutorial\WWW\tp5cms4cms\public/../application/admin\view\tplogin\login.htm";i:1547775721;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"F:\phpstu\PHPTutorial\WWW\tp5cms4cms\public/../application/admin\view\tplogin\login.htm";i:1548831978;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
     <meta charset="utf-8">
@@ -32,8 +32,8 @@
 
                 <div class="loginbox-textbox">
                     <input class="form-control" placeholder="password" name="code"  style='width:100px;float:left;'>
-<!-- 
-                    <img src="<?php echo captcha_src(); ?>" alt="" style='float:left;margin-bottom:10px;' width='120' onclick="this.src='<?php echo captcha_src(); ?>?'+Math.random();"> -->
+
+                    <img src="<?php echo captcha_src(); ?>" alt="" style='float:left;margin-bottom:10px;' width='120' onclick="this.src='<?php echo captcha_src(); ?>?'+Math.random();">
                 </div>
 
 
